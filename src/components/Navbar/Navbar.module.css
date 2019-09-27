@@ -1,0 +1,14 @@
+.nav {
+    grid-area: n;
+    border: 1px solid green;
+    
+  }
+.item {
+      color: red;
+}
+.active {
+  background: pink;
+}
+a {
+  color: inherit;
+}
