@@ -1,8 +1,4 @@
-.wrapper {
-    grid-area: c;
-    border: 1px solid purple;
-  }
-  
+
   .wrapper img {
     width: 100%;
   }

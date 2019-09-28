@@ -10,7 +10,7 @@ const Profile = () => {
             <div>
                 ava + description
             </div>
-            <Myposts/>
+            <Myposts message="it is myee posts"/>
         </div>
     )
 }
