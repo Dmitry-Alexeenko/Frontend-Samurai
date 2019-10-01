@@ -8,12 +8,12 @@
       color: red;
 }
 
-a {
+.item a {
   color: inherit;
     text-decoration: none;
 }
 
-a:hover {
+.item a:hover {
     color: aqua;
 }
 

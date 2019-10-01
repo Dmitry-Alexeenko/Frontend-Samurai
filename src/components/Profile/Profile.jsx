@@ -1,16 +1,12 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
 import c from  './Profile.module.css';
-import Myposts from './MyPosts/MyPosts';
+import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 const Profile = () => {
     return (
-        <div className={c.wrapper}>
-            <div>
-                <img src="https://s1.1zoom.me/b5050/925/241768-Sepik_2048x1152.jpg"></img>
-            </div>
-            <div>
-                ava + description
-            </div>
-            <Myposts message="it is myee posts"/>
+        <div>
+            <ProfileInfo />
+            <MyPosts message="it is my posts"/>
         </div>
     )
 }
