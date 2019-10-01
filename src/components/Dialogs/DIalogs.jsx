@@ -1,55 +1,27 @@
 import React from 'react';
 import c from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
-
-const DialogItem = (props) => {
-    return (
-        <div className={c.dialog}>
-            <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Message = (props) => {
-    return (
-        <div className={c.message}>
-            {props.content}
-        </div>
-    )
-}
+import Message from "./Message/Message";
+import DialogItem from "./DialogItem/DIalogItem";
 
 const Dialogs = (props) => {
 
-    let usersData = [                     //по сути это BLL, тут хранятся данные
-        {id:1, name:"Dimas"},
-        {id:2, name:"Alex"},
-        {id:3, name:"Sergy"},
-        {id:4, name:"Anton"},
-        {id:5, name:"Kate"}
-    ];
-    let messagesData = [
-        {id:1, message:"Hi, my name is Dima."},
-        {id:2, message:"Hi, my name is Anton."},
-        {id:3, message:"How are you?"},
-        {id:4, message:"not bad"},
-        {id:5, message:"ok"}
-    ];
+
+   /* let dialogsElements = [
+        <DialogItem name={users[0].name} id={users[0].id}/>,  //создаем массив из элементов которые ниже. ТАкой массив создает MAP
+        <DialogItem name={users[1].name} id={users[1].id}/>,  // т.е с сервака приходят данные типа users и мы мапом их преобразуем в массив
+        <DialogItem name={users[2].name} id={users[2].id}/>,  //который нам нужен
+        <DialogItem name={users[3].name} id={users[3].id}/>,
+        <DialogItem name={users[4].name} id={users[4].id}/>]*/
+   let dialogsElements = props.userss.map( u => (<DialogItem name={u.name} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
+    let messageElements = props.messagess.map( m => (<Message content={m.message} id={m.id}/>)); //мап как циел, он проходит по всем элементам
 
     return (
         <div className={c.dialogs}>
             <div className={c.dialogsItems}>
-                <DialogItem name={usersData[0].name} id={usersData[0].id}/>
-                <DialogItem name={usersData[1].name} id={usersData[1].id}/>
-                <DialogItem name={usersData[2].name} id={usersData[2].id}/>
-                <DialogItem name={usersData[3].name} id={usersData[3].id}/>
-                <DialogItem name={usersData[4].name} id={usersData[4].id}/>
+                {dialogsElements}
             </div>
             <div className={c.messages}>
-                <Message content={messagesData[0].message} id={messagesData[0].id}/>
-                <Message content={messagesData[1].message} id={messagesData[1].id}/>
-                <Message content={messagesData[2].message} id={messagesData[2].id}/>
-                <Message content={messagesData[3].message} id={messagesData[3].id}/>
-                <Message content={messagesData[4].message} id={messagesData[4].id}/>
+                {messageElements}
             </div>
         </div>
     )

@@ -2,11 +2,13 @@ import React from 'react'; // импортируем модуль из node modu
 import c from  './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-const Profile = () => {
+const Profile = (props) => {
+
+
     return (
-        <div>
+        <div >
             <ProfileInfo />
-            <MyPosts message="it is my posts"/>
+            <MyPosts message="it is my posts" post ={props.post}/>
         </div>
     )
 }

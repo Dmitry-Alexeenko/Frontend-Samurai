@@ -11,18 +11,23 @@ import Settings from "./components/Settings/Settings";
 
 
 // эта функц возвр JSX разметку(html встр в js) это компонента(app)
-const App = () => {
+const App = (props) => {
     return (  // className-назначение классна за место class; на ретурне долж быть только один элемент на вывод
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper__content">
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                    <Route path='/profile' render={ () => <Profile post={props.post}/>}/> {/*Так пропсы можно прокинуть*/}
+                    <Route path='/dialogs' render={ () => <Dialogs userss={props.userss} messagess={props.messagess}/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                    <Route path='/news' render={ () => <News/>}/>
+                    <Route path='/music' render={ () => <Music/>}/>
+                    <Route path='/settings' render={ () => <Settings/>}/>
+                    {/*<Route path='/profile' component={Profile}/>             !!!!!через  них пропсы не прокинешь
+                    <Route path='/dialogs' component={Dialogs}/> path смотрит на адресную строку. если адрес его, то он вкл
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
+                    <Route path='/settings' component={Settings}/>*/}
                 </div>
             </div>
         </BrowserRouter>
