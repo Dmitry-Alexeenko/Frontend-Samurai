@@ -2,11 +2,10 @@ import React from 'react'; // импортируем модуль из node modu
 import c from  './MyPosts.module.css';
 import Post from './Post/Post';
 const MyPosts = (props) => {
-
-    let postsItem = props.post.map( p => (<Post message={p.message} like={p.likesCount}/>));
+    let postsItem = props.posts.map( p => (<Post message={p.message} like={p.likesCount}/>));
     return (
     <div>
-        {props.message}
+        {props.cont}
         <div>
             New post
         </div>

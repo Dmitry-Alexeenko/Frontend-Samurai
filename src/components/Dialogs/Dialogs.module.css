@@ -1,7 +1,13 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-    background-color: aquamarine;
-    padding: 20px;
-}
+    background-color: white;
+    border-radius: 5px;
 
+
+
+}
+.dialogsItems {
+    border-right: 1px solid #edeef0;
+
+}

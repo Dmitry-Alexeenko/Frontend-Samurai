@@ -4,7 +4,7 @@ const Post = (props) => { //этот пропс берется из файла M
     return (
         <div className={c.item}> 
             <img src="http://s1.bwallpapers.com/wallpapers/2014/08/06/jake-sully-avatar-disguise_084518772.jpg"></img>
-                {props.message} 
+                {props.message}
             <div>
                 like {props.like}
             </div>
