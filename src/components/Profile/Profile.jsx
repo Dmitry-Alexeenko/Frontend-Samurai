@@ -2,13 +2,12 @@ import React from 'react'; // импортируем модуль из node modu
 import c from  './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+
 const Profile = (props) => {
-
-
     return (
         <div >
             <ProfileInfo />
-            <MyPosts cont="it is my posts" posts ={props.posts}/>
+            <MyPosts cont="it is my posts" state ={props.state.posts} addPost={props.addPost}/>
         </div>
     )
 }

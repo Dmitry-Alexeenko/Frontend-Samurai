@@ -17,6 +17,10 @@
     color: aqua;
 }
 
-a.active {
+.item a.active {
     color:green;
+}
+
+.friendsItems {
+    display: flex;
 }

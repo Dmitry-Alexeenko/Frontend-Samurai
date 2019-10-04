@@ -1,9 +1,14 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
 import c from  './Navbar.module.css';
-import {NavLink} from "react-router-dom"; // подкл стили; теперь это объект
+import {NavLink} from "react-router-dom";
+import FriendsSiteBar from "./FriendsSiteBar/FriendsSiteBar"; // подкл стили; теперь это объект
 
-const Navbar = () => { //{classes.item} - это ключ объекта classes
+
+const Navbar = (props) => { //{classes.item} - это ключ объекта classes
 //(let c = c1+" "+c2)<--сложение с1 и с2 || замена (шаблонная строка ecmascript 6)--> (let c = `${c1} ${c2}`)
+
+    let fliendsItems = props.state.user.map((u) => (<FriendsSiteBar name={u.name} id={u.id}/>));
+
     return (
         <nav className={c.nav}>
             <div className={c.item}> 
@@ -21,8 +26,15 @@ const Navbar = () => { //{classes.item} - это ключ объекта classes
             <div className={c.item}> 
                 <NavLink to="/settings" activeClassName={c.active}>Settings</NavLink>
             </div>
+            <div className={c.friends}>
+                <h3> Friends </h3>
+                <div className={c.friendsItems}>
+                    {fliendsItems}
+
+                </div>
+            </div>
         </nav>
     )
-}
+};
 
 export default Navbar; // экспортируем код в другие файлы default экспортирует все.

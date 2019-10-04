@@ -1,3 +1,4 @@
+import {rerenderEntireTree} from "../render";
 
 
 let state = {
@@ -26,11 +27,32 @@ let state = {
             {id:5, name:"Kate"},
             {id:6, name:"Mark"}
         ]
+
+
     },
-    sideBar:{}
+    sideBar:{
+        user:[
+            {id:1, name:"Kate"},
+            {id:2, name:"Valera"},
+            {id:3, name:"Mark"}
+        ]
+    }
+};
+export let addPost = (postMessage) => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
+    let newPost = {id:5, message:postMessage, likesCount:7};
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 };
 
 export default state;
+/*
+sideBar:{
+    users:[
+        {id:1, name:"Kate"},
+        {id:2, name:"Valera"},
+        {id:3, name:"Mark"}
+    ]
+}*/
 
 /*
 let posts = [

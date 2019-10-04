@@ -3,9 +3,12 @@ import c from './Message.module.css';
 
 const Message = (props) => {
     return (
-        <div className={c.message}>
-            {props.content}
-        </div>
+
+            <div className={c.message}>
+                {props.content}
+            </div>
+
+
     )
 };
 

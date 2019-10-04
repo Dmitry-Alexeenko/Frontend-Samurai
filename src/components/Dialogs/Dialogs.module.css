@@ -9,5 +9,10 @@
 }
 .dialogsItems {
     border-right: 1px solid #edeef0;
+}
 
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

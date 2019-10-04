@@ -1,0 +1,21 @@
+.friendsItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+
+
+}
+
+.friendsItem img {
+    width: 35px;
+    height:35px;
+    border-radius: 50%;
+}
+
+.friendsItem a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}

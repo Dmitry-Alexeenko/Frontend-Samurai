@@ -12,8 +12,14 @@ const Dialogs = (props) => {
         <DialogItem name={users[2].name} id={users[2].id}/>,  //который нам нужен
         <DialogItem name={users[3].name} id={users[3].id}/>,
         <DialogItem name={users[4].name} id={users[4].id}/>]*/
-   let dialogsElements = props.userss.map( u => (<DialogItem name={u.name} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
-    let messageElements = props.messagess.map( m => (<Message content={m.message} id={m.id}/>)); //мап как циел, он проходит по всем элементам
+   let dialogsElements = props.state.users.map( u => (<DialogItem name={u.name} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
+    let messageElements = props.state.messages.map( m => (<Message content={m.message} id={m.id}/>)); //мап как циел, он проходит по всем элементам
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    };
 
     return (
         <div className={c.dialogs}>
@@ -21,7 +27,17 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={c.messages}>
-                {messageElements}
+                <div>
+                    {messageElements}
+                </div>
+                <div className={c.textTupe}>
+                    <div>
+                        <textarea ref={newMessageElement}></textarea>
+                    </div>
+                    <div>
+                        <button onClick={addMessage}>new message</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
