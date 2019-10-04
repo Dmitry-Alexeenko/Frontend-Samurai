@@ -8,7 +8,8 @@ let state = {
             {id:2, message:"It is first post", likesCount:16},
             {id:3, message:"It is thirst post", likesCount:9},
             {id:3, message:"yes", likesCount:111}
-        ]
+        ],
+        textNewPost:""
     },
     dialogsPage:{
         messages: [
@@ -26,9 +27,8 @@ let state = {
             {id:4, name:"Anton"},
             {id:5, name:"Kate"},
             {id:6, name:"Mark"}
-        ]
-
-
+        ],
+        textNewMessages:""
     },
     sideBar:{
         user:[
@@ -38,11 +38,31 @@ let state = {
         ]
     }
 };
-export let addPost = (postMessage) => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
-    let newPost = {id:5, message:postMessage, likesCount:7};
+export let addPost = () => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
+    let newPost = {id:5, message:state.profilePage.textNewPost, likesCount:7};
     state.profilePage.posts.push(newPost);
-    rerenderEntireTree(state);
+    state.profilePage.textNewPost = "";
+    rerenderEntireTree(state, addPost, changeText , changeMessage, addMessage);
 };
+
+export let changeText = (change) => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
+    state.profilePage.textNewPost = change;
+    rerenderEntireTree(state, addPost, changeText, changeMessage, addMessage );
+};
+
+export let addMessage = () => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
+    let newMessage = {id:99, message:state.dialogsPage.textNewMessages};
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.textNewMessages = "";
+    rerenderEntireTree(state, addPost, changeText , changeMessage, addMessage);
+};
+
+export let changeMessage = (change) => {    //экспортируем только эту функцию, импорт будет через фигурные скобки
+    state.dialogsPage.textNewMessages = change;
+    rerenderEntireTree(state, addPost, changeText, changeMessage, addMessage );
+};
+
+
 
 export default state;
 /*

@@ -2,6 +2,7 @@ import React from 'react';
 import c from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
+import {addMessage} from "../../Redux/state";
 
 const Dialogs = (props) => {
 
@@ -17,8 +18,11 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
+        props.addMessage();
+    };
+    let changeMessage = () => {
         let text = newMessageElement.current.value;
-        alert(text);
+        props.changeMessage(text);
     };
 
     return (
@@ -32,7 +36,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={c.textTupe}>
                     <div>
-                        <textarea ref={newMessageElement}></textarea>
+                        <textarea onChange={changeMessage} ref={newMessageElement} value={props.state.textNewMessages}/>
                     </div>
                     <div>
                         <button onClick={addMessage}>new message</button>
