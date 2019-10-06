@@ -1,20 +1,19 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
 import c from  './MyPosts.module.css';
 import Post from './Post/Post';
-
+import {addPostActionCreator, changeTextActionCreator} from "../../../Redux/state";
 
 const MyPosts = (props) => {
-    debugger;
     let postsItem = props.state.posts.map( p => (<Post message={p.message} like={p.likesCount}/>));
 
     let newPostElement = React.createRef();  //реакт создает ссылку
 
     let addNewPost = () => {
-       props.addPost();
+       props.dispatch(addPostActionCreator());
     };
     let changeText = () => {
         let text = newPostElement.current.value;
-        props.changeText(text);
+        props.dispatch(changeTextActionCreator(text));
     };
     return (
     <div>

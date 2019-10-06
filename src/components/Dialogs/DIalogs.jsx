@@ -2,11 +2,9 @@ import React from 'react';
 import c from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
-import {addMessage} from "../../Redux/state";
+import {addMessageActionCreator, changeMessageActionCreator} from "../../Redux/state";
 
 const Dialogs = (props) => {
-
-
    /* let dialogsElements = [
         <DialogItem name={users[0].name} id={users[0].id}/>,  //создаем массив из элементов которые ниже. ТАкой массив создает MAP
         <DialogItem name={users[1].name} id={users[1].id}/>,  // т.е с сервака приходят данные типа users и мы мапом их преобразуем в массив
@@ -18,11 +16,11 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.addMessage();
+        props.dispatch(addMessageActionCreator());
     };
     let changeMessage = () => {
         let text = newMessageElement.current.value;
-        props.changeMessage(text);
+        props.dispatch(changeMessageActionCreator(text));
     };
 
     return (

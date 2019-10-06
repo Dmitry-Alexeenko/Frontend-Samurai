@@ -8,23 +8,16 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {addMessage} from "./Redux/state";
-
-
-
-
-// эта функц возвр JSX разметку(html встр в js) это компонента(app)
 
 const App = (props) => {
-
     return <BrowserRouter>
         <div className="app-wrapper">
             <Header />
             <Navbar state={props.state.sideBar}/>
             <div className="app-wrapper__content">
 
-                <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost={props.addPost} changeText={props.changeText} />}/> {/*Так пропсы можно прокинуть*/}
-                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} changeMessage={props.changeMessage} addMessage={props.addMessage}/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                <Route path='/profile' render={() => <Profile state={props.state.profilePage} dispatch={props.dispatch}/>}/> {/*Так пропсы можно прокинуть*/}
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>
