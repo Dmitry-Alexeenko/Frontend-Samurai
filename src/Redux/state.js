@@ -1,7 +1,6 @@
-const ADD_POST = "ADD-POST";
-const CHANGE_POST = 'CHANGE-POST';
-const ADD_MESSAGE = "ADD-MESSAGE";
-const CHANGE_MESSAGE = "CHANGE-MESSAGE";
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _callSubscriber () {
@@ -53,41 +52,16 @@ let store = {
     },
 
     dispatch(action){ //action это объект который мы диспатчим. У него обязон должен быть тип {type:""}
-        if(action.type === ADD_POST) {
-            let newPost = {
-                id:5,
-                message:this._state.profilePage.textNewPost,
-                likesCount:7
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.textNewPost = "";
-            this._callSubscriber();
-        }
-        else if (action.type === CHANGE_POST) {
-            this._state.profilePage.textNewPost = action.newText;
-            this._callSubscriber();
-        }
-        else if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                id:99,
-                message:this._state.dialogsPage.textNewMessages
-            };
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.textNewMessages = "";
-            this._callSubscriber();
-        }
-        else if (action.type === CHANGE_MESSAGE) {
-            this._state.dialogsPage.textNewMessages = action.newText;
-            this._callSubscriber();
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sideBar = sidebarReducer(this._state.sideBar, action);
+        this._callSubscriber();
     }
 };
 
-export const addPostActionCreator = () => ({type:ADD_POST});
-export const changeTextActionCreator = (text) => ({type:CHANGE_POST, newText:text});
 
-export const addMessageActionCreator = () => ({type:ADD_MESSAGE});
-export const changeMessageActionCreator = (text) => ({type:CHANGE_MESSAGE, newText:text});
+
+
 
 
 export default store;

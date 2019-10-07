@@ -2,7 +2,8 @@ import React from 'react';
 import c from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
-import {addMessageActionCreator, changeMessageActionCreator} from "../../Redux/state";
+import {addMessageCreator, changeMessageCreator} from '../../Redux/dialogs-reducer';
+
 
 const Dialogs = (props) => {
    /* let dialogsElements = [
@@ -13,14 +14,13 @@ const Dialogs = (props) => {
         <DialogItem name={users[4].name} id={users[4].id}/>]*/
    let dialogsElements = props.state.users.map( u => (<DialogItem name={u.name} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
     let messageElements = props.state.messages.map( m => (<Message content={m.message} id={m.id}/>)); //мап как циел, он проходит по всем элементам
-    let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.dispatch(addMessageCreator());
     };
-    let changeMessage = () => {
-        let text = newMessageElement.current.value;
-        props.dispatch(changeMessageActionCreator(text));
+    let changeMessage = (e) => {     //е- объект события, или еще event
+        let text = e.target.value;  //у е есть .target(т.к эта функция от textarea, то.target=textarea) и мы берем value у textarea в лице .target
+        props.dispatch(changeMessageCreator(text));
     };
 
     return (
@@ -34,10 +34,11 @@ const Dialogs = (props) => {
                 </div>
                 <div className={c.textTupe}>
                     <div>
-                        <textarea onChange={changeMessage} ref={newMessageElement} value={props.state.textNewMessages}/>
+                        <textarea onChange={changeMessage}  value={props.state.textNewMessages}
+                        placeholder="Enter your message"/>
                     </div>
                     <div>
-                        <button onClick={addMessage}>new message</button>
+                        <button onClick={addMessage}>Send message</button>
                     </div>
                 </div>
             </div>
