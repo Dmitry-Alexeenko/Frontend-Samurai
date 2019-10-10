@@ -1,7 +1,7 @@
 const ADD_POST = "ADD-POST";
 const CHANGE_POST = 'CHANGE-POST';
 
-let initialState = { //для стартовых данных
+let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
     posts: [
         {id:1, message:"Dorow, my name is React", likesCount:1},
         {id:2, message:"It is first post", likesCount:16},
@@ -11,7 +11,7 @@ let initialState = { //для стартовых данных
     textNewPost:""
 };
 
-const profileReducer = (state = initialState, action)=> {
+const profileReducer = (state = initialState, action)=> { // изначально state не может придти, т.к у redux его нет, поэтому мы передаем initialState для первой инициальзации
 
     switch (action.type) {
         case ADD_POST:

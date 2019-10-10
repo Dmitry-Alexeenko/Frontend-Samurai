@@ -1,7 +1,6 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
 import c from  './MyPosts.module.css';
 import Post from './Post/Post';
-import {addPostCreator, changeTextCreator} from "../../../Redux/profile-reducer";
 
 const MyPosts = (props) => {
     let postsItem = props.state.posts.map( p => (<Post message={p.message} like={p.likesCount}/>));
@@ -9,15 +8,14 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();  //реакт создает ссылку
 
     let addNewPost = () => {
-       props.dispatch(addPostCreator());
+        props.addPost();
     };
     let changeText = () => {
         let text = newPostElement.current.value;
-        props.dispatch(changeTextCreator(text));
+        props.updateNewPostText(text);
     };
     return (
     <div>
-        {props.cont}
         <div>
             <div>
                 <textarea onChange={changeText} ref={newPostElement} value={props.state.textNewPost} placeholder="Enter your post"/>
