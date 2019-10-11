@@ -24,16 +24,16 @@ let initialState = {
 const dialogsReducer = (state = initialState, action)=> {
     switch (action.type) {
         case ADD_MESSAGE:
-            let newMessage = {
-                id:99,
-                message:state.textNewMessages
+            return {
+                ...state,
+                textNewMessages: "",
+                messages: [...state.messages, {id:99, message:state.textNewMessages}] //добавляем элемент в messages  за место push
             };
-            state.messages.push(newMessage);
-            state.textNewMessages = "";
-            return state;                  //после каждого case надо ставить break, иначе switch продолжит выполняться
-        case CHANGE_MESSAGE:               //но я поставил return, без него или break будет ошибка
-            state.textNewMessages = action.newText;
-            return state;
+        case CHANGE_MESSAGE:
+            return {
+                ...state,
+                textNewMessages: action.newText
+            };
         default:                          //но если ничего не изм то вывод надо сделать по умолчанию
             return state;
     }

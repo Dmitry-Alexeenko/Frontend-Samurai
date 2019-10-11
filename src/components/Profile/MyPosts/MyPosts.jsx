@@ -3,7 +3,7 @@ import c from  './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-    let postsItem = props.state.posts.map( p => (<Post message={p.message} like={p.likesCount}/>));
+    let postsItem = props.profilePage.posts.map( p => (<Post message={p.message} key={p.id} like={p.likesCount}/>));
 
     let newPostElement = React.createRef();  //реакт создает ссылку
 
@@ -18,7 +18,7 @@ const MyPosts = (props) => {
     <div>
         <div>
             <div>
-                <textarea onChange={changeText} ref={newPostElement} value={props.state.textNewPost} placeholder="Enter your post"/>
+                <textarea onChange={changeText} ref={newPostElement} value={props.profilePage.textNewPost} placeholder="Enter your post"/>
             </div>
             <div>
                 <button onClick={addNewPost}>Add post</button> {/*//когда мы сами не выхываем функцию, а отдаем ее онклику и т.д, эта функц наз Колбэк !!!Отдаем без скобок */}

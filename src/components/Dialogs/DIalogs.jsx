@@ -11,8 +11,8 @@ const Dialogs = (props) => {
          <DialogItem name={users[2].name} id={users[2].id}/>,  //который нам нужен
          <DialogItem name={users[3].name} id={users[3].id}/>,
          <DialogItem name={users[4].name} id={users[4].id}/>]*/
-    let dialogsElements = props.state.users.map(u => (<DialogItem name={u.name} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
-    let messageElements = props.state.messages.map(m => (<Message content={m.message} id={m.id}/>)); //мап как циел, он проходит по всем элементам
+    let dialogsElements = props.dialogsPage.users.map(u => (<DialogItem name={u.name} key={u.id} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
+    let messageElements = props.dialogsPage.messages.map(m => (<Message content={m.message}  key={m.id} id={m.id}/>)); //мап как циел, он проходит по всем элементам
 
     let addMessage = () => {
         props.addNewMessage();
@@ -33,7 +33,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={c.textTupe}>
                     <div>
-                        <textarea onChange={changeMessage} value={props.state.textNewMessages}
+                        <textarea onChange={changeMessage} value={props.dialogsPage.textNewMessages}
                                   placeholder="Enter your message"/>
                     </div>
                     <div>

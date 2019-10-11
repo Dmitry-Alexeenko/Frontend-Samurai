@@ -12,5 +12,5 @@ let reducers = combineReducers({  //передаем этой функции н�
 
 let store = createStore(reducers); //создаем функцию и импортим createStore из библиотеки redux
                                     //автоматически createStore создает внутри себя state у которого есть 3 свойства(reducers)
-
+window.store = store;
 export default store;

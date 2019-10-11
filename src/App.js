@@ -8,6 +8,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DIalogsContainer";
+import Users from "./components/Users/Users";
 
 const App = (props) => {
     return(
@@ -16,8 +17,9 @@ const App = (props) => {
             <Navbar state={props.state.sideBar}/>
             <div className="app-wrapper__content">
 
-                <Route path='/profile' render={() => <Profile state={props.state.profilePage} dispatch={props.dispatch}/>}/> {/*Так пропсы можно прокинуть*/}
-                <Route path='/dialogs' render={() => <DialogsContainer state={props.state.dialogsPage} dispatch={props.dispatch}/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                <Route path='/profile' render={() => <Profile/>}/> {/*Так пропсы можно прокинуть*/}
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                <Route path='/Users' render={() => <Users/>}/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>

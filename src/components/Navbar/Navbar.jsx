@@ -7,7 +7,7 @@ import FriendsSiteBar from "./FriendsSiteBar/FriendsSiteBar"; // подкл ст
 const Navbar = (props) => { //{classes.item} - это ключ объекта classes
 //(let c = c1+" "+c2)<--сложение с1 и с2 || замена (шаблонная строка ecmascript 6)--> (let c = `${c1} ${c2}`)
 
-    let fliendsItems = props.state.user.map((u) => (<FriendsSiteBar name={u.name} id={u.id}/>));
+    let fliendsItems = props.state.user.map((u) => (<FriendsSiteBar name={u.name} key={u.id} id={u.id}/>));
 
     return (
         <nav className={c.nav}>
