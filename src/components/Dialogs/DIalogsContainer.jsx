@@ -1,6 +1,6 @@
 import React from 'react';
 import {addMessageCreator, changeMessageCreator} from '../../Redux/dialogs-reducer';
-import Dialogs from "./DIalogs";
+import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => { //обрашаемся сразу к стейт, а не к стору благодаря connect

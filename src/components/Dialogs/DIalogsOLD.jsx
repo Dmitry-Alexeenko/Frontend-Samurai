@@ -4,15 +4,9 @@ import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
 
 
-const Dialogs = (props) => {
-    /* let dialogsElements = [
-         <DialogItem name={users[0].name} id={users[0].id}/>,  //создаем массив из элементов которые ниже. ТАкой массив создает MAP
-         <DialogItem name={users[1].name} id={users[1].id}/>,  // т.е с сервака приходят данные типа users и мы мапом их преобразуем в массив
-         <DialogItem name={users[2].name} id={users[2].id}/>,  //который нам нужен
-         <DialogItem name={users[3].name} id={users[3].id}/>,
-         <DialogItem name={users[4].name} id={users[4].id}/>]*/
-    let dialogsElements = props.dialogsPage.users.map(u => (<DialogItem name={u.name} key={u.id} id={u.id}/>)); //Этой записью мы создали массив аналогичный закоммент. сверху
-    let messageElements = props.dialogsPage.messages.map(m => (<Message content={m.message}  key={m.id} id={m.id}/>)); //мап как циел, он проходит по всем элементам
+const DIalogsOLD = (props) => {
+    let dialogsElements = props.dialogsPage.users.map(u => (<DialogItem name={u.name} key={u.id} id={u.id}/>));
+    let messageElements = props.dialogsPage.messages.map(m => (<Message content={m.message}  key={m.id} id={m.id}/>));
 
     let addMessage = () => {
         props.addNewMessage();
@@ -45,4 +39,4 @@ const Dialogs = (props) => {
     )
 }
 
-export default Dialogs;
+export default DIalogsOLD;
