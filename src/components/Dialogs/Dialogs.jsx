@@ -3,40 +3,37 @@ import c from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
 
-class Dialogs extends React.Component {
-    addMessage = () => {
-        this.props.addNewMessage();
-    };
 
-    changeMessage = (e) => {     //е- объект события, или еще event
+let Dialogs = (props) => {
+
+    let changeMessage = (e) => {     //е- объект события, или еще event
         let text = e.target.value;  //у е есть .target(т.к эта функция от textarea, то.target=textarea) и мы берем value у textarea в лице .target
-        this.props.changeNewMessage(text);
+        props.changeMessage(text);
     };
 
-    render() {
-        return (
-            <div className={c.dialogs}>
-                <div className={c.dialogsItems}>
-                    {this.props.dialogsPage.users.map(u => (<DialogItem name={u.name} key={u.id} id={u.id}/>))}
+    return (
+        <div className={c.dialogs}>
+            <div className={c.dialogsItems}>
+                {props.dialogsPage.users.map(u => (<DialogItem name={u.name} key={u.id} id={u.id}/>))}
+            </div>
+            <div className={c.messages}>
+                <div>
+                    {props.dialogsPage.messages.map(m => (
+                        <Message content={m.message} key={m.id} id={m.id}/>))}
                 </div>
-                <div className={c.messages}>
+                <div className={c.textTupe}>
                     <div>
-                        {this.props.dialogsPage.messages.map(m => (
-                            <Message content={m.message} key={m.id} id={m.id}/>))}
+                        <textarea onChange={changeMessage} value={props.dialogsPage.textNewMessages}
+                                  placeholder="Enter your message"/>
                     </div>
-                    <div className={c.textTupe}>
-                        <div>
-                            <textarea onChange={this.changeMessage} value={this.props.dialogsPage.textNewMessages}
-                                      placeholder="Enter your message"/>
-                        </div>
-                        <div>
-                            <button onClick={this.addMessage}>Send message</button>
-                        </div>
+                    <div>
+                        <button onClick={props.addMessage}>Send message</button>
                     </div>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+
 }
 
 

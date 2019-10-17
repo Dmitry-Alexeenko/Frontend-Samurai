@@ -2,13 +2,13 @@ import React from 'react'; // импортируем модуль из node modu
 import './App.css'; // подкл стили;
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
 import {Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DIalogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const App = (props) => {
     return(
@@ -17,7 +17,7 @@ const App = (props) => {
             <Navbar state={props.state.sideBar}/>
             <div className="app-wrapper__content">
 
-                <Route path='/profile' render={() => <Profile/>}/> {/*Так пропсы можно прокинуть*/}
+                <Route path='/profile' render={() => <ProfileContainer/>}/> {/*Так пропсы можно прокинуть*/}
                 <Route path='/dialogs' render={() => <DialogsContainer/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
                 <Route path='/users' render={() => <UsersContainer/>}/>
                 <Route path='/news' render={() => <News/>}/>

@@ -2,13 +2,15 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_TOTAL_USERS_COUNT ="SET_TOTAL_USERS_COUNT"
+const SET_TOTAL_USERS_COUNT ="SET_TOTAL_USERS_COUNT";
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
     users: [],
     pageSize: 100,
     totalUsersCount: 0,
-    currentPage:1
+    currentPage:1,
+    isFetching: false
 };
 
 const usersReducer = (state = initialState, action) => { // изначально state не может придти, т.к у redux его нет, поэтому мы передаем initialState для первой инициальзации
@@ -44,6 +46,9 @@ const usersReducer = (state = initialState, action) => { // изначально
         case SET_TOTAL_USERS_COUNT: {
             return {...state, totalUsersCount:action.totalCount}
         }
+        case TOGGLE_IS_FETCHING: {
+            return {...state, isFetching:action.isFetching}
+        }
         default:
             return state;
     }
@@ -51,10 +56,11 @@ const usersReducer = (state = initialState, action) => { // изначально
 };
 
 
-export const followCreator = (userId) => ({type: FOLLOW, userId: userId});
-export const unFollowCreator = (userId) => ({type: UNFOLLOW, userId: userId});
-export const setUsersCreater = (users) => ({type: SET_USERS, users: users});
-export const setCarrentPageCreater = (pageNumber) => ({type: SET_CURRENT_PAGE, pageNumber: pageNumber});
-export const setUsersTotalCountCreater = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount: totalCount});
+export const follow = (userId) => ({type: FOLLOW, userId: userId});
+export const unFollow = (userId) => ({type: UNFOLLOW, userId: userId});
+export const setUsers = (users) => ({type: SET_USERS, users: users});
+export const setCurrentPage = (pageNumber) => ({type: SET_CURRENT_PAGE, pageNumber: pageNumber});
+export const setUsersTotalCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount: totalCount});
+export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching: isFetching});
 
 export default usersReducer;
