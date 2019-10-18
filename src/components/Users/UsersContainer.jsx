@@ -50,7 +50,7 @@ class UsersContainer extends React.Component {
                 currentPage={this.props.currentPage}
                 onPageChanget={this.onPageChanget}
                 follow={this.props.follow}
-                unfollow={this.props.unfollow}/>
+                unFollow={this.props.unFollow}/>
         </>
     }  //у класовой компоненты обязательно есть метод render()
 }

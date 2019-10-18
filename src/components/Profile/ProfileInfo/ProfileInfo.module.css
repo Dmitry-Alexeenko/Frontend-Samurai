@@ -1,5 +1,17 @@
 
-  .wrapper img {
+.wrapper img {
     width: 100%;
-  }
+}
 
+.title {
+    height: 80px;
+    background-color: #18213f;
+    background-image: repeating-linear-gradient(30deg, transparent 0, transparent 40px, rgba(22, 93, 249, 0.15) 40px,
+    rgba(22, 93, 249, 0.15) 41px),
+    repeating-linear-gradient(-30deg, transparent 0, transparent 40px,
+            rgba(22, 93, 249, 0.15) 40px, rgba(22, 93, 249, 0.15) 41px);
+}
+
+.avatar {
+    width: 80px;
+}

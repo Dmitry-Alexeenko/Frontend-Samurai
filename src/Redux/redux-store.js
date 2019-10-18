@@ -3,12 +3,14 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
+import authReducer from "./auth-reducer";
 
 let reducers = combineReducers({  //передаем этой функции наши редюсоры. импортим из библиотеки redux
     profilePage: profileReducer,  //юда приходит state от редюсеров. и все это упаковывается в общий state
     dialogsPage: dialogsReducer,
     sideBar: sidebarReducer,
-    usersPage: usersReducer
+    usersPage: usersReducer,
+    auth: authReducer
 });
 
 

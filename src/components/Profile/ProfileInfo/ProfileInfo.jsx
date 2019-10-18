@@ -8,12 +8,23 @@ const ProfileInfo = (props) => {
     }
     return (
         <div className={c.wrapper}>
+
+            <div className={c.title}></div>
             <div>
-                <img src="https://s1.1zoom.me/b5050/925/241768-Sepik_2048x1152.jpg"></img>
-            </div>
-            <div>
-                <img src={props.profile.photos.large} alt=""/> {/*потом когда будет перезагрузка и профиль придет, тогда отобразим*/}
-                ava + description
+                <div>
+                    name {props.profile.fullName}
+                </div>
+                <div className={c.avatar}>
+                    <img src={props.profile.photos.large}
+                         alt=""/> {/*потом когда будет перезагрузка и профиль придет, тогда отобразим*/}
+                </div>
+                <div>
+                    <div>About: {props.profile.aboutMe}</div>
+                    <div>Look for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+                    <div>Description: {props.profile.lookingForAJobDescription}</div>
+
+
+                </div>
             </div>
         </div>
     )
