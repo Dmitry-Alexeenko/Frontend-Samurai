@@ -1,0 +1,19 @@
+$fancy_color: #63b2ff;
+
+.wrapper {
+  grid-area: h;
+  border: 1px solid;
+  background-color: $fancy_color;
+
+  & img {
+    height: 100%;
+  }
+}
+
+.loginBlock {
+  float: right;
+
+  & img {
+    width: 50px;
+  }
+}

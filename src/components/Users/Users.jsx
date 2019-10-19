@@ -2,7 +2,7 @@ import React from 'react';
 import c from './Users.module.css';
 import userPhoto from '../../assets/images/user.png'
 import {NavLink} from "react-router-dom";
-import {unFollow} from "../../Redux/users-reducer";
+import * as axios from "axios/index";
 
 
 let Users = (props) => {
@@ -31,10 +31,32 @@ let Users = (props) => {
                     <div>
                         {u.followed
                             ? <button onClick={() => {
-                                props.unFollow(u.id)
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                                    {withCredentials: true,
+                                    headers: {
+                                        "API-KEY":"1a2f890d-63df-4bc9-b670-fa43a5c6e581"
+                                    }
+                                    })
+                                /*тут withCredentials как и в get запроса  передаем 2-м параметром*/
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.unFollow(u.id)
+                                        }
+                                    });
+
                             }}>Unfollow</button>
                             : <button onClick={() => {
-                                props.follow(u.id)
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                                    {withCredentials: true,
+                                        headers: {
+                                            "API-KEY":"1a2f890d-63df-4bc9-b670-fa43a5c6e581"
+                                        }})
+                                /*тут withCredentials в отличии от get запроса ты передаем 3-м параметром*/
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.follow(u.id)
+                                        }
+                                    });
                             }}>Follow</button>}
                     </div>
                 </div>
