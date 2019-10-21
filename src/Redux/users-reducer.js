@@ -2,15 +2,17 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_TOTAL_USERS_COUNT ="SET_TOTAL_USERS_COUNT";
+const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
     users: [],
     pageSize: 100,
     totalUsersCount: 0,
-    currentPage:1,
-    isFetching: false
+    currentPage: 1,
+    isFetching: false,
+    followingInProgress: []
 };
 
 const usersReducer = (state = initialState, action) => { // изначально state не может придти, т.к у redux его нет, поэтому мы передаем initialState для первой инициальзации
@@ -41,13 +43,21 @@ const usersReducer = (state = initialState, action) => { // изначально
             return {...state, users: [...action.users]}
         }
         case SET_CURRENT_PAGE: {
-            return {...state, currentPage:action.pageNumber}
+            return {...state, currentPage: action.pageNumber}
         }
         case SET_TOTAL_USERS_COUNT: {
-            return {...state, totalUsersCount:action.totalCount}
+            return {...state, totalUsersCount: action.totalCount}
         }
         case TOGGLE_IS_FETCHING: {
-            return {...state, isFetching:action.isFetching}
+            return {...state, isFetching: action.isFetching}
+        }
+        case TOGGLE_IS_FOLLOWING_PROGRESS: {
+            return {
+                ...state,
+                followingInProgress: action.isFetching
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => !action.userId)//пропускаю торлько ту id, кот не равна action.userId
+            }
         }
         default:
             return state;
@@ -62,5 +72,10 @@ export const setUsers = (users) => ({type: SET_USERS, users: users});
 export const setCurrentPage = (pageNumber) => ({type: SET_CURRENT_PAGE, pageNumber: pageNumber});
 export const setUsersTotalCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount: totalCount});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching: isFetching});
+export const setToggleFollowingProgress = (isFetching, userId) => ({
+    type: TOGGLE_IS_FOLLOWING_PROGRESS,
+    isFetching: isFetching,
+    userId:userId
+});
 
 export default usersReducer;
