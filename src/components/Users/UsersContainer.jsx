@@ -2,14 +2,12 @@ import React from 'react';
 import Users from './Users';
 import {connect} from 'react-redux';
 import {
-    follow,
     setCurrentPage,
-    setUsers,
-    setUsersTotalCount, setToggleFollowingProgress, toggleIsFetching,
-    unFollow
+    getUsersThunkCreator,
+    unfollowCreator,
+    followThunkCreator
 } from '../../Redux/users-reducer';
 import Preloader from "../common/Preloader/Preloader";
-import {userAPI} from "../../api/api";
 
 
 class UsersContainer extends React.Component {
@@ -19,23 +17,19 @@ class UsersContainer extends React.Component {
         автоматом*/
 
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-        userAPI.getUsers(this.props.currentPage, this.props.pageSize)
-            .then(data => {
-                this.props.toggleIsFetching(false);
-                this.props.setUsers(data.items);
-                this.props.setUsersTotalCount(data.totalCount);
-            });
+        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);//закометированный код ниже теперь в getUsersThunkCreator
+        /* this.props.toggleIsFetching(true);
+         userAPI.getUsers(this.props.currentPage, this.props.pageSize)
+             .then(data => {
+                 this.props.toggleIsFetching(false);
+                 this.props.setUsers(data.items);
+                 this.props.setUsersTotalCount(data.totalCount);
+             });*/
     }
 
     onPageChanget = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
-        this.props.toggleIsFetching(true);
-        userAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-        });
-
+        this.props.getUsersThunkCreator(pageNumber, this.props.pageSize);
     };
 
     render() {
@@ -48,10 +42,9 @@ class UsersContainer extends React.Component {
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
                 onPageChanget={this.onPageChanget}
-                follow={this.props.follow}
-                unFollow={this.props.unFollow}
-                setToggleFollowingProgress={this.props.setToggleFollowingProgress}
-                followingInProgress={this.props.followingInProgress}/>
+                followingInProgress={this.props.followingInProgress}
+                unfollowCreator={this.props.unfollowCreator}
+                followThunkCreator={this.props.followThunkCreator}/>
         </>
     }  //у класовой компоненты обязательно есть метод render()
 }
@@ -63,7 +56,7 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-        followingInProgress:  state.usersPage.followingInProgress
+        followingInProgress: state.usersPage.followingInProgress
 
     };
 };
@@ -92,16 +85,10 @@ let mapStateToProps = (state) => {
     }
 };*/
 //Заменили f mapDispatchToProps на ссылки АС которые ниже
-
+/*делаю ссылки на мои АС и connect автоматически обворачивает значения
+этого обекта в коллбэки и добавляет dispatch*/
 export default connect(mapStateToProps, {
-    /*делаю ссылки на мои АС и connect автоматически обворачивает значения
-   этого обекта в коллбэки и добавляет dispatch*/
-    follow, //если follow: follow, то можно записать просто follow
-    unFollow,
-    setUsers,
-    setCurrentPage,
-    setUsersTotalCount,
-    toggleIsFetching,
-    setToggleFollowingProgress
+    setCurrentPage, getUsersThunkCreator, unfollowCreator, followThunkCreator
+//если follow: follow, то можно записать просто follow
 })(UsersContainer);
 
