@@ -1,6 +1,7 @@
+import {headerAPI} from "../api/api";
+
 const SET_USER_DATA = "SET_USER_DATA";
 const SET_USER_PHOTO = "SET_USER_PHOTO";
-
 
 
 let initialState = {
@@ -32,7 +33,25 @@ const authReducer = (state = initialState, action) => {
 
 
 export const setAuthUserData = (id, login, email) => ({type: SET_USER_DATA, data: {id, login, email}});
-export const setAuthUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo:photo});
+export const setAuthUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo: photo});
 
+
+export const aetAuthUserThunkCreator = () => {
+    return (dispatch) => {
+        headerAPI.getUserLogin().then(data => {
+            if (data.resultCode === 0) {
+                let id = data.data.id;
+                let login = data.data.login;
+                let email = data.data.email;
+                dispatch(setAuthUserData(id, login, email));
+                headerAPI.getUserLoginPhoto(id).then(photos => {
+                    dispatch(setAuthUserPhoto(photos.small));
+                });
+
+            }
+
+        })
+    };
+};
 
 export default authReducer;

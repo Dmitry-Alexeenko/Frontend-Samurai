@@ -9,6 +9,7 @@ import DialogsContainer from "./components/Dialogs/DIalogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
 
 const App = (props) => {
     return(
@@ -17,6 +18,7 @@ const App = (props) => {
             <Navbar state={props.state.sideBar}/>
             <div className="app-wrapper__content">
 
+                <Route path='/login' render={() => <Login/>}/> {/*Так пропсы можно прокинуть*/}
                 <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/> {/*Так пропсы можно прокинуть*/}
                 <Route path='/dialogs' render={() => <DialogsContainer/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
                 <Route path='/users' render={() => <UsersContainer/>}/>

@@ -1,25 +1,13 @@
 import React from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
-import {setAuthUserData, setAuthUserPhoto} from "../../Redux/auth-reducer";
-import {headerAPI} from "../../api/api";
+import {aetAuthUserThunkCreator} from "../../Redux/auth-reducer";
+
 
 
 class HeaderContainer extends React.Component {
     componentDidMount() {
-        headerAPI.getUserLogin().then(data => {
-            if (data.resultCode === 0) {
-                let id = data.data.id;
-                let login = data.data.login;
-                let email = data.data.email;
-                this.props.setAuthUserData(id, login, email);
-                headerAPI.getUserLoginPhoto(id).then(photos => {
-                        this.props.setAuthUserPhoto(photos.small);
-                    });
-
-            }
-        });
-
+        this.props.aetAuthUserThunkCreator();
     }
 
     render() {
@@ -35,4 +23,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {setAuthUserData, setAuthUserPhoto})(HeaderContainer);
+export default connect(mapStateToProps, {aetAuthUserThunkCreator})(HeaderContainer);
