@@ -5,7 +5,7 @@ const instance = axios.create(  //настраиваю axios
         baseURL: "https://social-network.samuraijs.com/api/1.0/",
         withCredentials: true,  //добавляем элементы, еоторые нам нужны
         headers: {  //все запросы кроме гет требуют обязат ключа доступа. с каждым запросом на сервак отправляются и возвращ заголовки
-            "API-KEY": "1a2f890d-63df-4bc9-b670-fa43a5c6e581" //значение ключа который я взял с API
+            "API-KEY": "f7763c88-3a92-41fc-bedf-4a3c66d50860" //значение ключа который я взял с API
         }
     }
 );
@@ -34,6 +34,15 @@ export const profileAPI = {
         return (
             instance.get(`profile/` + userId).then(response => response.data)
         )
+    },
+    getUserStatus(userId) { //возврашает промис
+        return (
+            instance.get(`/profile/status/` + userId).then(response => response.data)
+        )
+    },
+    updeteStatus(status) {
+        return (
+            instance.put(`/profile/status`, {status: status}).then(response => response.data))
     }
 };
 

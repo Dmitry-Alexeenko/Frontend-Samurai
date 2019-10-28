@@ -8,10 +8,10 @@ const Profile = (props) => {
 
     return (
         <div >
-            <ProfileInfo profile={props.profile}/>
+            <ProfileInfo profile={props.profile} status={props.status}  UpdateUserStatusThunkCreator={props.UpdateUserStatusThunkCreator}/>
             <MyPostsContainer />
         </div>
     )
-}
+};
 
 export default Profile; // экспортируем код в другие файлы default экспортирует все.

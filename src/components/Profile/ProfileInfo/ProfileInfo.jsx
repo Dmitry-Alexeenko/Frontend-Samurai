@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
                 <div className={c.avatar}>
                     <img src={props.profile.photos.large}
                          alt=""/> {/*потом когда будет перезагрузка и профиль придет, тогда отобразим*/}
-                    <ProfileStatus status={"normmmm"}/>
+                    <ProfileStatus status={props.status} UpdateUserStatusThunkCreator={props.UpdateUserStatusThunkCreator}/>
                 </div>
                 <div>
                     <div>About: {props.profile.aboutMe}</div>
