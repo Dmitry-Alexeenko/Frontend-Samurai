@@ -22,9 +22,18 @@ class ProfileStatus extends React.Component {
 
     onChahangeStatus = (e) => {
         this.setState({
-                status: e.currentTarget.value
-            });
+            status: e.currentTarget.value
+        });
     };
+    componentDidUpdate(prevProps, prevState) { //в prevProps, prevState приходят предыдущие значения до момента обновления
+        console.log("componentDidUpdateeeeee");
+        //componentDidUpdate вызывается когда идет перерисовка компоненты извне и приходят новые пропсы, либо перерисовывается когда меняется локальный State
+        if(prevProps.status !== this.props.status) { //предыдущий статус- это статус с которым отрисовалась компонента, и если статус пришел после отрисовки, то они будут различаться
+            this.setState({
+                status: this.props.status
+            });
+        }
+    }
 
     render() {
         return (
@@ -36,7 +45,7 @@ class ProfileStatus extends React.Component {
                     </div>
                     : <div>
                         <input onChange={this.onChahangeStatus} autoFocus={true} onBlur={this.deactivateEditMode}
-                               value={this.state.status  }/> {/*onBlur работает на фокус*/}
+                               value={this.state.status}/> {/*onBlur работает на фокус*/}
                     </div>
                 }
             </div>
