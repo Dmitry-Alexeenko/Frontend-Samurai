@@ -58,6 +58,21 @@ export const headerAPI = {
         return (
             instance.get(`profile/` + id).then(response => response.data.photos)
         )
+    },
+    authorizeOnService(authorizeData) {
+        let email = authorizeData.login;
+        let password = authorizeData.Password;
+        let rememberMe = authorizeData.rememberMe;
+        let captcha = true;
+        debugger;
+        return (
+            instance.post(`auth/login`,{email:email,  password:password,  rememberMe:rememberMe, captcha:captcha}).then(response => response.data)
+        )
+    },
+    unfollowRequestedUser() {
+        return (
+            instance.delete(`auth/login`).then(response => response.data)
+        )
     }
 };
 

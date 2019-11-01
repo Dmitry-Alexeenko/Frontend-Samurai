@@ -1,5 +1,5 @@
 import React from 'react';
-import {addMessage, changeMessage} from '../../Redux/dialogs-reducer';
+import {addMessage} from '../../Redux/dialogs-reducer';
 import {connect} from "react-redux";
 import Dialogs from "./Dialogs";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
@@ -9,8 +9,7 @@ class DialogsContainer extends React.Component {
     render() {
         return <Dialogs
             dialogsPage={this.props.dialogsPage}
-            addMessage={this.props.addMessage}
-            changeMessage={this.props.changeMessage}/>
+            addMessage={this.props.addMessage}/>
     }
 }
 
@@ -22,7 +21,7 @@ let mapStateToProps = (state) => { //обрашаемся сразу к стей
 };
 
 export default compose(
-    connect(mapStateToProps, {addMessage, changeMessage}), //далее compose берет результат у withAuthRedirect и перекидывает его в след ф-ю
+    connect(mapStateToProps, {addMessage}), //далее compose берет результат у withAuthRedirect и перекидывает его в след ф-ю
     withAuthRedirect  //ф-я compose автоматически возьмет DialogsContainer и закинет его в вызов функции withAuthRedirect
 )(DialogsContainer);  //второй вызов вызывает DialogsContainer. DialogsContainer попадает в withAuthRedirect
 /*Смысл работы: берется DialogsContainer и закидывается в withAuthRedirect, потом резулитат закидывается в

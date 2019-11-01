@@ -2,13 +2,12 @@ import React from 'react';
 import c from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DIalogItem";
+import DialogsForm from "./DialogsForm/DialogsForm";
 
 
 let Dialogs = (props) => {
-
-    let changeMessage = (e) => {     //е- объект события, или еще event
-        let text = e.target.value;  //у е есть .target(т.к эта функция от textarea, то.target=textarea) и мы берем value у textarea в лице .target
-        props.changeMessage(text);
+    const onSubmit = (formData) => {
+        props.addMessage(formData)
     };
 
     return (
@@ -22,19 +21,13 @@ let Dialogs = (props) => {
                         <Message content={m.message} key={m.id} id={m.id}/>))}
                 </div>
                 <div className={c.textTupe}>
-                    <div>
-                        <textarea onChange={changeMessage} value={props.dialogsPage.textNewMessages}
-                                  placeholder="Enter your message"/>
-                    </div>
-                    <div>
-                        <button onClick={props.addMessage}>Send message</button>
-                    </div>
+                    <DialogsForm onSubmit={onSubmit}/>
                 </div>
             </div>
         </div>
     )
 
-}
+};
 
 
 export default Dialogs;

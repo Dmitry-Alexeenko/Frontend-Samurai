@@ -1,5 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
+import {authorizeOnServiceThunkCreator} from "../../Redux/auth-reducer";
+import {connect} from "react-redux";
 
 const LoginForm = (props) => {
     return (
@@ -13,10 +15,10 @@ const LoginForm = (props) => {
                 <Field placeholder={"login"} name={"login"} component={"input"}/>{/*меняю input на Field*/}
             </div>
             <div>
-                <Field placeholder={"Password"} name={"Password"} component={"input"}/>
+                <Field placeholder={"Password"} name={"Password"} component={"input"}  type="password"/>
             </div>
             <div>
-                <Field component={"input"} type="checkbox" name={"rememberMe"} /> remember me Field {/*пишу каким типом он должен быть*/}
+                <Field component={"input"} type="checkbox" name={"rememberMe"} /> remember me {/*пишу каким типом он должен быть*/}
             </div>
             <div>
                 <button> Log in</button>
@@ -31,7 +33,8 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
     const onSubmit = (formData) => {  //сюда придут все значения из формы
-        console.log(formData) //теперь эти данные можно через санку отправь на сервак
+        console.log(formData); //теперь эти данные можно через санку отправь на сервак но сначала надо сделать коннект fit4life
+        props.authorizeOnServiceThunkCreator(formData)
     };
     return (
         <div>
@@ -41,4 +44,4 @@ const Login = (props) => {
     )
 
 };
-export default Login;
+export default connect(null, {authorizeOnServiceThunkCreator}) (Login);

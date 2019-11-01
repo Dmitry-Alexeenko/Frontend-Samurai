@@ -1,5 +1,4 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
-const CHANGE_MESSAGE = "CHANGE-MESSAGE";
 
 let initialState = {
     messages: [
@@ -17,8 +16,7 @@ let initialState = {
         {id:4, name:"Anton"},
         {id:5, name:"Kate"},
         {id:6, name:"Mark"}
-    ],
-    textNewMessages:""
+    ]
 };
 
 const dialogsReducer = (state = initialState, action)=> {
@@ -26,20 +24,13 @@ const dialogsReducer = (state = initialState, action)=> {
         case ADD_MESSAGE:
             return {
                 ...state,
-                textNewMessages: "",
-                messages: [...state.messages, {id:99, message:state.textNewMessages}] //добавляем элемент в messages  за место push
+                messages: [...state.messages, {id:99, message:action.formData.newMessageBody}] //добавляем элемент в messages  за место push
             };
-        case CHANGE_MESSAGE:
-            return {
-                ...state,
-                textNewMessages: action.newText
-            };
-        default:                          //но если ничего не изм то вывод надо сделать по умолчанию
+        default:
             return state;
     }
 };
 
-export const addMessage = () => ({type:ADD_MESSAGE});
-export const changeMessage = (text) => ({type:CHANGE_MESSAGE, newText:text});
+export const addMessage = (formData) => ({type:ADD_MESSAGE, formData:formData});
 
 export default dialogsReducer;
