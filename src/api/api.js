@@ -3,7 +3,7 @@ import * as axios from "axios/index";
 const instance = axios.create(  //настраиваю axios
     {
         baseURL: "https://social-network.samuraijs.com/api/1.0/",
-        withCredentials: true,  //добавляем элементы, еоторые нам нужны
+        withCredentials: true, //благодаря этому true кука цепляется //добавляем элементы, еоторые нам нужны
         headers: {  //все запросы кроме гет требуют обязат ключа доступа. с каждым запросом на сервак отправляются и возвращ заголовки
             "API-KEY": "f7763c88-3a92-41fc-bedf-4a3c66d50860" //значение ключа который я взял с API
         }
@@ -69,7 +69,7 @@ export const headerAPI = {
             instance.post(`auth/login`,{email:email,  password:password,  rememberMe:rememberMe, captcha:captcha}).then(response => response.data)
         )
     },
-    unfollowRequestedUser() {
+    logout() {
         return (
             instance.delete(`auth/login`).then(response => response.data)
         )

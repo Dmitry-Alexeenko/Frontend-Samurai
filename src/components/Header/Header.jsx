@@ -12,6 +12,7 @@ const Header = (props) => {
                     ? <div>
                         {props.login}
                         <img src={props.photo != null ? props.photo : userPhoto} alt=""/>
+                        <button onClick={props.logoutThunkCreator}>logout</button>
                     </div>
                     : <NavLink to={"/Login"}>login</NavLink>
                 }

@@ -18,8 +18,7 @@ const authReducer = (state = initialState, action) => {
         case SET_USER_DATA:
             return {
                 ...state,
-                ...action.data,
-                isAuth: true
+                ...action.data
             };
         case SET_USER_PHOTO:
             return {
@@ -38,7 +37,7 @@ const authReducer = (state = initialState, action) => {
 };
 
 
-export const setAuthUserData = (id, login, email) => ({type: SET_USER_DATA, data: {id, login, email}});
+export const setAuthUserData = (id, login, email, isAuth) => ({type: SET_USER_DATA, data: {id, login, email, isAuth}});
 export const setAuthUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo: photo});
 export const uthorizeOnService = (id) => ({type: AUTHORIZE_ON_SERVICE, id:id});
 
@@ -50,7 +49,7 @@ export const setAuthUserThunkCreator = () => {
                 let id = data.data.id;
                 let login = data.data.login;
                 let email = data.data.email;
-                dispatch(setAuthUserData(id, login, email));
+                dispatch(setAuthUserData(id, login, email, true));
                 headerAPI.getUserLoginPhoto(id).then(photos => {
                     dispatch(setAuthUserPhoto(photos.small));
                 });
@@ -64,9 +63,18 @@ export const setAuthUserThunkCreator = () => {
 export const authorizeOnServiceThunkCreator = (authorizeData) => {
     return (dispatch) => {
         headerAPI.authorizeOnService(authorizeData).then(data => {
-            debugger;
             if (data.resultCode === 0) {
                 dispatch(setAuthUserThunkCreator())
+            }
+        })
+    }
+};
+
+export const logoutThunkCreator = () => {
+    return (dispatch) => {
+        headerAPI.logout().then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setAuthUserData(null, null, null, false));
             }
         })
     }

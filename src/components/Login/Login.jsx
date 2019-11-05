@@ -4,6 +4,7 @@ import {authorizeOnServiceThunkCreator} from "../../Redux/auth-reducer";
 import {connect} from "react-redux";
 import {requireField} from "../../utils/validators/validators";
 import {LoginInput} from "../common/FormsControls/FormsControls";
+import Redirect from "react-router-dom/es/Redirect";
 
 const LoginForm = (props) => {
     return (
@@ -37,9 +38,13 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
     const onSubmit = (formData) => {  //сюда придут все значения из формы
-        console.log(formData); //теперь эти данные можно через санку отправь на сервак но сначала надо сделать коннект fit4life
+        console.log(formData); //теперь эти данные можно через санку отправь на сервак но сначала надо сделать коннект
         props.authorizeOnServiceThunkCreator(formData)
     };
+
+    if(props.isAuth) {
+        return <Redirect to={"/profile"}/>
+    }
     return (
         <div>
             <h1>Login</h1>
@@ -48,4 +53,7 @@ const Login = (props) => {
     )
 
 };
-export default connect(null, {authorizeOnServiceThunkCreator}) (Login);
+const mapStateToProps = (state) => {
+    return ({isAuth:state.auth.isAuth})
+};
+export default connect(mapStateToProps, {authorizeOnServiceThunkCreator}) (Login);
