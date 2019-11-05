@@ -2,6 +2,8 @@ import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import {authorizeOnServiceThunkCreator} from "../../Redux/auth-reducer";
 import {connect} from "react-redux";
+import {requireField} from "../../utils/validators/validators";
+import {LoginInput} from "../common/FormsControls/FormsControls";
 
 const LoginForm = (props) => {
     return (
@@ -12,10 +14,12 @@ const LoginForm = (props) => {
             из контейнерной компоненты onSubmit(formData)- что бы сообщить во внейший мир что данные засобмитили из формы*/}
             <div>
                 {/*name нужно для того что бы каждый элемент отпралялся под каким то именем, т.е форма- это объект, а name это свойства формы*/}
-                <Field placeholder={"login"} name={"login"} component={"input"}/>{/*меняю input на Field*/}
+                <Field placeholder={"login"} name={"login"} component={LoginInput}
+                       validate={[requireField]}/>{/*меняю input на Field*/}
             </div>
             <div>
-                <Field placeholder={"Password"} name={"Password"} component={"input"}  type="password"/>
+                <Field placeholder={"Password"} name={"Password"} component={LoginInput}  type="password"
+                       validate={[requireField]}/>
             </div>
             <div>
                 <Field component={"input"} type="checkbox" name={"rememberMe"} /> remember me {/*пишу каким типом он должен быть*/}
