@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {requireField} from "../../utils/validators/validators";
 import {LoginInput} from "../common/FormsControls/FormsControls";
 import Redirect from "react-router-dom/es/Redirect";
+import c from './../common/FormsControls/FormsControls.module.scss';
 
 const LoginForm = (props) => {
     return (
@@ -19,12 +20,16 @@ const LoginForm = (props) => {
                        validate={[requireField]}/>{/*меняю input на Field*/}
             </div>
             <div>
-                <Field placeholder={"Password"} name={"Password"} component={LoginInput}  type="password"
+                <Field placeholder={"Password"} name={"Password"} component={LoginInput} type="password"
                        validate={[requireField]}/>
             </div>
             <div>
-                <Field component={"input"} type="checkbox" name={"rememberMe"} /> remember me {/*пишу каким типом он должен быть*/}
+                <Field component={"input"} type="checkbox" name={"rememberMe"}/> remember
+                me {/*пишу каким типом он должен быть*/}
             </div>
+            {props.error && <div className={c.loginError}> {/*если props.error - true, тогда выводится div*/}
+                {props.error}
+            </div>}
             <div>
                 <button> Log in</button>
             </div>
@@ -42,7 +47,7 @@ const Login = (props) => {
         props.authorizeOnServiceThunkCreator(formData)
     };
 
-    if(props.isAuth) {
+    if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
     return (
@@ -54,6 +59,6 @@ const Login = (props) => {
 
 };
 const mapStateToProps = (state) => {
-    return ({isAuth:state.auth.isAuth})
+    return ({isAuth: state.auth.isAuth})
 };
-export default connect(mapStateToProps, {authorizeOnServiceThunkCreator}) (Login);
+export default connect(mapStateToProps, {authorizeOnServiceThunkCreator})(Login);

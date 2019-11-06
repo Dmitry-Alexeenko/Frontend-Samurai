@@ -1,4 +1,5 @@
 import {headerAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = "SET_USER_DATA";
 const SET_USER_PHOTO = "SET_USER_PHOTO";
@@ -39,7 +40,6 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (id, login, email, isAuth) => ({type: SET_USER_DATA, data: {id, login, email, isAuth}});
 export const setAuthUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo: photo});
-export const uthorizeOnService = (id) => ({type: AUTHORIZE_ON_SERVICE, id:id});
 
 
 export const setAuthUserThunkCreator = () => {
@@ -65,6 +65,10 @@ export const authorizeOnServiceThunkCreator = (authorizeData) => {
         headerAPI.authorizeOnService(authorizeData).then(data => {
             if (data.resultCode === 0) {
                 dispatch(setAuthUserThunkCreator())
+            } else {
+                let message = data.messages.length > 0 ? data.messages[0] : "Some error";
+                dispatch(stopSubmit('login', {_error:message})) //'login'- форма которую обрабатываем
+                /*_error это общая ошибка, после этого в форме login в props появится error*/
             }
         })
     }

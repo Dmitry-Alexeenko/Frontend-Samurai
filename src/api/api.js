@@ -64,7 +64,6 @@ export const headerAPI = {
         let password = authorizeData.Password;
         let rememberMe = authorizeData.rememberMe;
         let captcha = true;
-        debugger;
         return (
             instance.post(`auth/login`,{email:email,  password:password,  rememberMe:rememberMe, captcha:captcha}).then(response => response.data)
         )

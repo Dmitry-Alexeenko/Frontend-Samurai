@@ -13,15 +13,16 @@ import {compose} from "redux";
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
+        debugger;
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 4937;
+            userId = this.props.authorezedUserId;
         }
         /*мы делаем 2 запроса, один на профиль, другой на статус
         * и они каждый раз отрабатывают по разному. Кто то быстрее, кто то медленнее
         * а компонента profile не показывается (включается preloader) пока, туда не придет пропс с  profile
         * и пока пропс профиль не пришел, а пропс со статусом пришел, то все отображается хорошо, статус успел придти
-        * ели же в припсы приходит первый profile, то компонента начинает редрерится без пропсов ыефегы*/
+        * ели же в припсы приходит первый profile, то компонента начинает редрерится без пропсов статус*/
         this.props.UserProfileThunkCreator(userId);
         this.props.UserStatusThunkCreator(userId);
 
@@ -36,7 +37,9 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
-        status: state.profilePage.status
+        status: state.profilePage.status,
+        authorezedUserId:state.auth.id,
+        isAuth: state.auth.isAuth
     };
 };
 
