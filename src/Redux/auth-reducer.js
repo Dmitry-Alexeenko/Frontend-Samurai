@@ -10,7 +10,7 @@ let initialState = {
     id: null,
     email: null,
     login: null,
-    photos: "https://im0-tub-ru.yandex.net/i?id=2f39626df22133cefe36a721bd92313f&n=13&exp=1",
+    photos: null,
     isAuth: false
 };
 
@@ -44,8 +44,8 @@ export const setAuthUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo: photo}
 
 export const setAuthUserThunkCreator = () => {
     return (dispatch) => {
-        headerAPI.getUserLogin().then(data => {
-            if (data.resultCode === 0) {
+       return headerAPI.getUserLogin().then(data => {  //нужно добавить return что бы промис вернулся наружу и нормально работал initializeAppThunkCreator
+            if (data.resultCode === 0) {               //т.е  через return я передаю все что в return другой санке
                 let id = data.data.id;
                 let login = data.data.login;
                 let email = data.data.email;

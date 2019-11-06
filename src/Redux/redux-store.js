@@ -6,6 +6,7 @@ import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
 import thunkMiddleware from "redux-thunk";
+import appReducer from "./app-reducer";
 
 let reducers = combineReducers({  //передаем этой функции наши редюсоры. импортим из библиотеки redux
     profilePage: profileReducer,  //юда приходит state от редюсеров. и все это упаковывается в общий state
@@ -13,7 +14,8 @@ let reducers = combineReducers({  //передаем этой функции н�
     sideBar: sidebarReducer,
     usersPage: usersReducer,
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    app:appReducer
 });
 
 
