@@ -92,7 +92,14 @@ export const getUsersThunkCreator = (currentPage, pageSize) => {
 
     }
 };
-
+/*При запуске getUsersThunkCreator страница перерисовывается 5 раз
+* 1) Первый рендер страницы, создание реактом объекта (в лице компонента)
+* 2) Запускается ComponentDidMount  и запускает 2 перезагрузку ( для  dispatch(toggleIsFetching(true)); true добавляется
+* в стор и компонента перерисовывается)
+* 3) после того как промис сходит на сервак и придет, запускается dispatch(toggleIsFetching(false)); и false добавляется в стор
+* и стор перерисовывается
+* 4)  dispatch(setUsers(data.items)); диспатчатся юзеры и перерисовывается страница
+* 5) dispatch(setUsersTotalCount(data.totalCount));*/
 export const unfollowCreator = (id) => {
     return (dispatch) => {
         dispatch(setToggleFollowingProgress(true, id));

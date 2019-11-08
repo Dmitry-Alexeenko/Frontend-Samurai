@@ -25,7 +25,9 @@ class UsersContainer extends React.Component {
         автоматом*/
 
     componentDidMount() {
+
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);//закометированный код ниже теперь в getUsersThunkCreator
+
         /* this.props.toggleIsFetching(true);
          userAPI.getUsers(this.props.currentPage, this.props.pageSize)
              .then(data => {
@@ -34,6 +36,7 @@ class UsersContainer extends React.Component {
                  this.props.setUsersTotalCount(data.totalCount);
              });*/
     }
+
 
     onPageChanget = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);

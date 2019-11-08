@@ -2,6 +2,7 @@ import React from 'react'; // импортируем модуль из node modu
 import c from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWirhHooks";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {  //если вдруг в пропсах профиля нет, то мы возвePreloafeg
@@ -18,7 +19,7 @@ const ProfileInfo = (props) => {
                 <div className={c.avatar}>
                     <img src={props.profile.photos.large}
                          alt=""/> {/*потом когда будет перезагрузка и профиль придет, тогда отобразим*/}
-                    <ProfileStatus status={props.status}
+                    <ProfileStatusWithHooks status={props.status}
                                    UpdateUserStatusThunkCreator={props.UpdateUserStatusThunkCreator}/>
                 </div>
                 <div>

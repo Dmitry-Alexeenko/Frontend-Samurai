@@ -23,8 +23,7 @@ class ProfileContainer extends React.Component {
         * и пока пропс профиль не пришел, а пропс со статусом пришел, то все отображается хорошо, статус успел придти
         * ели же в припсы приходит первый profile, то компонента начинает редрерится без пропсов статус*/
         this.props.UserProfileThunkCreator(userId);
-        this.props.UserStatusThunkCreator(userId);
-
+        this.props.UserStatusThunkCreator(userId)
     }
 
     render() {
@@ -37,7 +36,7 @@ let mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
         status: state.profilePage.status,
-        authorezedUserId:state.auth.id,
+        authorezedUserId: state.auth.id,
         isAuth: state.auth.isAuth
     };
 };
