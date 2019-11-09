@@ -14,6 +14,7 @@ class ProfileContainer extends React.Component {
 
     componentDidMount() {
         let userId = this.props.match.params.userId;
+
         if (!userId) {
             userId = this.props.authorezedUserId;
         }
@@ -23,7 +24,10 @@ class ProfileContainer extends React.Component {
         * и пока пропс профиль не пришел, а пропс со статусом пришел, то все отображается хорошо, статус успел придти
         * ели же в припсы приходит первый profile, то компонента начинает редрерится без пропсов статус*/
         this.props.UserProfileThunkCreator(userId);
-        this.props.UserStatusThunkCreator(userId)
+        this.props.UserStatusThunkCreator(userId);
+        /*setTimeout(() => {this.props.UserStatusThunkCreator(userId);}, 1000)*/
+
+
     }
 
     render() {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 /*useState возвращает массив. В массиве 1 элементом сидит само значение(т.е. false),
 * вторым элементом в массиве будет функция, которая меняет значение
@@ -11,9 +11,19 @@ import React, {useState} from 'react';
 
 const ProfileStatusWithHooks = (props) => {
 
-    let [editMode, setEditMode] = useState(false);
+    let [editMode, setEditMode] = useState(false); //в useState данные попадают при первом рендере, потом попадать не будут
     let [status, setStatus] = useState(props.status);
     //если статус в пропсах придет позже чем профиль, то будет так же как и с классовыми компонентами. Запишется пустая строка
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
+    /*[] означает что useEffect надо запускать не всегда а только в момент после самого 1 вмонтирования, но это не сработает
+    * если нужные мне пропсы не придут к концу первого рендера, поэтому [] не должен быть пустым, там должна быть зависомость
+    * если props.status при очередной отрисовке будет не таким каким он был раньшене запустится useEffect т.е если props.status
+    * при очередной отрисовке будет не такой, какой он был раньше, запустится useEffect*/
+    /*useEffect - это такой хук, который говорит закиньте в меня функцию (в самой простой реализации), которую он
+    выполнит когда произойдет уже отрисовка*/
+
     const activateEditMode = () => {
         setEditMode(true)
     };
