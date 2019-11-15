@@ -1,20 +1,22 @@
 import {userAPI} from "../api/api";
+import {updateObjectInArray} from "../utils/object-helpers";
 
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = "SET_USERS";
-const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
-const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
-const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
+const FOLLOW = "social_network/users/FOLLOW";
+const UNFOLLOW = 'social_network/users/UNFOLLOW';
+const SET_USERS = "social_network/users/SET_USERS";
+const SET_CURRENT_PAGE = "social_network/users/SET_CURRENT_PAGE";
+const SET_TOTAL_USERS_COUNT = "social_network/users/SET_TOTAL_USERS_COUNT";
+const TOGGLE_IS_FETCHING = "social_network/users/TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "social_network/users/TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
     users: [],
-    pageSize: 100,
+    pageSize: 8,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
-    followingInProgress: []
+    followingInProgress: [],
+    portionSize: 10
 };
 
 const usersReducer = (state = initialState, action) => { // изначально state не может придти, т.к у redux его нет, поэтому мы передаем initialState для первой инициальзации
@@ -22,24 +24,26 @@ const usersReducer = (state = initialState, action) => { // изначально
         case FOLLOW:
             return {
                 ...state,
+                users: updateObjectInArray(state.users, action.userId, "id", {followed: true})
                 //users:[...state.users] т.е этот вариант с нижним идентичные
-                users: state.users.map(u => {     //пробегаемся по массиву users и .map создает новый массив элементами которого будут сидеть все те же самые users
+               /*users: state.users.map(u => {     //пробегаемся по массиву users и .map создает новый массив элементами которого будут сидеть все те же самые users
                     if (u.id === action.userId) {
                         return {...u, followed: true}
                     }
                     return u;
-                })
+                })*/
             };
         case UNFOLLOW:
             return {
                 ...state,
+                users: updateObjectInArray(state.users, action.userId, "id", {followed: false})
                 //users:[...state.users] т.е этот вариант с нижним идентичные
-                users: state.users.map(u => {     //пробегаемся по массиву users и .map создает новый массив элементами которого будут сидеть все те же самые users
+                /*users: state.users.map(u => {     //пробегаемся по массиву users и .map создает новый массив элементами которого будут сидеть все те же самые users
                     if (u.id === action.userId) {
                         return {...u, followed: false}
                     }
                     return u;
-                })
+                })*/
             };
         case SET_USERS: {
             return {...state, users: [...action.users]}
@@ -81,15 +85,12 @@ export const setToggleFollowingProgress = (isFetching, userId) => ({
 });
 
 export const getUsersThunkCreator = (currentPage, pageSize) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toggleIsFetching(true));
-        userAPI.getUsers(currentPage, pageSize)
-            .then(data => {
-                dispatch(toggleIsFetching(false));
-                dispatch(setUsers(data.items));
-                dispatch(setUsersTotalCount(data.totalCount));
-            });
-
+        let response = await userAPI.getUsers(currentPage, pageSize)
+        dispatch(toggleIsFetching(false));
+        dispatch(setUsers(response.data.items));
+        dispatch(setUsersTotalCount(response.data.totalCount));
     }
 };
 /*При запуске getUsersThunkCreator страница перерисовывается 5 раз
@@ -100,29 +101,25 @@ export const getUsersThunkCreator = (currentPage, pageSize) => {
 * и стор перерисовывается
 * 4)  dispatch(setUsers(data.items)); диспатчатся юзеры и перерисовывается страница
 * 5) dispatch(setUsersTotalCount(data.totalCount));*/
-export const unfollowCreator = (id) => {
-    return (dispatch) => {
-        dispatch(setToggleFollowingProgress(true, id));
-        userAPI.unfollowAtUser(id).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(unFollow(id))
-            }
-            dispatch(setToggleFollowingProgress(false, id));
 
-        })
+const followUnfollowFlow =async (dispatch, id, apiMethod, actionCreator) => {
+    dispatch(setToggleFollowingProgress(true, id));
+    let response = await apiMethod(id);
+    if (response.data.resultCode === 0) {
+        dispatch(actionCreator(id))
+    }
+    dispatch(setToggleFollowingProgress(false, id));
+};
+export const unfollowCreator = (id) => {
+    return async (dispatch) => {
+        let apiMethod = userAPI.unfollowAtUser.bind(userAPI); //забаяндил потому что метод беру у объекта и вызываю оторвано от самого объекта
+        followUnfollowFlow(dispatch, id, apiMethod, unFollow)
     }
 };
-
 export const followThunkCreator = (id) => {
-    return (dispatch) => {
-        dispatch(setToggleFollowingProgress(true, id));
-        userAPI.followAtUser(id).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(follow(id))
-            }
-            dispatch(setToggleFollowingProgress(false, id));
-
-        })
+    return async (dispatch) => {
+        let apiMethod = userAPI.followAtUser.bind(userAPI);
+        followUnfollowFlow(dispatch, id, apiMethod, follow)
     }
 };
 

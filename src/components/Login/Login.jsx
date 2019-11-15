@@ -7,9 +7,9 @@ import {LoginInput} from "../common/FormsControls/FormsControls";
 import Redirect from "react-router-dom/es/Redirect";
 import c from './../common/FormsControls/FormsControls.module.scss';
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => { //деструктуризация пропсов. Пишу то что нужно взять
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             {/*Действия: форма вызвала handleSubmit из LoginReduxForm, внутри handleSubmit вызовется то что пришло
              в LoginReduxForm т.е props.onSubmit, и в этот onSubmit придут данные собранные контейнерной компонентой для меня*/}
             {/*handleSubmit сделает 3 действия e.preventDefault, сбор всех данных и все упаковывается в объект и вызывается
@@ -27,8 +27,8 @@ const LoginForm = (props) => {
                 <Field component={"input"} type="checkbox" name={"rememberMe"}/> remember
                 me {/*пишу каким типом он должен быть*/}
             </div>
-            {props.error && <div className={c.loginError}> {/*если props.error - true, тогда выводится div*/}
-                {props.error}
+            {error && <div className={c.loginError}> {/*если props.error - true, тогда выводится div*/}
+                {error}
             </div>}
             <div>
                 <button> Log in</button>

@@ -1,7 +1,7 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
 import './App.css'; // подкл стили;
 import Navbar from './components/Navbar/Navbar';
-import {Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -10,15 +10,18 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeAppThunkCreator} from "./Redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import store from "./Redux/redux-store";
+
 
 class App extends React.Component {
     componentDidMount() {
         this.props.initializeAppThunkCreator();
     }
+
     render() {
         if (!this.props.initialized) {
             return <Preloader/>
@@ -48,13 +51,25 @@ class App extends React.Component {
             ;
     }
 }
+
 const mapStateToProps = (state) => {
     return ({
         initialized: state.app.initialized
     })
 };
 
-export default compose(
+const AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializeAppThunkCreator}))
-    (App);
+(App);
+
+const SocialNetworkApp = () => {
+    return (
+        <BrowserRouter>  {/*bind означает что ты захардкодили this у этой функции. И при ее вызове она будет обращаться к store, а не к пропсу*/}
+            <Provider store={store}>
+                <AppContainer state={store.getState()} dispatch={store.dispatch.bind(store)}/>
+            </Provider>
+        </BrowserRouter>);
+};
+
+export default SocialNetworkApp;

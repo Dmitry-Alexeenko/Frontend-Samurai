@@ -1,8 +1,8 @@
 import {profileAPI} from "../api/api";
 
-const ADD_POST = "ADD-POST";
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const ADD_USER_STATUS = "ADD_USER_STATUS";
+const ADD_POST = "social_network/profile/ADD-POST";
+const SET_USER_PROFILE = 'social_network/profile/SET_USER_PROFILE';
+const ADD_USER_STATUS = "social_network/profile/ADD_USER_STATUS";
 
 let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
     posts: [
@@ -36,34 +36,25 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile: pr
 export const addUserStatus = (status) => ({type: ADD_USER_STATUS, status: status});
 
 export const UserProfileThunkCreator = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserProfile(userId)
-            .then(data => {
-                dispatch(setUserProfile(data));
-            });
-
+    return async (dispatch) => {
+        let response = await profileAPI.getUserProfile(userId)
+        dispatch(setUserProfile(response.data));
     }
 };
 
 export const UserStatusThunkCreator = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserStatus(userId)
-            .then(data => {
-                dispatch(addUserStatus(data));
-            });
-
+    return async (dispatch) => {
+        let response = await profileAPI.getUserStatus(userId)
+        dispatch(addUserStatus(response.data));
     }
 };
 
 export const UpdateUserStatusThunkCreator = (status) => {
-    return (dispatch) => {
-        profileAPI.updeteStatus(status)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(addUserStatus(status));
-                }
-            });
-
+    return async (dispatch) => {
+        let response = await profileAPI.updeteStatus(status); // в response будет результатом которым зарезолвится промис
+        if (response.data.resultCode === 0) {
+            dispatch(addUserStatus(status));
+        }
     }
 };
 

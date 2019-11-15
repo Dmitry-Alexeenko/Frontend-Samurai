@@ -44,7 +44,6 @@ class UsersContainer extends React.Component {
     };
 
     render() {
-
         return <>
             {this.props.isFetching ? <Preloader/> : null}
             <Users
@@ -55,7 +54,8 @@ class UsersContainer extends React.Component {
                 onPageChanget={this.onPageChanget}
                 followingInProgress={this.props.followingInProgress}
                 unfollowCreator={this.props.unfollowCreator}
-                followThunkCreator={this.props.followThunkCreator}/>
+                followThunkCreator={this.props.followThunkCreator}
+                portionSize={this.props.portionSize}/>
         </>
     }  //у класовой компоненты обязательно есть метод render()
 }
@@ -78,8 +78,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
-
+        followingInProgress: getFollowingInProgress(state),
+        portionSize: state.usersPage.portionSize
     };
 };
 

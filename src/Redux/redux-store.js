@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import { reducer as formReducer } from 'redux-form'
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
@@ -18,8 +18,11 @@ let reducers = combineReducers({  //передаем этой функции н�
     app:appReducer
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)
+));
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware)); //thunkMiddleware- промежуточный уровень
+//thunkMiddleware- промежуточный уровень
 //автоматически createStore создает внутри себя state у которого есть 3 свойства(reducers)
-window.store = store;
+window.__store__ = store;
 export default store;
