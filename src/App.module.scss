@@ -1,0 +1,13 @@
+.app-wrapper {
+  width: auto;
+  margin: 0 auto;
+}
+
+.page_Main {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 15px;
+  width: 1000px;
+  margin: 0 auto;
+}

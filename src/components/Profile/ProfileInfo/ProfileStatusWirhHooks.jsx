@@ -10,7 +10,6 @@ import React, {useState, useEffect} from 'react';
    */
 
 const ProfileStatusWithHooks = (props) => {
-
     let [editMode, setEditMode] = useState(false); //в useState данные попадают при первом рендере, потом попадать не будут
     let [status, setStatus] = useState(props.status);
     //если статус в пропсах придет позже чем профиль, то будет так же как и с классовыми компонентами. Запишется пустая строка

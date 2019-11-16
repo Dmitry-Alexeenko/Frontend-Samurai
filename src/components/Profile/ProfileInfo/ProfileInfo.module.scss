@@ -1,0 +1,26 @@
+.ProfileInfo  {
+    display: flex;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.ProfileInfo__UserAbout {
+    margin-left: 25px;
+}
+.ProfileInfo__UserName {
+    font-size: 22px;
+}
+
+.ProfileInfo__avatar {
+    width: 180px;
+    & img {
+        width: 100%;
+        border-radius: 3px;
+    }
+}
+
+.ProfileInfo__UserData {
+    margin-bottom: 5px;
+}

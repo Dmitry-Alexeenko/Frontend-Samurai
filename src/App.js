@@ -1,5 +1,5 @@
-import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
-import './App.css'; // подкл стили;
+import React from 'react';
+import c from './App.module.scss';
 import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -17,8 +17,8 @@ import Preloader from "./components/common/Preloader/Preloader";
 
 //import News from "./components/News/News";
 //import ProfileContainer from "./components/Profile/ProfileContainer";
-const News = React.lazy(()=> import ("./components/News/News")); //загрузится когда понадобится
-const ProfileContainer = React.lazy(()=> import ("./components/Profile/ProfileContainer")); //загрузится когда понадобится
+const News = React.lazy(() => import ("./components/News/News")); //загрузится когда понадобится
+const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileContainer")); //загрузится когда понадобится
 
 class App extends React.Component {
     componentDidMount() {
@@ -32,24 +32,27 @@ class App extends React.Component {
         return (
             <div className="app-wrapper">
                 <HeaderContainer/>
-                <Navbar state={this.props.state.sideBar}/>
-                <div className="app-wrapper__content">
-
-                    <Route path='/login' render={() => <Login/>}/>
-                    <Route path='/profile/:userId?'
-                           render={ WithSuspense(ProfileContainer)}/> {/*Так пропсы можно прокинуть*/}
-                    <Route path='/dialogs' render={() =>
-                        <DialogsContainer/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
-                    <Route path='/users' render={() => <UsersContainer/>}/>
-                    <Route path='/news' render={WithSuspense(News)}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
-                    {/*<Route path='/profile' component={Profile}/>             !!!!!через  них пропсы не прокинешь
+                <main className={c.page_Main}>
+                    <div className={c.navBar}>
+                        <Navbar state={this.props.state.sideBar}/>
+                    </div>
+                    <div className={c.content}>
+                        <Route path='/login' render={() => <Login/>}/>
+                        <Route path='/profile/:userId?'
+                               render={WithSuspense(ProfileContainer)}/> {/*Так пропсы можно прокинуть*/}
+                        <Route path='/dialogs' render={() =>
+                            <DialogsContainer/>}/> {/*path смотрит на адресную строку. если адрес его, то он вкл*/}
+                        <Route path='/users' render={() => <UsersContainer/>}/>
+                        <Route path='/news' render={WithSuspense(News)}/>
+                        <Route path='/music' render={() => <Music/>}/>
+                        <Route path='/settings' render={() => <Settings/>}/>
+                        {/*<Route path='/profile' component={Profile}/>             !!!!!через  них пропсы не прокинешь
                     <Route path='/dialogs' component={Dialogs}/> path смотрит на адресную строку. если адрес его, то он вкл
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>*/}
-                </div>
+                    </div>
+                </main>
             </div>)
             ;
     }

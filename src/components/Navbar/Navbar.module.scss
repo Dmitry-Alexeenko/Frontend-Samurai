@@ -1,0 +1,30 @@
+.navBar {
+  padding-top: 15px;
+  color: #2d2d44;
+}
+
+.navBar__item {
+  padding: 4px 5px;
+
+  &:hover {
+    background-color: #c3d2db;
+    border-radius: 5px;
+  }
+}
+
+.navBar__item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navBar__item a.active {
+  font-weight: bold;
+}
+
+.navBar__friendsItems {
+  display: flex;
+}
+
+.navBar__friends h3 {
+  margin-left: 5px;
+}
