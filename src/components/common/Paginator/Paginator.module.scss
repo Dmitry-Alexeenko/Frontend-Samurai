@@ -3,8 +3,20 @@
   padding: 10px;
 }
 
-.selectPage {
+.paginator__page {
+  padding: 3px 5px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+
+  &:hover {
+    background-color: rgba(130, 130, 130, 0.41);
+  }
+}
+
+.paginator__selectPage {
   font-weight: bold;
+  background-color: rgba(130, 130, 130, 0.41);
 }
 
 .paginator__btn {
@@ -16,9 +28,11 @@
   background-color: #4f92ff;
   color: white;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 12px;
 
   &:hover {
     background-color: #3e74ff;
   }
 }
+
+

@@ -18,7 +18,6 @@ const MyPosts = React.memo((props) => {
     let items = props.posts.map(p => (
         <Post message={p.message} key={p.id} like={p.likesCount}/>)
     );
-debugger
     const onSubmit = (formData) => {  //сюда придут все значения из формы
         props.addPostCreator(formData);
     };

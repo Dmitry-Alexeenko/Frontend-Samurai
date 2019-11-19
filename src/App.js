@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './App.module.scss';
-import {HashRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import store from "./Redux/redux-store";
@@ -28,7 +28,7 @@ class App extends React.Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Preloader/>
+            return <div className={c.app_preloader}><Preloader/></div>
         }
         return (
             <div className="app-wrapper">
@@ -38,6 +38,7 @@ class App extends React.Component {
                         <Navbar state={this.props.state.sideBar}/>
                     </div>
                     <div className={c.content}>
+                        <Route exact path='/' render={WithSuspense(ProfileContainer)}/>
                         <Route path='/login' render={() => <Login/>}/>
                         <Route path='/profile/:userId?'
                                render={WithSuspense(ProfileContainer)}/> {/*Так пропсы можно прокинуть*/}
@@ -47,6 +48,7 @@ class App extends React.Component {
                         <Route path='/news' render={WithSuspense(News)}/>
                         <Route path='/music' render={() => <Music/>}/>
                         <Route path='/settings' render={() => <Settings/>}/>
+
                         {/*<Route path='/profile' component={Profile}/>             !!!!!через  них пропсы не прокинешь
                     <Route path='/dialogs' component={Dialogs}/> path смотрит на адресную строку. если адрес его, то он вкл
                     <Route path='/news' component={News}/>
@@ -78,5 +80,6 @@ const SocialNetworkApp = () => {
             </Provider>
         </HashRouter>);
 };
-{/*bind означает что я захардкодил this у этой функции. И при ее вызове она будет обращаться к store, а не к пропсу*/}
+{/*bind означает что я захардкодил this у этой функции. И при ее вызове она будет обращаться к store, а не к пропсу*/
+}
 export default SocialNetworkApp;

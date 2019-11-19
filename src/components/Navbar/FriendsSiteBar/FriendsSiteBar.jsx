@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './FriendsSiteBar.module.css';
+import c from './FriendsSiteBar.module.scss';
 import {NavLink} from "react-router-dom";
 import logo from "../../../assets/images/user.png";
 

@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import FriendsSiteBar from "./FriendsSiteBar/FriendsSiteBar";
 
 const Navbar = (props) => {
-    let friendsItems = props.state.user.map((u) => (<FriendsSiteBar name={u.name} key={u.id} id={u.id}/>));
+    /*let friendsItems = props.state.user.map((u) => (<FriendsSiteBar name={u.name} key={u.id} id={u.id}/>));*/
     return (
         <nav className={c.navBar}>
             <div className={c.navBar__item}>
@@ -26,14 +26,14 @@ const Navbar = (props) => {
             <div className={c.navBar__item}>
                 <NavLink to="/settings" activeClassName={c.active}>Settings</NavLink>
             </div>
-            <div className={c.navBar__friends}>
+            {/*<div className={c.navBar__friends}>
                 <h3> Friends </h3>
                 <div className={c.navBar__friendsItems}>
                     {friendsItems}
                 </div>
-            </div>
+            </div>*/}
         </nav>
     )
 };
 
-export default Navbar; // экспортируем код в другие файлы default экспортирует все.
+export default Navbar;

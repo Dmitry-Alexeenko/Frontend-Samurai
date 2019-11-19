@@ -16,6 +16,7 @@ import {
     getTotalUsersCount,
     getUsers
 } from "../../Redux/users-selectors";
+import c from './Users.module.scss';
 
 
 class UsersContainer extends React.Component {
@@ -45,7 +46,7 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
-            {this.props.isFetching ? <Preloader/> : null}
+            {this.props.isFetching ? <div className={c.usersPreloader}><Preloader/></div> : null}
             <Users
                 users={this.props.users}
                 totalUsersCount={this.props.totalUsersCount}
