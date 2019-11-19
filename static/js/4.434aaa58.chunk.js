@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-first-project"]=this["webpackJsonpreact-first-project"]||[]).push([[4],{299:function(e,r,t){e.exports={wrapper:"News_wrapper__3SLsl"}},306:function(e,r,t){"use strict";t.r(r);var s=t(0),a=t.n(s),p=t(299),c=t.n(p);r.default=function(){return a.a.createElement("div",{className:c.a.wrapper},"News")}}}]);
+//# sourceMappingURL=4.434aaa58.chunk.js.map
