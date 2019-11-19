@@ -1,13 +1,10 @@
-.paginator {
-  text-align: center;
-  padding: 10px;
+.dialogForm {
+  width: 400px;
+  height: 40px;
+  border-radius: 8px;
 }
 
-.selectPage {
-  font-weight: bold;
-}
-
-.paginator__btn {
+.dialogFormBtn {
   border-style: none;
   border-radius: 5px;
   padding: 3px 10px;
@@ -16,7 +13,6 @@
   background-color: #4f92ff;
   color: white;
   cursor: pointer;
-  margin-top: 10px;
 
   &:hover {
     background-color: #3e74ff;

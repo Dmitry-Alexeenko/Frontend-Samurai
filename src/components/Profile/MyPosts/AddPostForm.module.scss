@@ -1,0 +1,31 @@
+.formControl {
+  margin: 15px 0;
+}
+
+.formControl__text {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 5px;
+  border-style: none;
+  border-radius: 5px;
+  //margin-top: 10px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+}
+
+.formControl__btn {
+  border-style: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #4f92ff;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+
+  &:hover {
+    background-color: #3e74ff;
+  }
+}
+

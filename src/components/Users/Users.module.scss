@@ -1,0 +1,56 @@
+.usersPage {
+  background-color: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(130, 130, 130, 0.41);
+  padding: 10px 0;
+}
+
+.userItem__statusName {
+  margin-left: 5px;
+}
+
+.userItem__info {
+  display: flex;
+  //align-items: center;
+}
+
+.userItem__name {
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.userItem__status {
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+.userItem__info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.userItem__btn {
+  border-style: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #4f92ff;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #3e74ff;
+  }
+}
+
+

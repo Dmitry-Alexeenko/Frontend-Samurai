@@ -1,0 +1,42 @@
+.PostItem {
+    margin-bottom: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+
+    & img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+}
+
+.PostItem:last-of-type {
+    margin-bottom: 0;
+}
+
+.PostItem__data {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.PostItem__text,
+.PostItem__like{
+    margin-left: 10px;
+}
+
+.PostItem__likeContainer {
+    color: #828282;
+    font-size: 15px;
+
+}
+
+.PostItem__like {
+    background-color: #c3d2db;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 12px;
+    color: black;
+
+}

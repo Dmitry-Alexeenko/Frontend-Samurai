@@ -4,12 +4,12 @@ const ADD_POST = "social_network/profile/ADD-POST";
 const SET_USER_PROFILE = 'social_network/profile/SET_USER_PROFILE';
 const ADD_USER_STATUS = "social_network/profile/ADD_USER_STATUS";
 
-let initialState = { //для стартовых данных. типа заготовка, что бы profileReducer в state что нибудь пришло
+let initialState = {
     posts: [
-        {id: 1, message: "Dorow, my name is React", likesCount: 1},
-        {id: 2, message: "It is first post", likesCount: 16},
-        {id: 3, message: "It is thirst post", likesCount: 9},
-        {id: 3, message: "yes", likesCount: 111}
+        {id: 1, message: "It is React", likesCount: 1},
+        {id: 2, message: "It is thirst post", likesCount: 16},
+        {id: 3, message: "It is second post", likesCount: 9},
+        {id: 4, message: "It is first post", likesCount: 111}
     ],
     profile: null,
     status: ""
@@ -26,7 +26,7 @@ const profileReducer = (state = initialState, action) => { // изначальн
             return {...state, profile: action.profile};
         case ADD_USER_STATUS:
             return {...state, status: action.status};
-        default:                        //но если ничего не изм то вывод надо сделать по умолчанию
+        default:
             return state;
     }
 };

@@ -1,5 +1,5 @@
-import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
-import c from './MyPosts.module.css';
+import React from 'react';
+import c from './MyPosts.module.scss';
 import Post from './Post/Post';
 import AddPostFormReduxForm from "./AddPostForm";
 
@@ -15,21 +15,21 @@ import AddPostFormReduxForm from "./AddPostForm";
 *   const MyPosts = React.memo((props) => {}) наподобие хока*/
 
 const MyPosts = React.memo((props) => {
-    let postsItem = props.posts.map(p => (
-        <Post message={p.message} key={p.id} like={p.likesCount}/>));
-
+    let items = props.posts.map(p => (
+        <Post message={p.message} key={p.id} like={p.likesCount}/>)
+    );
+debugger
     const onSubmit = (formData) => {  //сюда придут все значения из формы
         props.addPostCreator(formData);
     };
-
     return (
         <div>
             <AddPostFormReduxForm onSubmit={onSubmit}/>
             <div className={c.myPosts}>
-                {postsItem}
+                {items.reverse()}
             </div>
         </div>
     )
 });
 
-export default MyPosts; // экспортируем код в другие файлы default экспортирует все.
+export default MyPosts;

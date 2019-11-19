@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './App.module.scss';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import store from "./Redux/redux-store";
@@ -14,6 +14,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {initializeAppThunkCreator} from "./Redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+
 
 //import News from "./components/News/News";
 //import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -71,11 +72,11 @@ const AppContainer = compose(
 
 const SocialNetworkApp = () => {
     return (
-        <BrowserRouter>  {/*bind означает что ты захардкодили this у этой функции. И при ее вызове она будет обращаться к store, а не к пропсу*/}
+        <HashRouter>  {/*HashRouter использую для того что бы все нормально работало в github*/}
             <Provider store={store}>
                 <AppContainer state={store.getState()} dispatch={store.dispatch.bind(store)}/>
             </Provider>
-        </BrowserRouter>);
+        </HashRouter>);
 };
-
+{/*bind означает что я захардкодил this у этой функции. И при ее вызове она будет обращаться к store, а не к пропсу*/}
 export default SocialNetworkApp;

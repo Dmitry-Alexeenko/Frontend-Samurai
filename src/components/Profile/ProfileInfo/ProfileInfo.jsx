@@ -25,13 +25,19 @@ const ProfileInfo = (props) => {
                                             UpdateUserStatusThunkCreator={props.UpdateUserStatusThunkCreator}/>
                 </div>
                 <div className={c.ProfileInfo__UserData}>
-                    About: {props.profile.aboutMe}
+                    <span className={c.UserData__item}>About:</span> {props.profile.aboutMe
+                    ? props.profile.aboutMe
+                    : "no data"}
                 </div>
                 <div className={c.ProfileInfo__UserData}>
-                    Look for a job: {props.profile.lookingForAJob ? "yes" : "no"}
+                    <span className={c.UserData__item}>Look for a job:</span> {props.profile.lookingForAJob
+                    ? "yes"
+                    : "no"}
                 </div>
                 <div className={c.ProfileInfo__UserData}>
-                    Description: {props.profile.lookingForAJobDescription}
+                    <span className={c.UserData__item}>Description:</span> {props.profile.lookingForAJobDescription
+                    ? props.profile.lookingForAJobDescription
+                    : "no data"}
                 </div>
             </div>
         </div>

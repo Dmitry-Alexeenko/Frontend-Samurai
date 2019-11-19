@@ -1,6 +1,6 @@
 .formControl.error {
   & input,
-   textarea {
+  textarea {
     border: 2px solid red;
   }
 
@@ -8,6 +8,7 @@
     color: red;
   }
 }
+
 .loginError {
   border: 2px solid red;
   color: red;

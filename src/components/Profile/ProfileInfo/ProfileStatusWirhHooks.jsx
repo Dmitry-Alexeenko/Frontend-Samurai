@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import c from './ProfileStatus.module.scss';
 /*useState возвращает массив. В массиве 1 элементом сидит само значение(т.е. false),
 * вторым элементом в массиве будет функция, которая меняет значение
 * let stateWithSetState = useState(false); -useState изначально по умолчанию будет равен false
@@ -40,10 +40,10 @@ const ProfileStatusWithHooks = (props) => {
    * вторая отрисовка будет после того как выполнится функция setEditMode(true) и компонента отрисуется со зданчением true*/
 
     return (
-        <div>
+        <div className={c.status}>
             { !editMode &&
-            <div>
-                <span  onDoubleClick={activateEditMode}> {props.status || "type text"} </span>
+            <div >
+                <span className={c.status__text}  onDoubleClick={activateEditMode}> {props.status || "type text"} </span>
             </div>
             }
             {editMode &&

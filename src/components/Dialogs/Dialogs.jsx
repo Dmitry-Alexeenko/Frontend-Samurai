@@ -21,7 +21,7 @@ let Dialogs = (props) => {
                         <Message content={m.message} key={m.id} id={m.id}/>))}
                 </div>
                 <div className={c.textTupe}>
-                    <DialogsForm onSubmit={onSubmit}/>
+                    <DialogsForm  onSubmit={onSubmit}/>
                 </div>
             </div>
         </div>

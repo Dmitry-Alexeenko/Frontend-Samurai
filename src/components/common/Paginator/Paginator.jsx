@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import c from "./Paginator.module.scss";
 
 
+
 let Paginator = (props) => {
     let pagesCount = Math.ceil(props.totalItemsCount / props.pageSize);
     let pages = [];
@@ -15,21 +16,21 @@ let Paginator = (props) => {
     let rightPortionPageNumber = portionNumber * props.portionSize;
 
     return (
-        <div>
+        <div className={c.paginator}>
             {portionNumber > 1 &&
-            <button onClick={() => {setPortionNumber(portionNumber - 1)}}>LEFT</button>}
+            <button className={c.paginator__btn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Less</button>}
 
             {pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map(p => {
-                    return <span className={props.currentPage === p && c.selectPage}
+                    return <span className={ props.currentPage === p ? c.selectPage : ""}
                                  onClick={() => {
                                      props.onPageChanget(p)
                                  }}>{p}</span>
                 })}
 
             {portionNumber < portionCount &&
-            <button onClick={() => {setPortionNumber(portionNumber + 1)}}>RIGHT</button>}
+            <button className={c.paginator__btn} onClick={() => {setPortionNumber(portionNumber + 1)}}>More</button>}
         </div>
     )
 };

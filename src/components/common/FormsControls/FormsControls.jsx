@@ -5,7 +5,7 @@ export const Textarea = ({input, meta, ...props}) => { //rest оператор
     return (
         <div className={ c.formControl + " " + (meta.error && meta.touched ? c.error : "")}>
             <div>
-                <textarea {...input}{...props}/>
+                <textarea  {...input}{...props}/>
             </div>
             {meta.error && meta.touched && <span>{meta.error}</span>} {/*если элемент был тронут и  meta.error - true то вылезает спан*/}
         </div>

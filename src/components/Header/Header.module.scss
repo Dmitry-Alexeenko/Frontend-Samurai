@@ -52,7 +52,9 @@ $color: #2d2d44;
   background-color: #4f92ff;
   color: white;
   cursor: pointer;
+
+  &:hover {
+    background-color: #3e74ff;
+  }
 }
-.header__btn:hover {
-  background-color: #3e74ff;
-}
+
