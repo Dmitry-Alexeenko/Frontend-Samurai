@@ -10,7 +10,7 @@ const AddMessageForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div>
                 <Field className={c.dialogForm} component={Textarea} name={"newMessageBody"} placeholder="Enter your message"
-               />
+                />
             </div>
             <div>
                 <button className={c.dialogFormBtn}>Send message</button>

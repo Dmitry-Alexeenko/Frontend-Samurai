@@ -11,7 +11,6 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
-
     componentDidMount() {
         let userId = this.props.match.params.userId;
 
@@ -31,7 +30,6 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-
         return <Profile {...this.props} profile={this.props.profile} status={this.props.status}
                         UpdateUserStatusThunkCreator={this.props.UpdateUserStatusThunkCreator}/>
     }
