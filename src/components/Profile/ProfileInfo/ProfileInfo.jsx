@@ -1,45 +1,65 @@
 import React from 'react';
 import c from './ProfileInfo.module.scss';
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWirhHooks";
 import logo from "../../../assets/images/user.png";
 
+
 const ProfileInfo = (props) => {
-    if (!props.profile) {  //если вдруг в пропсах профиля нет, то возв Preloafer
+
+    if (!props.profile) {
         return <Preloader/>
     }
+
+    let {isOwner} = props;
+    let {aboutMe, lookingForAJob, lookingForAJobDescription, photos} = props.profile;
+    const {savePhoto} = props;
+
+    const selectPhoto = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0])
+        }
+    };
+
     return (
         <div className={c.ProfileInfo}>
+
             <div className={c.ProfileInfo__avatar}>
-                <img src={props.profile.photos.large
-                    ? props.profile.photos.large
-                    : logo}/>
+                <img src={photos.large
+                    ? photos.large
+                    : logo} alt={"userPhoto"}/>
+
+                {isOwner && <input type="file" accept=".jpg, .jpeg, .png" onChange={selectPhoto}/>}
             </div>
+
             <div className={c.ProfileInfo__UserAbout}>
+
                 <div className={c.ProfileInfo__UserName}>
                     {props.profile.fullName}
                 </div>
+
                 <div className={c.ProfileInfo__UserData}>
                     <ProfileStatusWithHooks status={props.status}
                                             UpdateUserStatusThunkCreator={props.UpdateUserStatusThunkCreator}/>
                 </div>
+
                 <div className={c.ProfileInfo__UserData}>
-                    <span className={c.UserData__item}>About:</span> {props.profile.aboutMe
-                    ? props.profile.aboutMe
-                    : "no data"}
+                    <span className={c.UserData__item}>About:</span>
+                    {aboutMe ? aboutMe : "no data"}
                 </div>
+
                 <div className={c.ProfileInfo__UserData}>
-                    <span className={c.UserData__item}>Look for a job:</span> {props.profile.lookingForAJob
-                    ? "yes"
-                    : "no"}
+                    <span className={c.UserData__item}>Look for a job:</span>
+                    {lookingForAJob ? "yes" : "no"}
                 </div>
+
                 <div className={c.ProfileInfo__UserData}>
-                    <span className={c.UserData__item}>Description:</span> {props.profile.lookingForAJobDescription
-                    ? props.profile.lookingForAJobDescription
-                    : "no data"}
+                    <span className={c.UserData__item}>Description:</span>
+                    {lookingForAJobDescription ? lookingForAJobDescription : "no data"}
                 </div>
+
             </div>
+
         </div>
     )
 };

@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,18 +31,13 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>classnames</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../organiser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -238,6 +237,18 @@
       <workItem from="1575302437192" duration="599000" />
       <workItem from="1575466869496" duration="3561000" />
       <workItem from="1575553384290" duration="5153000" />
+      <workItem from="1580358812824" duration="4359000" />
+      <workItem from="1580546966069" duration="11364000" />
+      <workItem from="1580627116677" duration="7830000" />
+      <workItem from="1580703310731" duration="6845000" />
+      <workItem from="1581065059573" duration="426000" />
+      <workItem from="1581138882960" duration="2942000" />
+      <workItem from="1581232436887" duration="1545000" />
+      <workItem from="1581308303729" duration="6455000" />
+      <workItem from="1582366084627" duration="642000" />
+      <workItem from="1582984029688" duration="1413000" />
+      <workItem from="1583128342634" duration="537000" />
+      <workItem from="1583655717112" duration="14744000" />
     </task>
     <servers />
   </component>

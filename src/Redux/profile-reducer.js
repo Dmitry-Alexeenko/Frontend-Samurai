@@ -3,6 +3,7 @@ import {profileAPI} from "../api/api";
 const ADD_POST = "social_network/profile/ADD-POST";
 const SET_USER_PROFILE = 'social_network/profile/SET_USER_PROFILE';
 const ADD_USER_STATUS = "social_network/profile/ADD_USER_STATUS";
+const SAVE_PHOTO_SUCCESS = "social_network/profile/SAVE-PHOTO-SUCCESS";
 
 let initialState = {
     posts: [
@@ -15,7 +16,7 @@ let initialState = {
     status: ""
 };
 
-const profileReducer = (state = initialState, action) => { // изначально state не может придти, т.к у redux его нет, поэтому мы передаем initialState для первой инициальзации
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             return {
@@ -27,6 +28,10 @@ const profileReducer = (state = initialState, action) => { // изначальн
             return {...state, profile: action.profile};
         case ADD_USER_STATUS:
             return {...state, status: action.status};
+
+        case SAVE_PHOTO_SUCCESS:
+            return {...state, profile: {...state.profile, photos: action.photos}};
+
         default:
             return state;
     }
@@ -35,6 +40,7 @@ const profileReducer = (state = initialState, action) => { // изначальн
 export const addPostCreator = (formData) => ({type: ADD_POST, formData: formData});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile: profile});
 export const addUserStatus = (status) => ({type: ADD_USER_STATUS, status: status});
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
 export const UserProfileThunkCreator = (userId) => {
     return async (dispatch) => {
@@ -52,9 +58,18 @@ export const UserStatusThunkCreator = (userId) => {
 
 export const UpdateUserStatusThunkCreator = (status) => {
     return async (dispatch) => {
-        let response = await profileAPI.updeteStatus(status); // в response будет результатом которым зарезолвится промис
+        let response = await profileAPI.updateStatus(status);
         if (response.data.resultCode === 0) {
             dispatch(addUserStatus(status));
+        }
+    }
+};
+
+export const SavePhoto = (file) => {
+    return async (dispatch) => {
+        let response = await profileAPI.savePhoto(file);
+        if (response.data.resultCode === 0) {
+            dispatch(savePhotoSuccess(response.data.data.photos));
         }
     }
 };
