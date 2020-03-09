@@ -1,4 +1,5 @@
 import {profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = "social_network/profile/ADD-POST";
 const SET_USER_PROFILE = 'social_network/profile/SET_USER_PROFILE';
@@ -42,7 +43,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile: pr
 export const addUserStatus = (status) => ({type: ADD_USER_STATUS, status: status});
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
-export const UserProfileThunkCreator = (userId) => {
+export const UserProfile = (userId) => {
     return async (dispatch) => {
         let response = await profileAPI.getUserProfile(userId)
         dispatch(setUserProfile(response.data));
@@ -56,7 +57,7 @@ export const UserStatusThunkCreator = (userId) => {
     }
 };
 
-export const UpdateUserStatusThunkCreator = (status) => {
+export const UpdateUserStatus = (status) => {
     return async (dispatch) => {
         let response = await profileAPI.updateStatus(status);
         if (response.data.resultCode === 0) {
@@ -70,6 +71,20 @@ export const SavePhoto = (file) => {
         let response = await profileAPI.savePhoto(file);
         if (response.data.resultCode === 0) {
             dispatch(savePhotoSuccess(response.data.data.photos));
+        }
+    }
+};
+
+export const UpdateProfile = (formData) => {
+    return async (dispatch, getState) => {
+
+        const userId = getState().auth.id;
+        let response = await profileAPI.saveProfile(formData);
+        if (response.data.resultCode === 0) {
+            dispatch(UserProfile(userId));
+        } else {
+            dispatch(stopSubmit('ProfileDataForm', {_error: response.data.messages[0]}))
+            return Promise.reject(response.data.messages[0])
         }
     }
 };
