@@ -1,4 +1,4 @@
-import profileReducer, {addPostCreator} from "./profile-reducer";
+import profileReducer, {addPostCreator} from "./reducers/profile-reducer";
 import React from 'react';
 
 it('new post should be added', () => {

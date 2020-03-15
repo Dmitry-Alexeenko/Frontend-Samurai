@@ -5,14 +5,19 @@ import c from './Users.module.scss';
 
 
 let Users = (props) => {
+
+    let {
+        users, followingInProgress, unsubscribe, subscribe, currentPage,
+        onPageChanged, totalUsersCount, pageSize, portionSize
+    } = props;
+
     return (
         <div className={c.usersPage}>
-            <Paginator currentPage={props.currentPage} onPageChanget={props.onPageChanget}
-                       totalItemsCount={props.totalUsersCount} pageSize={props.pageSize}
-                       portionSize={props.portionSize}/>
-            {props.users.map(u => <User key={u.id} user={u} followingInProgress={props.followingInProgress}
-                                        unfollowCreator={props.unfollowCreator}
-                                        followThunkCreator={props.followThunkCreator}/>
+            <Paginator currentPage={currentPage} onPageChanget={onPageChanged} totalItemsCount={totalUsersCount}
+                       pageSize={pageSize} portionSize={portionSize}/>
+            {users.map(u =>
+                <User key={u.id} user={u} followingInProgress={followingInProgress} unsubscribe={unsubscribe}
+                      subscribe={subscribe}/>
             )}
         </div>
     )

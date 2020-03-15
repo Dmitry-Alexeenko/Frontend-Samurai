@@ -1,12 +1,12 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import { reducer as formReducer } from 'redux-form'
-import profileReducer from "./profile-reducer";
-import dialogsReducer from "./dialogs-reducer";
-import sidebarReducer from "./sidebar-reducer";
-import usersReducer from "./users-reducer";
-import authReducer from "./auth-reducer";
+import profileReducer from "./reducers/profile-reducer";
+import dialogsReducer from "./reducers/dialogs-reducer";
+import sidebarReducer from "./reducers/sidebar-reducer";
+import usersReducer from "./reducers/users-reducer";
+import authReducer from "./reducers/auth-reducer";
 import thunkMiddleware from "redux-thunk";
-import appReducer from "./app-reducer";
+import appReducer from "./reducers/app-reducer";
 
 let reducers = combineReducers({  //передаем этой функции наши редюсоры. импортим из библиотеки redux
     profilePage: profileReducer,  //юда приходит state от редюсеров. и все это упаковывается в общий state

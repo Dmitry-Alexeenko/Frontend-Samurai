@@ -1,13 +1,13 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
-import {authorizeOnServiceThunkCreator} from "../../Redux/auth-reducer";
+import {authorizeOnService} from "../../Redux/reducers/auth-reducer";
 import {connect} from "react-redux";
 import {requireField} from "../../utils/validators/validators";
 import {LoginInput} from "../common/FormsControls/FormsControls";
-import Redirect from "react-router-dom/es/Redirect";
+import {Redirect} from "react-router-dom";
 import c from './Login.module.scss';
 
-const LoginForm = ({handleSubmit, error}) => { //деструктуризация пропсов. Пишу то что нужно взять
+const LoginForm = ({handleSubmit, error, captcha}) => {
     return (
         <form onSubmit={handleSubmit}>
             {/*Действия: форма вызвала handleSubmit из LoginReduxForm, внутри handleSubmit вызовется то что пришло
@@ -17,7 +17,7 @@ const LoginForm = ({handleSubmit, error}) => { //деструктуризаци�
             <div>
                 {/*name нужно для того что бы каждый элемент отпралялся под каким то именем, т.е форма- это объект, а name это свойства формы*/}
                 <Field className={c.loginForm__input} placeholder={"login"} name={"login"} component={LoginInput}
-                       validate={[requireField]}/>{/*меняю input на Field*/}
+                       validate={[requireField]}/>
             </div>
             <div>
                 <Field className={c.loginForm__input} placeholder={"Password"} name={"Password"} component={LoginInput} type="password"
@@ -25,9 +25,13 @@ const LoginForm = ({handleSubmit, error}) => { //деструктуризаци�
             </div>
             <div>
                 <Field component={"input"} type="checkbox" name={"rememberMe"}/> remember
-                me {/*пишу каким типом он должен быть*/}
+                me
             </div>
-            {error && <div className={c.loginForm__error}> {/*если props.error - true, тогда выводится div*/}
+
+            {captcha && <img src={captcha} alt="captcha"/>}
+            {captcha && <Field component={"input"} type="text" name={"captcha"} validate={[requireField]}/>}
+
+            {error && <div className={c.loginForm__error}>
                 {error}
             </div>}
             <div>
@@ -37,24 +41,25 @@ const LoginForm = ({handleSubmit, error}) => { //деструктуризаци�
     )
 };
 
-const LoginReduxForm = reduxForm({
-    form: 'login' //уникальное название конкретно для этой формы
-})(LoginForm); //передаем ту форму, вокруг которой нужно создать redux-form
+const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
 const Login = (props) => {
-    const onSubmit = (formData) => {  //сюда придут все значения из формы
-        console.log(formData); //теперь эти данные можно через санку отправь на сервак но сначала надо сделать коннект
-        props.authorizeOnServiceThunkCreator(formData)
+
+    let {isAuth, captcha} = props;
+    let {authorizeOnService} = props;
+
+    const onSubmit = (formData) => {
+        authorizeOnService(formData)
     };
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to={"/profile"}/>
     }
     return (
         <div className={c.loginPage}>
             <div className={c.loginPage__item}>
                 <h1 className={c.loginPage__title}>Log in</h1>
-                <LoginReduxForm onSubmit={onSubmit}/>
+                <LoginReduxForm onSubmit={onSubmit} captcha={captcha}/>
             </div>
             <div className={c.loginPage__item}>
                 <div className={c.loginPage__text}>
@@ -70,6 +75,9 @@ const Login = (props) => {
 
 };
 const mapStateToProps = (state) => {
-    return ({isAuth: state.auth.isAuth})
+    return ({
+        isAuth: state.auth.isAuth,
+        captcha: state.auth.captcha
+    })
 };
-export default connect(mapStateToProps, {authorizeOnServiceThunkCreator})(Login);
+export default connect(mapStateToProps, {authorizeOnService})(Login);
