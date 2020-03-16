@@ -1,7 +1,7 @@
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './utils/serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import SocialNetworkApp from './App'
 
 ReactDOM.render(<SocialNetworkApp/>, document.getElementById('root'));

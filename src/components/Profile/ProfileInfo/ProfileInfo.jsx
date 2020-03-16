@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import c from './ProfileInfo.module.scss';
+import styles from '../../../styles/ProfileInfo.module.scss';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
 import logo from "../../../assets/images/user.png";
@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
         return <Preloader/>
     }
 
-    let {isOwner, profile} = props;
+    let {isOwner, profile, status} = props;
     let {large} = props.profile.photos;
     const {savePhoto, UpdateUserStatus, updateProfile} = props;
 
@@ -29,30 +29,33 @@ const ProfileInfo = (props) => {
         updateProfile(formData).then(() => {
             setEditMode(false)
         });
-
-
-
     };
 
     return (
-        <div className={c.ProfileInfo}>
+        <div className={styles.ProfileInfo}>
 
-            <div className={c.ProfileInfo__avatar}>
+            <div className={styles.ProfileInfo__avatar}>
                 <img src={large
                     ? large
                     : logo} alt={"userPhoto"}/>
 
-                {isOwner && <input type="file" accept=".jpg, .jpeg, .png" onChange={selectPhoto}/>}
+                {isOwner &&
+                <div>
+                    <input type="file" accept=".jpg, .jpeg, .png" onChange={selectPhoto}
+                           name={"file"} id={"file"} className={styles.ProfileInfo__loadPhoto}/>
+                    < label htmlFor="file">Изменить фото</label>
+                </div>
+                }
             </div>
 
-            <div className={c.ProfileInfo__UserAbout}>
+            <div className={styles.ProfileInfo__UserAbout}>
 
-                <div className={c.ProfileInfo__UserName}>
-                    {props.profile.fullName}
+                <div className={styles.ProfileInfo__UserName}>
+                    {profile.fullName}
                 </div>
 
-                <div className={c.ProfileInfo__UserData}>
-                    <ProfileStatus status={props.status}
+                <div className={styles.ProfileInfo__UserData}>
+                    <ProfileStatus status={status}
                                    UpdateUserStatus={UpdateUserStatus}/>
                 </div>
 
@@ -62,61 +65,71 @@ const ProfileInfo = (props) => {
 
                 {editMode && <ProfileDataForm initialValues={profile} profile={profile} setEditMode={setEditMode}
                                               onSubmit={onSubmit}/>}
-
             </div>
-
 
         </div>
     )
 };
 
 const ProfileData = (props) => {
+
     let {aboutMe, lookingForAJob, lookingForAJobDescription, contacts} = props.profile;
     const {setEditMode, isOwner} = props;
+
+    let contactsItems = Object.keys(contacts).map(contact => {
+            if (contacts[contact]) {
+                return <Contact key={contact} contactTitle={contact}
+                                contactValue={contacts[contact]}
+                />
+            }
+        }
+    );
 
     return (
         <div>
             {isOwner &&
-            <button onClick={() => {
-                setEditMode(true)
-            }}>edit
-            </button>
+            <div>
+                <button onClick={() => {
+                    setEditMode(true)
+                }}>Редактировать
+                </button>
+            </div>
             }
 
-            <div className={c.ProfileInfo__UserData}>
-                <span className={c.UserData__item}>About:</span>
+            <div className={styles.ProfileInfo__UserData}>
+                <span className={styles.UserData__item}>Обо мне:</span>
                 {aboutMe ? aboutMe : "no data"}
             </div>
 
-            <div className={c.ProfileInfo__UserData}>
-                <span className={c.UserData__item}>Looking for a job:</span>
-                {lookingForAJob ? "yes" : "no"}
+            <div className={styles.ProfileInfo__UserData}>
+                <span className={styles.UserData__item}>Ищу работу:</span>
+                {lookingForAJob ? "Да" : "Нет"}
             </div>
 
-            <div className={c.ProfileInfo__UserData}>
-                <span className={c.UserData__item}>Description:</span>
-                {lookingForAJobDescription ? lookingForAJobDescription : "no data"}
+            <div className={styles.ProfileInfo__UserData}>
+                <span className={styles.UserData__item}>Описание:</span>
+                {lookingForAJobDescription ? lookingForAJobDescription : "Нет данных"}
             </div>
 
-            <div className={c.ProfileInfo__UserData}>
-                <span className={c.UserData__item}>Contacts:</span>
-
-                {Object.keys(contacts).map(contact => (
-                    <Contact key={contact} contactTitle={contact}
-                             contactValue={contacts[contact]}
-                    />)
-                )}
-            </div>
+            {
+                contactsItems.length > 0 &&
+                <div className={styles.ProfileInfo__UserData}>
+                    <span className={styles.UserData__item}>Контакты:</span>
+                    {contactsItems}
+                </div>
+            }
 
         </div>
     )
 };
 
 const Contact = (props) => {
+
     const {contactTitle, contactValue} = props;
+
     return (
         <div>
-            <span>{contactTitle}</span> : <span>{contactValue || "no data"}</span>
+            <span>{contactTitle}</span> : <span>{contactValue || "Нет данных"}</span>
         </div>
     )
 

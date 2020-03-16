@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './DialogItem.module.scss';
+import c from '../../../styles/DialogItem.module.scss';
 import {NavLink} from "react-router-dom";
 import userPhoto from '../../../assets/images/user.png'
 

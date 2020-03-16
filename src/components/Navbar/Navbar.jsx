@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './Navbar.module.scss';
+import c from '../../styles/Navbar.module.scss';
 import {NavLink} from "react-router-dom";
 import FriendsSiteBar from "./FriendsSiteBar/FriendsSiteBar";
 

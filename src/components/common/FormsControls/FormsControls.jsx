@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './FormsControls.module.scss';
+import c from '../../../styles/FormsControls.module.scss';
 //в mata хранятся данные типа error, touched или warning, это данные о состоянии поля, введена ли инфа, тронуто ли поле юзером
 export const Textarea = ({input, meta, ...props}) => { //rest оператор
     return (

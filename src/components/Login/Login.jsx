@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {requireField} from "../../utils/validators/validators";
 import {LoginInput} from "../common/FormsControls/FormsControls";
 import {Redirect} from "react-router-dom";
-import c from './Login.module.scss';
+import c from '../../styles/Login.module.scss';
 
 const LoginForm = ({handleSubmit, error, captcha}) => {
     return (

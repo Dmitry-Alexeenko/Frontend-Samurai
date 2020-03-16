@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import c from "./Paginator.module.scss";
+import c from "../../../styles/Paginator.module.scss";
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react'; // импортируем модуль из node modules без ./ он добавл во все файлы
-import c from './Header.module.scss';
+import c from '../../styles/Header.module.scss';
 import {NavLink} from "react-router-dom"; // подкл стили; теперь это объект
 import userPhoto from "../../assets/images/user.png";
 import logo from "../../assets/images/logo.svg";

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {setCurrentPage, getUsers, unsubscribe, subscribe} from '../../Redux/reducers/users-reducer';
 import Preloader from "../common/Preloader/Preloader";
 import {usersSelectors} from "../../Redux/users-selectors";
-import styles from './Users.module.scss';
+import styles from '../../styles/Users.module.scss';
 
 
 class UsersContainer extends React.Component {

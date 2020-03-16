@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './Post.module.scss';
+import c from '../../../../styles/Post.module.scss';
 import logo from "../../../../assets/images/user.png";
 
 const Post = (props) => {

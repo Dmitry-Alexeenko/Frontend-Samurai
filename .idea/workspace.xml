@@ -2,45 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Redux/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/appInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/authInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/dialogsInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/profileInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/sideBarInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/usersInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/app-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/auth-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/dialogs-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/sidebar-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/users-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/app-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/auth-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/dialogs-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/reducers/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/profile-reducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profile-reducer.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/sidebar-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/users-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/users-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/users-selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DIalogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DIalogsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DIalogsOLD.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/profile-reducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/profile-reducer.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DIalogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DIalogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/DialogItem.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/DialogsForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Message.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Login.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Music/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Music/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Music/Music.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Music.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/FriendsSiteBar/FriendsSiteBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/FriendsSiteBar/FriendsSiteBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/FriendsSiteBar/FriendsSiteBar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/FriendsSiteBar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Navbar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/News.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/AddPostForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/AddPostForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/AddPostForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AddPostForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MyPosts.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Post.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Profile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileStatus.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Settings.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Users.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/FormsControls.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Paginator.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Preloader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/serviceWorker.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +82,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/project/DocumentEditor/src/HeavenlyComponents/heavenly-react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -86,17 +100,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\p\React-project\src\utils" />
+      <recent name="C:\p\React-project\src\tests" />
+      <recent name="C:\p\React-project\src\styles" />
+      <recent name="C:\p\React-project\src\Redux\reducers" />
+      <recent name="C:\p\React-project\src\Redux\initialStates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\p\React-project\src\components\Profile\ProfileInfo" />
       <recent name="D:\git\react-project\src\components\Login" />
       <recent name="D:\git\react-project\src\components\common\Preloader" />
       <recent name="D:\git\react-project\src\components\Dialogs\DialogsForm" />
       <recent name="D:\git\react-project\src\components\Profile\MyPosts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\p\React-project\src\Redux\reducers" />
-      <recent name="C:\p\React-project\src\Redux\initialStates" />
-      <recent name="D:\git\react-project\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -285,7 +301,8 @@
       <workItem from="1583743693164" duration="15359000" />
       <workItem from="1583821606225" duration="334000" />
       <workItem from="1583936924828" duration="1181000" />
-      <workItem from="1584260184867" duration="18186000" />
+      <workItem from="1584260184867" duration="18975000" />
+      <workItem from="1584334070320" duration="7736000" />
     </task>
     <servers />
   </component>
