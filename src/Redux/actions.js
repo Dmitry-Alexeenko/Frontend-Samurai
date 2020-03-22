@@ -10,6 +10,8 @@ export const actions = {
 
     //dialogs actions
     ADD_MESSAGE: "social_network/dialogs/ADD-MESSAGE",
+    ADD_ALL_DIALOGS: "social_network/dialogs/ADD-ALL-DIALOGS",
+    GET_LIST_MESSAGES: "social_network/dialogs/GET-LIST-MESSAGES",
 
     //profile actions
     ADD_POST: "social_network/profile/ADD-POST",

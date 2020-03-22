@@ -53,7 +53,7 @@ export const profileAPI = {
     },
     saveProfile(profile) {
         return (
-        instance.put(`/profile`, profile))
+            instance.put(`/profile`, profile))
     }
 };
 
@@ -76,7 +76,7 @@ export const headerAPI = {
         let rememberMe = authorizeData.rememberMe;
         let captcha = authorizeData.captcha;
         return (
-            instance.post(`auth/login`,{email:email,  password:password,  rememberMe:rememberMe, captcha:captcha})
+            instance.post(`auth/login`, {email: email, password: password, rememberMe: rememberMe, captcha: captcha})
         )
     },
     logout() {
@@ -93,4 +93,28 @@ export const captchaAPI = {
         )
     }
 };
+
+export const dialogsAPI = {
+    startDialogs(userId) {
+        return (
+            instance.put(`dialogs/${userId}`)
+        )
+    },
+    getAllDialogs() {
+        return (
+            instance.get(`dialogs`)
+        )
+    },
+    getListMessages(userId) {
+        return (
+            instance.get(`dialogs/${userId}/messages`)
+        )
+    },
+    sendMessage(userId, message) {
+        return (
+            instance.post(`dialogs/${userId}/messages`, {body: message})
+        )
+    }
+};
+
 

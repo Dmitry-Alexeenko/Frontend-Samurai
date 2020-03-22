@@ -1,14 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import c from '../../styles/Users.module.scss';
 import userPhoto from '../../assets/images/user.png'
 import {NavLink} from "react-router-dom";
-
+import {useDispatch, useSelector} from "react-redux";
+import {startDialog} from "../../Redux/reducers/dialogs-reducer";
+import {Redirect} from "react-router-dom";
 
 let User = (props) => {
 
+    const dispatch = useDispatch();
+    //const [isRedirect, setIsRedirect] = useState(false);
     let userId = props.user.id;
     let {name, status, photos, followed} = props.user;
     let {followingInProgress, unsubscribe, subscribe} = props;
+
+    /*const onFulfilled = () => {
+        setIsRedirect(true)
+    };
+
+    const onRejected = () => {
+        console.log("something wrong")
+    };*/
+
+    const startNewDialog = () => {
+        dispatch(startDialog(userId));
+    };
+
 
     return (
         <div className={c.userItem}>
@@ -43,8 +60,15 @@ let User = (props) => {
             </div>
 
             <div>
-                <div>{"u.location.country"}</div>
-                <div>{"u.location.city"}</div>
+                <div>
+                    <button onClick={startNewDialog}>
+                        <NavLink to={'/dialogs'}>
+                            Написать
+                        </NavLink>
+
+                    </button>
+                </div>
+
             </div>
 
         </div>
