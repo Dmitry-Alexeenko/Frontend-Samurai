@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import styles from '../../styles/Dialogs.module.css';
 import Messages from "./Messages/Messages";
 import DialogItem from "./DialogItem/DIalogItem";
-import DialogsForm from "./DialogsForm/DialogsForm";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllDialogs} from "../../Redux/reducers/dialogs-reducer";
 import Preloader from "../common/Preloader/Preloader";
@@ -13,7 +12,6 @@ let Dialogs = (props) => {
 
     const listAllDialogs = useSelector(state => state.dialogsPage.listAllDialogs);
     const {startDialog} = props;
-    const {dialogsPage} = props;
 
     const dispatch = useDispatch();
 
@@ -21,9 +19,7 @@ let Dialogs = (props) => {
         dispatch(getAllDialogs())
     }, [dispatch]);
 
-    const onSubmit = (formData) => {
-        props.addMessage(formData)
-    };
+
 
     console.log(listAllDialogs)
 
@@ -40,7 +36,7 @@ let Dialogs = (props) => {
                                         photo={user.photos.small}/>))}
                     </div>
 
-                    <Messages currentUser={listAllDialogs[0]} onSubmit={onSubmit}/>
+                    <Messages {...listAllDialogs[0]}/>
                 </div>
             }
             {
