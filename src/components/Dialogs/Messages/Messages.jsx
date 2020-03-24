@@ -7,6 +7,7 @@ import DialogsForm from "../DialogsForm/DialogsForm";
 
 const Messages = (props) => {
     const messages = useSelector(state => state.dialogsPage.messages);
+    const myId = useSelector(state => state.auth.id);
     let {id} = props;
 
     const dispatch = useDispatch();
@@ -18,11 +19,26 @@ const Messages = (props) => {
     const onSubmit = (formData) => {
         dispatch(sendMessage(id, formData))
     };
-    console.log(messages, "messages");
 
     let messageList = messages.map((item, index) => (
-        <div key={index} className={styles.message}>
-            <span className={styles.message__item}>{item.body}</span>
+        <div key={index} className={item.senderId === myId ? styles.message_right : styles.message_left}>
+
+            <div>
+                <span className={styles.message__item}>{item.body}</span>
+            </div>
+
+            <div>
+                <span>{item.addedAt}</span>
+            </div>
+
+            {item.senderId === myId &&
+            <div>
+                   <span>
+                       {item.viewed ? "прочитано" : "не прочитано"}
+                   </span>
+            </div>}
+
+
         </div>
     ));
 

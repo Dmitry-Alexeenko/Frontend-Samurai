@@ -11,6 +11,7 @@ import {NavLink} from "react-router-dom";
 let Dialogs = (props) => {
 
     const listAllDialogs = useSelector(state => state.dialogsPage.listAllDialogs);
+
     const {startDialog} = props;
 
     const dispatch = useDispatch();
@@ -18,10 +19,6 @@ let Dialogs = (props) => {
     useEffect(() => {
         dispatch(getAllDialogs())
     }, [dispatch]);
-
-
-
-    console.log(listAllDialogs)
 
     if (listAllDialogs === null) return <Preloader/>;
 

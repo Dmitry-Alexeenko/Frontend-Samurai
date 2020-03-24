@@ -1,5 +1,27 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
 .message {
   padding: 10px 0;
+  width: 65%;
+  border: 1px solid;
+}
+
+.message_left {
+  padding: 10px 0;
+  width: 75%;
+  margin-right: auto;
+
+}
+
+.message_right {
+  padding: 10px 0;
+  width: 75%;
+  margin-left: auto;
+  text-align: right;
+
 }
 
 .message__item {
