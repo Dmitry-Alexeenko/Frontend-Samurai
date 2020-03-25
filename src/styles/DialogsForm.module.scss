@@ -1,7 +1,13 @@
 .dialogForm {
-  width: 400px;
-  height: 40px;
+  width: 100%;
+  resize: none;
+  height: 60px;
   border-radius: 8px;
+  padding: 10px;
+}
+
+.contentMessage {
+  box-sizing: border-box;
 }
 
 .dialogFormBtn {

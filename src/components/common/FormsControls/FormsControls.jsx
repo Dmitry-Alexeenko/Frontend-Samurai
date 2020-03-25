@@ -4,8 +4,8 @@ import c from '../../../styles/FormsControls.module.scss';
 export const Textarea = ({input, meta, ...props}) => { //rest оператор
     return (
         <div>
-            <div>
-                <textarea   {...input}{...props}/>
+            <div className={c.textContainer}>
+                <textarea  {...input}{...props}/>
             </div>
             {meta.error && meta.touched && <span>{meta.error}</span>} {/*если элемент был тронут и  meta.error - true то вылезает спан*/}
         </div>

@@ -1,6 +1,8 @@
 .messages {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  height: 1fr;
 }
 
 .message {
@@ -10,14 +12,14 @@
 }
 
 .message_left {
-  padding: 10px 0;
+  padding-bottom: 50px;
   width: 75%;
   margin-right: auto;
 
 }
 
 .message_right {
-  padding: 10px 0;
+  padding-bottom: 10px;
   width: 75%;
   margin-left: auto;
   text-align: right;
@@ -25,7 +27,26 @@
 }
 
 .message__item {
-  padding: 5px;
+  margin: 0px;
+  width: auto;
+  padding: 10px;
   border-radius: 10px;
   background-color: rgba(216, 219, 218, 0.4);
+}
+
+.message__data {
+  color: rgb(103, 106, 105);
+  font-size: 12px;
+  padding:  0 10px;
+}
+
+.viewed {
+  font-size: 12px;
+  padding:  0 10px;
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.textType {
+  box-sizing: border-box;
+  height: 15%;
 }
