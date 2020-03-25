@@ -3,6 +3,8 @@ import styles from '../../../styles/Message.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {getListMessages, sendMessage} from "../../../Redux/reducers/dialogs-reducer";
 import DialogsForm from "../DialogsForm/DialogsForm";
+import Moment from 'react-moment';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 
 const Messages = (props) => {
@@ -11,7 +13,6 @@ const Messages = (props) => {
     let {id} = props;
 
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getListMessages(id))
     }, [dispatch, id]);
@@ -24,30 +25,28 @@ const Messages = (props) => {
         <div key={index} className={item.senderId === myId ? styles.message_right : styles.message_left}>
 
             <div>
-                <span className={styles.message__item}>{item.body}</span>
+                <Moment format="YYYY-MM-DD HH:mm" className={styles.message__data}>{item.addedAt}</Moment>
+                <p className={styles.message__item}>{item.body}</p>
             </div>
 
-            <div>
-                <span>{item.addedAt}</span>
-            </div>
-
-            {item.senderId === myId &&
-            <div>
-                   <span>
-                       {item.viewed ? "прочитано" : "не прочитано"}
+            {
+                item.senderId === myId && !item.viewed &&
+                <div>
+                   <span className={styles.viewed}>
+                        не прочитано
                    </span>
-            </div>}
-
-
+                </div>
+            }
         </div>
     ));
 
     return (
         <div className={styles.messages}>
-            <div>
+            <Scrollbars style={{ width: '100%', height: '85%'}}>
                 {messageList}
-            </div>
-            <div className={styles.textTupe}>
+            </Scrollbars>
+
+            <div className={styles.textType}>
                 <DialogsForm onSubmit={onSubmit}/>
             </div>
         </div>

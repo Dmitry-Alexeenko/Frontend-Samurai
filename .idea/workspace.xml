@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsForm/DialogsForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Messages/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Messages/Messages.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/DialogsForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/DialogsForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/FormsControls.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/FormsControls.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +266,8 @@
       <workItem from="1584863196017" duration="325000" />
       <workItem from="1584863659926" duration="19761000" />
       <workItem from="1584938992615" duration="6891000" />
-      <workItem from="1585032393047" duration="3388000" />
+      <workItem from="1585032393047" duration="4134000" />
+      <workItem from="1585108783812" duration="11468000" />
     </task>
     <servers />
   </component>
