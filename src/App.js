@@ -14,6 +14,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import Education from "./components/Education/Education";
 
 const News = React.lazy(() => import ("./components/News/News"));
 const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileContainer"));
@@ -63,6 +64,7 @@ class App extends React.Component {
                             <Route path='/news' render={WithSuspense(News)}/>
                             <Route path='/music' render={() => <Music/>}/>
                             <Route path='/settings' render={() => <Settings/>}/>
+                            <Route path='/education' render={() => <Education/>}/>
                             <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
                         </Switch>
                     </div>
