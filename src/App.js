@@ -4,7 +4,7 @@ import {HashRouter, Route, Switch, withRouter, Redirect} from "react-router-dom"
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import store from "./Redux/redux-store";
-import Navbar from './components/Navbar/Navbar';
+import NavBar from './components/Navbar/Navbar';
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DIalogsContainer";
@@ -14,7 +14,9 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import Education from "./components/Education/Education";
+import Algorithms from "./components/Education/Education";
+import {Layout} from 'antd';
+import 'antd/dist/antd.css';
 
 const News = React.lazy(() => import ("./components/News/News"));
 const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileContainer"));
@@ -27,14 +29,16 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.initializeApp();
-        window.addEventListener('unhandledrejection',  this.catchAllErrors)
+        window.addEventListener('unhandledrejection', this.catchAllErrors)
     }
 
     componentWillUnmount() {
-        window.removeEventListener('unhandledrejection',  this.catchAllErrors)
+        window.removeEventListener('unhandledrejection', this.catchAllErrors)
     }
 
     render() {
+
+        const {Header, Footer, Sider, Content} = Layout;
 
         if (!this.props.initialized) {
             return (
@@ -45,18 +49,19 @@ class App extends React.Component {
         }
 
         return (
-            <div className="app-wrapper">
+            <Layout style={{backgroundColor: '#edeef0', minHeight:'100vh'}} className="app-wrapper">
+
                 <HeaderContainer/>
 
-                <main className={c.page_Main}>
+                <Layout className={c.page_Main}>
 
-                    <div className={c.navBar}>
-                        <Navbar state={this.props.state.sideBar}/>
-                    </div>
+                    <Sider theme={'light'}>
+                        <NavBar/>
+                    </Sider>
 
-                    <div className={c.content}>
+                    <Content>
                         <Switch>
-                            <Route exact path='/' render={() => <Redirect to ={'/profile'}/> }/>
+                            <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
                             <Route path='/login' render={() => <Login/>}/>
                             <Route path='/profile/:userId?' render={WithSuspense(ProfileContainer)}/>
                             <Route path='/dialogs' render={() => <DialogsContainer/>}/>
@@ -64,14 +69,17 @@ class App extends React.Component {
                             <Route path='/news' render={WithSuspense(News)}/>
                             <Route path='/music' render={() => <Music/>}/>
                             <Route path='/settings' render={() => <Settings/>}/>
-                            <Route path='/education' render={() => <Education/>}/>
+                            <Route path='/algorithms' render={() => <Algorithms/>}/>
                             <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
                         </Switch>
-                    </div>
+                    </Content>
 
-                </main>
+                </Layout>
 
-            </div>
+                <Footer>Footer</Footer>
+
+            </Layout>
+
         );
     }
 }
@@ -92,7 +100,7 @@ const SocialNetworkApp = () => {
         //HashRouter использую для того что бы все нормально работало в github
         <HashRouter>
             <Provider store={store}>
-                <AppContainer state={store.getState()} dispatch={store.dispatch.bind(store)}/>
+                <AppContainer/>
             </Provider>
         </HashRouter>);
 };

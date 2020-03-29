@@ -1,14 +1,13 @@
 .app-wrapper {
   width: auto;
+  min-height:100vh;
   margin: 0 auto;
+  border: 1px solid green;
+  background-color: red;
 }
 
 .page_Main {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 15px;
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 
