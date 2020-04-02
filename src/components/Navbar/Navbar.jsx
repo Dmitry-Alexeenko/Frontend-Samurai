@@ -29,31 +29,37 @@ const NavBar = (props) => {
             <Menu.Item key="/profile">
                 <UserOutlined/>
                 <Link to="/profile">Профиль</Link>
+
             </Menu.Item>
 
             <Menu.Item key="/dialogs">
                 <MailOutlined/>
                 <Link to="/dialogs">Сообщения</Link>
+
             </Menu.Item>
 
             <Menu.Item key="/users">
                 <UsergroupAddOutlined/>
                 <Link to="/users">Пользователи</Link>
+
             </Menu.Item>
 
             <Menu.Item key="/news">
                 <ExperimentOutlined/>
                 <Link to="/news">Новости</Link>
+
             </Menu.Item>
 
             <Menu.Item key="/music">
                 <CustomerServiceOutlined/>
-                <Link to="/music">Музыка</Link>
+               <Link to="/music">Музыка</Link>
+
             </Menu.Item>
 
             <Menu.Item key="/settings">
                 <SettingOutlined/>
                 <Link to="/settings">Настрийки</Link>
+
             </Menu.Item>
 
             <SubMenu key="sub1" title={
@@ -64,6 +70,7 @@ const NavBar = (props) => {
             }>
                 <Menu.Item key="/algorithms">
                     <Link to="/algorithms">Алгоритмы</Link>
+
                 </Menu.Item>
 
             </SubMenu>

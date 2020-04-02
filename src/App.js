@@ -15,7 +15,7 @@ import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import Algorithms from "./components/Education/Education";
-import {Layout} from 'antd';
+import {Layout, Row, Col,} from 'antd';
 import 'antd/dist/antd.css';
 
 const News = React.lazy(() => import ("./components/News/News"));
@@ -55,7 +55,7 @@ class App extends React.Component {
 
                 <Layout className={c.page_Main}>
 
-                    <Sider theme={'light'}>
+                    <Sider theme={'dark'} collapsed={true}>
                         <NavBar/>
                     </Sider>
 
@@ -76,7 +76,7 @@ class App extends React.Component {
 
                 </Layout>
 
-                <Footer>Footer</Footer>
+                <Footer style={{backgroundColor: '#001529'}}>Footer</Footer>
 
             </Layout>
 

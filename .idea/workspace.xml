@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/Education.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Education.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Navbar.module.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DocumentEditor/src/HeavenlyComponents/heavenly-react" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -82,20 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="new post should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Redux/profile-reducer.test.js" />
-      <test-names>
-        <test-name value="new post should be added" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Node.js.algoritms.js">
     <configuration name="renders without crashing" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -107,6 +94,9 @@
       <test-names>
         <test-name value="renders without crashing" />
       </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="algoritms.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/Education/algoritms.js" working-dir="$PROJECT_DIR$/src/components/Education">
       <method v="2" />
     </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -141,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.renders without crashing" />
-        <item itemvalue="Jest.new post should be added" />
       </list>
     </recent_temporary>
   </component>
@@ -270,6 +260,10 @@
       <workItem from="1585383438278" duration="1413000" />
       <workItem from="1585385447812" duration="15528000" />
       <workItem from="1585472712166" duration="20352000" />
+      <workItem from="1585558880379" duration="80000" />
+      <workItem from="1585591047953" duration="6121000" />
+      <workItem from="1585632922926" duration="38000" />
+      <workItem from="1585836239649" duration="12724000" />
     </task>
     <servers />
   </component>
