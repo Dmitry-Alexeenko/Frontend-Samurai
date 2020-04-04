@@ -1,5 +1,4 @@
 import React from 'react';
-import c from '../../styles/Profile.module.scss';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 

@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
 
 const Education = (props) => {
 
-    const classes = useStyles();
+    //const classes = useStyles();
 
     let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let result = binary_search(list, 2);
@@ -21,15 +21,6 @@ const Education = (props) => {
 
     return (
         <Container>
-
-            <h1 className={classes.title}>
-                База знаний
-            </h1>
-
-            <p>
-                Данный раздел содержит учебный материал с которым может ознакомится каждый. Просто выберете главу.
-                Данная статья написана на основе книги "Грокаем алгиритмы" Адитья Брахгава
-            </p>
 
             <span>Алгоритмы</span>
             <p>

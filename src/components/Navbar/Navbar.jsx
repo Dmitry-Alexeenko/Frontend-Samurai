@@ -24,42 +24,42 @@ const NavBar = (props) => {
 
     return (
 
-        <Menu selectedKeys={[location]} mode="inline" theme="light" defaultOpenKeys={[isOpenMenu]}>
+        <Menu selectedKeys={[location]} mode="inline" theme="dark" defaultOpenKeys={[isOpenMenu]}>
 
             <Menu.Item key="/profile">
                 <UserOutlined/>
-                <Link to="/profile">Профиль</Link>
-
+                <span>Профиль</span>
+                <Link to="/profile"/>
             </Menu.Item>
 
             <Menu.Item key="/dialogs">
                 <MailOutlined/>
-                <Link to="/dialogs">Сообщения</Link>
-
+                <span>Сообщения</span>
+                <Link to="/dialogs"/>
             </Menu.Item>
 
             <Menu.Item key="/users">
                 <UsergroupAddOutlined/>
-                <Link to="/users">Пользователи</Link>
-
+                <span>Пользователи</span>
+                <Link to="/users"/>
             </Menu.Item>
 
             <Menu.Item key="/news">
                 <ExperimentOutlined/>
-                <Link to="/news">Новости</Link>
-
+                <span>Новости</span>
+                <Link to="/news"/>
             </Menu.Item>
 
             <Menu.Item key="/music">
                 <CustomerServiceOutlined/>
-               <Link to="/music">Музыка</Link>
-
+                <span>Музыка</span>
+               <Link to="/music"/>
             </Menu.Item>
 
             <Menu.Item key="/settings">
                 <SettingOutlined/>
-                <Link to="/settings">Настрийки</Link>
-
+                <span>Настрийки</span>
+                <Link to="/settings"/>
             </Menu.Item>
 
             <SubMenu key="sub1" title={
@@ -69,8 +69,8 @@ const NavBar = (props) => {
                     </span>
             }>
                 <Menu.Item key="/algorithms">
-                    <Link to="/algorithms">Алгоритмы</Link>
-
+                    <span>Алгоритмы</span>
+                    <Link to="/algorithms"/>
                 </Menu.Item>
 
             </SubMenu>

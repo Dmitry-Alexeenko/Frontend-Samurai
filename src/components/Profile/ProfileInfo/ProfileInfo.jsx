@@ -7,7 +7,6 @@ import ProfileDataForm from "./ProfileDataForm";
 
 
 const ProfileInfo = (props) => {
-
     let [editMode, setEditMode] = useState(false);
 
     if (!props.profile) {
@@ -33,7 +32,6 @@ const ProfileInfo = (props) => {
 
     return (
         <div className={styles.ProfileInfo}>
-
             <div className={styles.ProfileInfo__avatar}>
                 <img src={large
                     ? large

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import c from './styles/App.module.scss';
 import {HashRouter, Route, Switch, withRouter, Redirect} from "react-router-dom";
 import {connect, Provider} from "react-redux";
@@ -15,51 +15,52 @@ import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import Algorithms from "./components/Education/Education";
-import {Layout, Row, Col,} from 'antd';
+import {Layout, Row} from 'antd';
 import 'antd/dist/antd.css';
+import useBreakpoint from "./custom_hook/useBreakpoint";
+
 
 const News = React.lazy(() => import ("./components/News/News"));
 const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileContainer"));
 
-class App extends React.Component {
+const App = (props) => {
 
-    catchAllErrors = (promiseRejectionEvent) => {
+    const screenWidth = useBreakpoint();
+
+    const color = '#001529';
+    const {Footer, Sider, Content} = Layout;
+    const {initialized, initializeApp} = props;
+
+    const catchAllErrors = (promiseRejectionEvent) => {
         console.log(promiseRejectionEvent)
     };
 
-    componentDidMount() {
-        this.props.initializeApp();
-        window.addEventListener('unhandledrejection', this.catchAllErrors)
-    }
+    useEffect(() => {
+        initializeApp();
+        window.addEventListener('unhandledrejection', catchAllErrors)
+        return () => window.removeEventListener('unhandledrejection', catchAllErrors);
+    }, [initializeApp]);
 
-    componentWillUnmount() {
-        window.removeEventListener('unhandledrejection', this.catchAllErrors)
-    }
-
-    render() {
-
-        const {Header, Footer, Sider, Content} = Layout;
-
-        if (!this.props.initialized) {
-            return (
-                <div className={c.app_preloader}>
-                    <Preloader/>
-                </div>
-            )
-        }
-
+    if (!initialized) {
         return (
-            <Layout style={{backgroundColor: '#edeef0', minHeight:'100vh'}} className="app-wrapper">
+            <div className={c.app_preloader}>
+                <Preloader/>
+            </div>
+        )
+    }
 
-                <HeaderContainer/>
+    return (
+        <Layout style={{backgroundColor: color, minHeight: '100vh'}} className="app-wrapper">
 
+            <HeaderContainer/>
+            <Row >
                 <Layout className={c.page_Main}>
 
-                    <Sider theme={'dark'} collapsed={true}>
+                    <Sider theme={'dark'} collapsed={screenWidth === 'xs'} style={{position:'fixed'}}>
                         <NavBar/>
                     </Sider>
 
-                    <Content>
+                    <Content  style={{backgroundColor: color, paddingLeft:screenWidth !== 'xs'? '215px' : '95px', paddingRight: '15px'}}>
                         <Switch>
                             <Route exact path='/' render={() => <Redirect to={'/profile'}/>}/>
                             <Route path='/login' render={() => <Login/>}/>
@@ -75,13 +76,14 @@ class App extends React.Component {
                     </Content>
 
                 </Layout>
+            </Row>
 
-                <Footer style={{backgroundColor: '#001529'}}>Footer</Footer>
+            <Footer style={{backgroundColor: '#001529'}}> </Footer>
 
-            </Layout>
+        </Layout>
 
-        );
-    }
+    );
+
 }
 
 const mapStateToProps = (state) => {

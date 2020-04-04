@@ -1,8 +1,12 @@
-$color: #001529;
+$color: #000c18;
 
 .header_container {
   background-color: $color;
   height: auto;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
 }
 
 .header__content {
@@ -13,11 +17,9 @@ $color: #001529;
   min-height: 40px;
 }
 
-
-
 .header__logo {
   height: 30px;
-  margin-left:15px;
+  margin-left: 15px;
 }
 
 .header__name {

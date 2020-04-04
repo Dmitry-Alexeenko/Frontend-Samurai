@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/custom_hook/useBreakpoint.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/80cdb6f1c28b9de9f609fa224a0f9e83dff051fb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Education/Education.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Education.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Dialogs.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Profile.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +48,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DocumentEditor/src/HeavenlyComponents/heavenly-react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -55,19 +66,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\React-project\src\components\common\Conponents" />
-      <recent name="C:\projects\React-project\src\components\Education" />
-      <recent name="C:\p\React-project\src\components\Profile\ProfileInfo" />
-      <recent name="D:\git\react-project\src\components\Login" />
-      <recent name="D:\git\react-project\src\components\common\Preloader" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\React-project\src\custom_hook" />
       <recent name="C:\p\React-project\src\utils" />
       <recent name="C:\p\React-project\src\tests" />
       <recent name="C:\p\React-project\src\styles" />
       <recent name="C:\p\React-project\src\Redux\reducers" />
-      <recent name="C:\p\React-project\src\Redux\initialStates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\React-project\src" />
+      <recent name="C:\projects\React-project\src\components\common\Conponents" />
+      <recent name="C:\projects\React-project\src\components\Education" />
+      <recent name="C:\p\React-project\src\components\Profile\ProfileInfo" />
+      <recent name="D:\git\react-project\src\components\Login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.renders without crashing" />
@@ -264,6 +275,7 @@
       <workItem from="1585591047953" duration="6121000" />
       <workItem from="1585632922926" duration="38000" />
       <workItem from="1585836239649" duration="12724000" />
+      <workItem from="1586003164236" duration="20854000" />
     </task>
     <servers />
   </component>

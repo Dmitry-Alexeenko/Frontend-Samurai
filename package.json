@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "http://dmitry-alexeenko.github.io/React-project",
   "dependencies": {
+    "@ant-design/icons": "latest",
     "antd": "^4.0.1",
     "axios": "^0.19.0",
+    "lodash.throttle": "^4.1.1",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-custom-scrollbars": "^4.2.1",
@@ -18,8 +20,7 @@
     "redux": "^4.0.4",
     "redux-form": "^8.2.6",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0",
-    "@ant-design/icons": "latest"
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
