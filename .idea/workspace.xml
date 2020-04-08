@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Education/Education.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Education/algoritms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Header.module.scss" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,6 +270,8 @@
       <workItem from="1586238874628" duration="1570000" />
       <workItem from="1586276166713" duration="1292000" />
       <workItem from="1586328184123" duration="4308000" />
+      <workItem from="1586333046316" duration="732000" />
+      <workItem from="1586367809289" duration="7345000" />
     </task>
     <servers />
   </component>
