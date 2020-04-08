@@ -14,10 +14,10 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import Algorithms from "./components/Education/Education";
 import {Layout, Row} from 'antd';
 import 'antd/dist/antd.css';
 import useBreakpoint from "./custom_hook/useBreakpoint";
+import Algorithms from "./components/Education/Algorithms";
 
 
 const News = React.lazy(() => import ("./components/News/News"));

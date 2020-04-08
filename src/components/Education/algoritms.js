@@ -14,7 +14,33 @@ export const binary_search = (list, item) => {
         }
     }
     return  NaN
-}
+};
+
+
+const min = (list) => {
+    let minNumber = list[0];
+    let idMinNumber = 0;
+    for (let i = 1; i < list.length; i++) {
+        if(list[i] < minNumber) {
+            minNumber = list[i];
+            idMinNumber = i;
+        }
+    }
+    return idMinNumber
+};
+
+export const sort = (list) => {
+    let oldList = [...list];
+    let newList = [];
+    for(let i = 0; i < oldList.length; i) {
+        let minNumber = min(oldList);
+        newList.push(oldList[minNumber]);
+        oldList.splice(minNumber,1)
+
+    }
+    return newList
+};
+
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss'
 import Container from "../common/Conponents/Container";
-import {binary_search} from "./algoritms";
+import {binary_search, sort} from "./algoritms";
 
 const useStyles = createUseStyles({
     title: {
@@ -11,13 +11,17 @@ const useStyles = createUseStyles({
     },
 })
 
-const Education = (props) => {
+const Algorithms = (props) => {
 
     //const classes = useStyles();
 
     let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let result = binary_search(list, 2);
     console.log(result, "result")
+
+
+    let result2 = sort([2,1,6,5,9,3,33,8]);
+    console.log(result2, "result2")
 
     return (
         <Container>
@@ -77,8 +81,44 @@ const Education = (props) => {
 
             </p>
 
+            <a> Сортировка выбором</a>
+            <p>
+                Сортировка выбором - медленная сортировка с коростью О(n2 (2 в степени)). Принимает не отсортированный
+                массив ( [1,3,5,7,9,11,13,15,17,19] ) и возвращает отсортированный от min к max.
+            </p>
+            <pre>
+                    {
+                        `
+                    //функция находит минимальное значение в массиве в 1 итерации
+                    const min = (list) => { 
+                        let minNumber = list[0];
+                        let idMinNumber = 0;
+                        for (let i = 1; i < list.length; i++) {
+                            if(list[i] < minNumber) {
+                                minNumber = list[i];
+                                idMinNumber = i;
+                            }
+                        }
+                        return idMinNumber
+                    };
+                    
+                    //функция собирает новый масив
+                    export const sort = (list) => { 
+                        let oldList = [...list]; //копируем массив
+                        let newList = [];
+                        for(let i = 0; i < oldList.length; i) {
+                            let minNumber = min(oldList);
+                            newList.push(oldList[minNumber]);
+                            oldList.splice(minNumber,1) //сокращаем массив
+                    
+                        }
+                        return newList
+                    };
+                        `
+                    }
+            </pre>
         </Container>
     )
 };
 
-export default Education;
+export default Algorithms;
