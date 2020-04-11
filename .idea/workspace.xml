@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Messages/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Messages/Messages.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/algoritms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Header.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,19 +58,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\React-project\src\custom_hook" />
-      <recent name="C:\p\React-project\src\utils" />
-      <recent name="C:\p\React-project\src\tests" />
-      <recent name="C:\p\React-project\src\styles" />
-      <recent name="C:\p\React-project\src\Redux\reducers" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\React-project\src" />
       <recent name="C:\projects\React-project\src\components\common\Conponents" />
       <recent name="C:\projects\React-project\src\components\Education" />
       <recent name="C:\p\React-project\src\components\Profile\ProfileInfo" />
       <recent name="D:\git\react-project\src\components\Login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\React-project\src\custom_hook" />
+      <recent name="C:\p\React-project\src\utils" />
+      <recent name="C:\p\React-project\src\tests" />
+      <recent name="C:\p\React-project\src\styles" />
+      <recent name="C:\p\React-project\src\Redux\reducers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -128,9 +134,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.renders without crashing" />
       </list>
@@ -271,7 +277,10 @@
       <workItem from="1586276166713" duration="1292000" />
       <workItem from="1586328184123" duration="4308000" />
       <workItem from="1586333046316" duration="732000" />
-      <workItem from="1586367809289" duration="7345000" />
+      <workItem from="1586367809289" duration="8609000" />
+      <workItem from="1586415234745" duration="146000" />
+      <workItem from="1586520214601" duration="833000" />
+      <workItem from="1586521364677" duration="25527000" />
     </task>
     <servers />
   </component>

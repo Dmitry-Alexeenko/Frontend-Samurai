@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllDialogs} from "../../Redux/reducers/dialogs-reducer";
 import Preloader from "../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
+import {Scrollbars} from "react-custom-scrollbars";
 
 
 let Dialogs = (props) => {
@@ -23,18 +24,26 @@ let Dialogs = (props) => {
     if (listAllDialogs === null) return <Preloader/>;
 
     return (
-        <div>
+        <>
             {
                 listAllDialogs.length > 0 &&
+
                 <div className={styles.dialogs}>
-                    <div className={styles.dialogsItems}>
-                        {listAllDialogs.map(user => (
-                            <DialogItem name={user.userName} key={user.id} id={user.id} startDialog={startDialog}
-                                        photo={user.photos.small}/>))}
-                    </div>
+
+
+                    <Scrollbars style={{width: '100%', height: '100%'}}>
+                        <div className={styles.dialogsItems}>
+                            {listAllDialogs.map(user => (
+                                <DialogItem name={user.userName} key={user.id} id={user.id}
+                                            startDialog={startDialog}
+                                            photo={user.photos.small}/>))}
+                        </div>
+
+                    </Scrollbars>
 
                     <Messages {...listAllDialogs[0]}/>
                 </div>
+
             }
             {
                 listAllDialogs.length < 1 &&
@@ -44,7 +53,7 @@ let Dialogs = (props) => {
                     что бы выбрать пользователя
                 </div>
             }
-        </div>
+        </>
     )
 };
 

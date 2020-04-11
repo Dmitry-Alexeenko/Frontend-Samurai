@@ -12,6 +12,7 @@ const useStyles = createUseStyles({
     header__container: {
         backgroundColor: '#000c18',
         color: 'white',
+        top:0,
         height: 'auto',
         position: 'fixed',
         width: '100%',

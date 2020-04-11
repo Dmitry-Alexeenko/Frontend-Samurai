@@ -2,9 +2,14 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  height: 1fr;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-
+.messages__list {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
 .message {
   padding: 10px 0;
   width: 65%;
@@ -48,5 +53,5 @@
 
 .textType {
   box-sizing: border-box;
-  height: 15%;
+  height: 100px;
 }

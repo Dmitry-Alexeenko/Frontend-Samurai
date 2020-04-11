@@ -42,9 +42,14 @@ const Messages = (props) => {
 
     return (
         <div className={styles.messages}>
-            <Scrollbars style={{ width: '100%', height: '85%'}}>
-                {messageList}
-            </Scrollbars>
+            <div className={styles.messages__list}>
+                <Scrollbars style={{ width: '100%', height: '100%'}}>
+                    <div style={{ paddingRight:'15px'}}>
+                        {messageList}
+                    </div>
+                </Scrollbars>
+            </div>
+
 
             <div className={styles.textType}>
                 <DialogsForm onSubmit={onSubmit}/>

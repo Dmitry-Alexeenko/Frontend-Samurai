@@ -16,7 +16,7 @@ export const binary_search = (list, item) => {
     return  NaN
 };
 
-
+//------------sort------------//
 const min = (list) => {
     let minNumber = list[0];
     let idMinNumber = 0;
@@ -40,6 +40,31 @@ export const sort = (list) => {
     }
     return newList
 };
+
+//------------Рекурсия------------//
+
+export const rec = (count) => {
+
+    //console.log('count ' + count);
+
+    if(count === 0) {
+        return null
+    } else {
+        rec(count - 1)
+    }
+};
+
+export const copyObject = (object) => {
+
+    let newObject = {...object, copy:'copy'};
+
+    for (let key in newObject) {
+        if(typeof (newObject[key]) === "object") {
+            newObject[key] = {...copyObject(newObject[key])};
+        }
+    }
+    return newObject
+}
 
 
 

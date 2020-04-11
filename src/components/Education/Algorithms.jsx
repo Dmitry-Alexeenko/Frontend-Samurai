@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss'
 import Container from "../common/Conponents/Container";
-import {binary_search, sort} from "./algoritms";
+import {binary_search, copyObject, rec, sort} from "./algoritms";
 
 const useStyles = createUseStyles({
     title: {
@@ -17,12 +17,36 @@ const Algorithms = (props) => {
 
     let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let result = binary_search(list, 2);
-    console.log(result, "result")
+    //console.log(result, "result")
 
 
     let result2 = sort([2,1,6,5,9,3,33,8]);
-    console.log(result2, "result2")
+    //console.log(result2, "result2")
 
+    rec(5);
+
+    let obj = {
+        el1:[1,2,3,4,5],
+        el2:'qqq',
+        el3:111,
+        el4:{
+            el4_1:[1,2,3,4,5,6],
+            el4_2:{
+                el4_2_1:{
+                    q:'q',
+                    w:'w'
+                }
+            },
+            el4_3:{
+                e:'e',
+                r:'r',
+                t:'t',
+            }
+        }
+    };
+    //console.log(obj, "original")
+    console.log(copyObject(obj));
+    console.log(obj, "original");
     return (
         <Container>
 
@@ -117,6 +141,45 @@ const Algorithms = (props) => {
                         `
                     }
             </pre>
+
+            <a> Рекурсия</a>
+            <p>
+                Рекурсия - это функуия которая вызывет сама себя. Что бы рекурсия не была вечной, нужно в какой то
+                момент прервать рекурсию. Для этого каждая рекурсивная функция состоит из 2 частей: <br/>
+                -базового случая<br/>
+                -рекурсовного случая<br/>
+            </p>
+
+            <pre>
+                {`
+                const rec = (count = 3) => {
+
+                    console.log('count ' + count)
+                    
+                    if(count === 0) { //базовый случай
+                        return
+                    } else {         //рекурсивный случай
+                        rec(count - 1)
+                    }
+                }
+                `}
+            </pre>
+            <p>
+                Как работает рекурсия: <br/>
+                Когда функция вызывает саму себя, Компьютер сохраняет ее и ее данные в стек. И продолжит сохранять до
+                тех пор, пофа фцнкция будет вызывать саму себя.
+
+            </p>
+            <p>
+                Взлянем на наш пример:<br/>
+                3)rec вызывается снова и попадает в стек с данными 1 <br/>
+                2)rec вызывается снова и попадает в стек с данными 2 <br/>
+                1)rec вызываетсяи попадает в стек с данными 3 (первый запуск функции)
+            </p>
+            <p>
+                Действие 1 и 2 приостановлены, но не закончены пока не закончится действие 3. После действия 3 закончится
+                действие 2, а после и действое 1.
+            </p>
         </Container>
     )
 };
