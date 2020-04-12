@@ -2,7 +2,7 @@
   "name": "react-first-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dmitry-alexeenko.github.io/React-project",
+  "homepage": "http://dmitry-alexeenko.github.io/Frontend-Samurai",
   "dependencies": {
     "@ant-design/icons": "latest",
     "antd": "^4.0.1",
