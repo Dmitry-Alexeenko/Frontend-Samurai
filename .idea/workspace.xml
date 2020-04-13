@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,9 +124,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
         <item itemvalue="Node.js.algoritms.js" />
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.renders without crashing" />
       </list>
@@ -274,7 +271,8 @@
       <workItem from="1586415234745" duration="146000" />
       <workItem from="1586520214601" duration="833000" />
       <workItem from="1586521364677" duration="25568000" />
-      <workItem from="1586683880410" duration="5137000" />
+      <workItem from="1586683880410" duration="7155000" />
+      <workItem from="1586761254847" duration="67000" />
     </task>
     <servers />
   </component>
