@@ -1,57 +1,6 @@
-.ProfileInfo {
-  width: 100%;
-  display: flex;
-  background-color: white;
-  border-radius: 7px;
-  margin-top: 15px;
-  padding: 15px;
-}
-
-.ProfileInfo__UserAbout {
-  margin-left: 25px;
-}
-
-.ProfileInfo__UserName {
-  font-size: 22px;
-}
-
-.ProfileInfo__avatar {
-  width: 180px;
-
-  & img {
-    width: 100%;
-    border-radius: 3px;
-    border-style: none;
-  }
-}
-
-.ProfileInfo__loadPhoto {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.ProfileInfo__loadPhoto + label {
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%;
-  color: white;
-  background-color: #828282;
-  display: inline-block;
-  cursor: pointer;
-}
-.ProfileInfo__loadPhoto:focus + label,
-.ProfileInfo__loadPhoto + label:hover {
-  background-color: rgba(130, 130, 130, 0.6);
-}
 
 .ProfileInfo__UserData {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 14px;
 }
 

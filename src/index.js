@@ -2,8 +2,8 @@ import * as serviceWorker from './utils/serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import SocialNetworkApp from './App'
+import AppContainer from './App'
 
-ReactDOM.render(<SocialNetworkApp/>, document.getElementById('root'));
+ReactDOM.render(<AppContainer/>, document.getElementById('root'));
 
 serviceWorker.unregister();

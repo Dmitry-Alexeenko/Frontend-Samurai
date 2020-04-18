@@ -12,14 +12,17 @@ let Users = (props) => {
     } = props;
 
     return (
-        <div className={c.usersPage}>
-            <Paginator currentPage={currentPage} onPageChanget={onPageChanged} totalItemsCount={totalUsersCount}
-                       pageSize={pageSize} portionSize={portionSize}/>
-            {users.map(u =>
-                <User key={u.id} user={u} followingInProgress={followingInProgress} unsubscribe={unsubscribe}
-                      subscribe={subscribe}/>
-            )}
+        <div className={c.usersCont}>
+            <div className={c.usersPage}>
+                <Paginator currentPage={currentPage} onPageChanget={onPageChanged} totalItemsCount={totalUsersCount}
+                           pageSize={pageSize} portionSize={portionSize}/>
+                {users.map(u =>
+                    <User key={u.id} user={u} followingInProgress={followingInProgress} unsubscribe={unsubscribe}
+                          subscribe={subscribe}/>
+                )}
+            </div>
         </div>
+
     )
 };
 

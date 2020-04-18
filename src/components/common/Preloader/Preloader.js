@@ -1,9 +1,19 @@
 import React from 'react';
 import preloader from './../../../assets/images/preloader.svg'
-import c from '../../../styles/Preloader.module.scss';
+import {createUseStyles} from "react-jss";
 
-let Preloader= (props) => {
-    return <img className={c.preloader} src={preloader}/>
+let Preloader = (props) => {
+    const classes = useStyles();
+    return (
+            <img  src={preloader} alt={'preloader'} className={classes.Preloader}/>
+    )
 };
 
-export default  Preloader;
+const useStyles = createUseStyles({
+    Preloader: {
+        width: 60,
+
+    },
+});
+
+export default Preloader;

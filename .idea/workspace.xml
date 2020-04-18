@@ -2,7 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/audio.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gear.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/house.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/mail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/message.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/paper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/trash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/vision.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/AuthContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/NotAuthContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/atoms/LoadBtn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Preloader/PreloaderApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/News.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Preloader.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ProfileStatus.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileStatus.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Users.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +67,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -48,19 +85,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\React-project\src" />
-      <recent name="C:\projects\React-project\src\components\common\Conponents" />
-      <recent name="C:\projects\React-project\src\components\Education" />
-      <recent name="C:\p\React-project\src\components\Profile\ProfileInfo" />
-      <recent name="D:\git\react-project\src\components\Login" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\React-project\src\custom_hook" />
       <recent name="C:\p\React-project\src\utils" />
       <recent name="C:\p\React-project\src\tests" />
       <recent name="C:\p\React-project\src\styles" />
       <recent name="C:\p\React-project\src\Redux\reducers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\React-project\src\components\Profile\ProfileInfo" />
+      <recent name="C:\projects\React-project\src\assets\images" />
+      <recent name="C:\projects\React-project\src\components\common\Preloader" />
+      <recent name="C:\projects\React-project\src\components\Header" />
+      <recent name="C:\projects\React-project\src\components\atoms" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -124,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="Node.js.algoritms.js" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.renders without crashing" />
@@ -273,6 +310,9 @@
       <workItem from="1586521364677" duration="25568000" />
       <workItem from="1586683880410" duration="7155000" />
       <workItem from="1586761254847" duration="67000" />
+      <workItem from="1586761420893" duration="348000" />
+      <workItem from="1587118672887" duration="1522000" />
+      <workItem from="1587214138057" duration="36565000" />
     </task>
     <servers />
   </component>

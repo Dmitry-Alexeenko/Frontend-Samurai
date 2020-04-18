@@ -1,16 +1,14 @@
 .status__text {
   display: block;
-  max-width: 630px;
-  border: 1px solid #c3d2db;
+  width: auto;
   border-radius: 5px;
-  padding: 0 5px;
-  //background-color: #c3d2db;
   cursor: pointer;
   word-wrap: break-word;
-  margin-top: 3px;
+  color: #919191;
+  font-size: 14px;
 
   &:hover {
-    border: 1px solid #7fa9db;
+    color: white;
   }
 }
 

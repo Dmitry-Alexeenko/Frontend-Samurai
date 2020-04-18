@@ -4,9 +4,14 @@ import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
 import logo from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
+import ProfileData from "./ProfileData";
+import {createUseStyles} from "react-jss";
+import LoadBtn from "../../atoms/LoadBtn";
 
 
 const ProfileInfo = (props) => {
+
+    const classes = useStyles();
     let [editMode, setEditMode] = useState(false);
 
     if (!props.profile) {
@@ -31,24 +36,15 @@ const ProfileInfo = (props) => {
     };
 
     return (
-        <div className={styles.ProfileInfo}>
-            <div className={styles.ProfileInfo__avatar}>
-                <img src={large
-                    ? large
-                    : logo} alt={"userPhoto"}/>
-
-                {isOwner &&
-                <div>
-                    <input type="file" accept=".jpg, .jpeg, .png" onChange={selectPhoto}
-                           name={"file"} id={"file"} className={styles.ProfileInfo__loadPhoto}/>
-                    < label htmlFor="file">Изменить фото</label>
-                </div>
-                }
+        <div className={classes.ProfileInfo}>
+            <div className={classes.ProfileInfo__Avatar}>
+                <img src={large ? large : logo} alt={"userPhoto"}/>
+                {isOwner && <LoadBtn selectPhoto={selectPhoto}/>}
             </div>
 
-            <div className={styles.ProfileInfo__UserAbout}>
+            <div className={classes.ProfileInfo__UserAbout}>
 
-                <div className={styles.ProfileInfo__UserName}>
+                <div className={classes.ProfileInfo__UserName}>
                     {profile.fullName}
                 </div>
 
@@ -57,10 +53,7 @@ const ProfileInfo = (props) => {
                                    UpdateUserStatus={UpdateUserStatus}/>
                 </div>
 
-                {!editMode &&
-                <ProfileData profile={profile} UpdateUserStatus={UpdateUserStatus} setEditMode={setEditMode}
-                             isOwner={isOwner}/>}
-
+                {!editMode && <ProfileData profile={profile} setEditMode={setEditMode} isOwner={isOwner}/>}
                 {editMode && <ProfileDataForm initialValues={profile} profile={profile} setEditMode={setEditMode}
                                               onSubmit={onSubmit}/>}
             </div>
@@ -69,68 +62,33 @@ const ProfileInfo = (props) => {
     )
 };
 
-const ProfileData = (props) => {
-
-    let {aboutMe, lookingForAJob, lookingForAJobDescription, contacts} = props.profile;
-    const {setEditMode, isOwner} = props;
-
-    let contactsItems = Object.keys(contacts).map(contact => {
-            if (contacts[contact]) {
-                return <Contact key={contact} contactTitle={contact}
-                                contactValue={contacts[contact]}
-                />
-            }
+const useStyles = createUseStyles({
+    ProfileInfo: {
+        transition: '0.1s all',
+        display: 'flex',
+    },
+    ProfileInfo__Avatar: {
+        width: 180,
+        padding: 17,
+        backgroundColor: '#001c38',
+        borderRadius: 4,
+        '& img': {
+            width: '100%',
+            borderRadius: 2,
+            borderStyle: 'none',
         }
-    );
+    },
+    ProfileInfo__UserAbout: {
+        marginLeft: 15,
+        backgroundColor: '#001c38',
+        padding: 17,
+        flexGrow: 1,
+        borderRadius: 4,
+    },
+    ProfileInfo__UserName: {
+        fontSize: 20,
+    },
 
-    return (
-        <div>
-            {isOwner &&
-            <div>
-                <button onClick={() => {
-                    setEditMode(true)
-                }}>Редактировать
-                </button>
-            </div>
-            }
-
-            <div className={styles.ProfileInfo__UserData}>
-                <span className={styles.UserData__item}>Обо мне:</span>
-                {aboutMe ? aboutMe : "no data"}
-            </div>
-
-            <div className={styles.ProfileInfo__UserData}>
-                <span className={styles.UserData__item}>Ищу работу:</span>
-                {lookingForAJob ? "Да" : "Нет"}
-            </div>
-
-            <div className={styles.ProfileInfo__UserData}>
-                <span className={styles.UserData__item}>Описание:</span>
-                {lookingForAJobDescription ? lookingForAJobDescription : "Нет данных"}
-            </div>
-
-            {
-                contactsItems.length > 0 &&
-                <div className={styles.ProfileInfo__UserData}>
-                    <span className={styles.UserData__item}>Контакты:</span>
-                    {contactsItems}
-                </div>
-            }
-
-        </div>
-    )
-};
-
-const Contact = (props) => {
-
-    const {contactTitle, contactValue} = props;
-
-    return (
-        <div>
-            <span>{contactTitle}</span> : <span>{contactValue || "Нет данных"}</span>
-        </div>
-    )
-
-};
+});
 
 export default ProfileInfo;

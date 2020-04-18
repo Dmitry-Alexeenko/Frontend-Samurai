@@ -31,7 +31,7 @@ let Dialogs = (props) => {
                 <div className={styles.dialogs}>
 
 
-                    <Scrollbars style={{width: '100%', height: '100%'}}>
+                    <Scrollbars style={{width: '200px', }}>
                         <div className={styles.dialogsItems}>
                             {listAllDialogs.map(user => (
                                 <DialogItem name={user.userName} key={user.id} id={user.id}

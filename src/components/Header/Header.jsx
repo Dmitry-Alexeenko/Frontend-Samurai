@@ -1,110 +1,66 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
-import userPhoto from "../../assets/images/user.png";
-import {Row, Col, Button} from 'antd';
-import 'antd/dist/antd.css';
-import {LogoutOutlined, RadarChartOutlined, LoginOutlined} from '@ant-design/icons';
+import {RadarChartOutlined} from '@ant-design/icons';
 import useBreakpoint from "../../custom_hook/useBreakpoint";
 import {createUseStyles} from 'react-jss'
+import {useSelector} from "react-redux";
+import AuthContent from "./AuthContent";
+import NotAuthContent from "./NotAuthContent";
 
+const Header = (props) => {
+
+    const screenWidth = useBreakpoint();
+    const classes = useStyles({...props, screenWidth});
+    const isAuth = useSelector(state => state.auth.isAuth);
+
+    return (
+        <div className={classes.Header}>
+            <div className={classes.Header__content}>
+                <div className={classes.Header__logoContent}>
+                    <RadarChartOutlined className={classes.Header__logo}/>
+                    {screenWidth !== 'xs' && <span className={classes.Header__name}>Frontend Samurai</span>}
+                </div>
+
+                {isAuth ? <AuthContent/> : <NotAuthContent/>}
+            </div>
+        </div>
+    )
+};
 
 const useStyles = createUseStyles({
-    header__container: {
-        backgroundColor: '#000c18',
+    Header: {
+        //backgroundColor: '#000c18',
+        backgroundColor: '#00050a',
         color: 'white',
-        top:0,
+        top: 0,
         height: 'auto',
         position: 'fixed',
         width: '100%',
         zIndex: 999,
     },
-    header__content: {
+    Header__content: {
+        display: 'flex',
+        alignItems: 'center',
         minWidth: 300,
-        maxWidth: 1200,
+        maxWidth: 1000,
         margin: '0 auto',
         fontWeight: 'bold',
-        minHeight: 40
+        minHeight: 40,
+        padding: '0 10px',
+        boxSizing:'border-box'
     },
-    header__logoContent: {
+    Header__logoContent: {
         display: 'flex',
+        flexGrow: 1,
         alignItems: 'center'
     },
-    header__logo: {
+    Header__logo: {
         fontSize: 22,
-        marginLeft: props => props.screenWidth !== 'xs' ? 20 : 30,
+        marginLeft: props => props.screenWidth !== 'xs' ? 0 : 15,
     },
-    header__name: {
+    Header__name: {
         marginLeft: 10
     },
-    header__UserPhoto: {
-        width: 30,
-        borderRadius: '50%',
-        margin: '0 10px',
-    },
-    header__btn: {
-        textAlign: 'center',
-        marginRight: 20
-    },
-    header__loginContainer: {
-        textAlign: 'right'
-    }
 });
-
-
-const Header = (props) => {
-
-    const screenWidth = useBreakpoint();
-
-    const classes = useStyles({...props, screenWidth});
-
-    let {logout} = props;
-    let {photo, login, isAuth} = props;
-
-    const isAuthContent = () => {
-        return (
-            <>
-                <Col flex={'230px'} className={classes.header__loginContainer}>
-                    <span>{login}</span>
-                    <img className={classes.header__UserPhoto} src={photo != null ? photo : userPhoto}
-                         alt="userPhoto"/>
-                </Col>
-                <Col flex={'50px'} className={classes.header__btn}>
-                    <Button type="primary" shape="circle" icon={<LogoutOutlined/>} size={'small'} onClick={logout}/>
-                </Col>
-            </>
-        )
-    };
-
-    const notIsAuthContent = () => {
-        return (
-            <Col flex={'60px'} className={classes.header__btn}>
-                <Button type="primary" shape="circle" size={'small'}>
-                    <NavLink to={"/Login"}>
-                        <LoginOutlined/>
-                    </NavLink>
-                </Button>
-            </Col>
-        )
-    };
-
-    return (
-        <div className={classes.header__container}>
-            <Row className={classes.header__content} justify={'center'} align={'middle'}>
-                <Col flex={'auto'} className={classes.header__logoContent}>
-
-                    <RadarChartOutlined className={classes.header__logo}/>
-                    {
-                        screenWidth !== 'xs' &&
-                        <span className={classes.header__name}>Frontend Samurai</span>
-                    }
-
-                </Col>
-
-                {isAuth ? isAuthContent() : notIsAuthContent()}
-            </Row>
-        </div>
-    )
-};
 
 /*Header.defaultProps = {
     marginLeft: 20 ,
