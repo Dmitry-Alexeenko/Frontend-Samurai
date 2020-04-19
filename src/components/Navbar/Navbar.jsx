@@ -3,12 +3,14 @@ import {NavLink} from "react-router-dom";
 import {
     MailOutlined, SettingOutlined, UsergroupAddOutlined, ExperimentOutlined, CustomerServiceOutlined, UserOutlined
 } from '@ant-design/icons';
-import {createUseStyles} from "react-jss";
+import {createUseStyles, useTheme} from "react-jss";
 
 
 const NavBar = (props) => {
-    const {screenWidth} = props;
-    const classes = useStyles({...props});
+    const theme = useTheme();
+    const classes = useStyles({...props, theme});
+
+    const {screenWidth}  = theme;
 
     return (
         <nav className={classes.NavBar}>
@@ -61,7 +63,7 @@ const NavBar = (props) => {
 const useStyles = createUseStyles({
     NavBar: {
         marginTop: 15,
-        width: props => props.screenWidth !== 'xs' ? '170px' : '70px',
+        width: ({theme}) => theme.screenWidth !== 'xs' ? '170px' : '70px',
         position: 'fixed',
         top: 40,
         display: 'flex',
@@ -74,7 +76,7 @@ const useStyles = createUseStyles({
         padding: '8px 10px',
         color: '#b2b2b2',
         textDecoration: 'none',
-        textAlign: props => props.screenWidth !== 'xs' ? 'left' : 'center',
+        textAlign: ({theme}) => theme.screenWidth !== 'xs' ? 'left' : 'center',
         '&:hover': {
             color: 'white'
         }

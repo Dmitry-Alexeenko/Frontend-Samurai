@@ -25,7 +25,7 @@ const Profile = (props) => {
 const useStyles = createUseStyles({
     Profile: {
         marginTop: 40,
-        padding: '15px 0'
+        padding: '15px',
     },
 
 });

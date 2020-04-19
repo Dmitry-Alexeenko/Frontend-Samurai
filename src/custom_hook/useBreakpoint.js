@@ -6,11 +6,11 @@ const getDeviceConfig = (width) => {
         return 'xs';
     } else if (width >= 576 && width < 768) {
         return 'sm';
-    } else if (width >= 768 && width < 992) {
+    } /*else if (width >= 768 && width < 992) {
         return 'md';
     } else if (width >= 992 && width < 1200) {
         return 'lg';
-    } /*else if (width >= 1200 && width < 1600) {
+    } *//*else if (width >= 1200 && width < 1600) {
         return 'xl';
     } else if (width >= 1600) {
         return 'xxl';

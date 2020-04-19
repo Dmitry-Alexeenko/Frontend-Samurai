@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from '../../../styles/ProfileInfo.module.scss';
-
-
+import EditBtn from "../../atoms/EditBtn";
+import {SnippetsOutlined  } from "@ant-design/icons";
 
 const ProfileData = (props) => {
 
     let {aboutMe, lookingForAJob, lookingForAJobDescription, contacts} = props.profile;
     const {setEditMode, isOwner} = props;
 
-    let contactsItems = Object.keys(contacts).map(contact => {
+    let contactsItemsFilter = Object.keys(contacts).filter(contact => contacts[contact]);
+    let contactsItems = contactsItemsFilter.map(contact => {
             if (contacts[contact]) {
                 return <Contact key={contact} contactTitle={contact}
                                 contactValue={contacts[contact]}
@@ -17,37 +18,36 @@ const ProfileData = (props) => {
         }
     );
 
+    console.log(contactsItems)
+
     return (
         <div>
-            {isOwner &&
-            <div>
-                <button onClick={() => {
-                    setEditMode(true)
-                }}>Редактировать
-                </button>
-            </div>
-            }
-
-            <div className={styles.ProfileInfo__UserData}>
-                <span className={styles.UserData__item}>Обо мне:</span>
-                {aboutMe ? aboutMe : "no data"}
-            </div>
+            {isOwner && <EditBtn setEditMode={setEditMode}> Редактировать </EditBtn>}
 
             <div className={styles.ProfileInfo__UserData}>
                 <span className={styles.UserData__item}>Ищу работу:</span>
-                {lookingForAJob ? "Да" : "Нет"}
+                <span>{lookingForAJob ? "Да" : "Нет"}</span>
+
             </div>
 
             <div className={styles.ProfileInfo__UserData}>
-                <span className={styles.UserData__item}>Описание:</span>
-                {lookingForAJobDescription ? lookingForAJobDescription : "Нет данных"}
+                <span className={styles.UserData__item}>Обо мне:</span>
+                <span> {aboutMe ? aboutMe : "Нет данных"}</span>
+
+            </div>
+
+            <div className={styles.ProfileInfo__UserData}>
+                <span className={styles.UserData__item}>Навыки:</span>
+                <span>{lookingForAJobDescription ? lookingForAJobDescription : "Нет данных"}</span>
             </div>
 
             {
                 contactsItems.length > 0 &&
                 <div className={styles.ProfileInfo__UserData}>
                     <span className={styles.UserData__item}>Контакты:</span>
-                    {contactsItems}
+                    <div>
+                        {contactsItems}
+                    </div>
                 </div>
             }
 
@@ -60,8 +60,9 @@ const Contact = (props) => {
     const {contactTitle, contactValue} = props;
 
     return (
-        <div>
-            <span>{contactTitle}</span> : <span>{contactValue || "Нет данных"}</span>
+        <div className={styles.Contact}>
+            <SnippetsOutlined  />
+            <a href={contactValue} target="_blank" className={styles.Contact__Link}>{contactValue}</a>
         </div>
     )
 

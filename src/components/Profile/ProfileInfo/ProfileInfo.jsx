@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
-import styles from '../../../styles/ProfileInfo.module.scss';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
 import logo from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
 import ProfileData from "./ProfileData";
-import {createUseStyles} from "react-jss";
+import {createUseStyles, useTheme} from "react-jss";
 import LoadBtn from "../../atoms/LoadBtn";
 
 
 const ProfileInfo = (props) => {
 
-    const classes = useStyles();
-    let [editMode, setEditMode] = useState(false);
+    const theme = useTheme();
+    const classes = useStyles({theme});
+    const [editMode, setEditMode] = useState(false);
 
     if (!props.profile) {
         return <Preloader/>
@@ -39,7 +39,7 @@ const ProfileInfo = (props) => {
         <div className={classes.ProfileInfo}>
             <div className={classes.ProfileInfo__Avatar}>
                 <img src={large ? large : logo} alt={"userPhoto"}/>
-                {isOwner && <LoadBtn selectPhoto={selectPhoto}/>}
+                {isOwner && <LoadBtn selectPhoto={selectPhoto}> Изменить фото </LoadBtn>}
             </div>
 
             <div className={classes.ProfileInfo__UserAbout}>
@@ -48,9 +48,8 @@ const ProfileInfo = (props) => {
                     {profile.fullName}
                 </div>
 
-                <div className={styles.ProfileInfo__UserData}>
-                    <ProfileStatus status={status}
-                                   UpdateUserStatus={UpdateUserStatus}/>
+                <div>
+                    <ProfileStatus status={status} UpdateUserStatus={UpdateUserStatus}/>
                 </div>
 
                 {!editMode && <ProfileData profile={profile} setEditMode={setEditMode} isOwner={isOwner}/>}
@@ -66,12 +65,17 @@ const useStyles = createUseStyles({
     ProfileInfo: {
         transition: '0.1s all',
         display: 'flex',
+        flexDirection: ({theme}) => theme.screenWidth !== 'sm' && theme.screenWidth !== 'xs' ? 'row' : 'column',
+        alignItems: 'flex-start',
     },
     ProfileInfo__Avatar: {
+        flexShrink:0,
         width: 180,
-        padding: 17,
+        padding: 15,
         backgroundColor: '#001c38',
         borderRadius: 4,
+        marginRight: 15,
+        marginBottom: 15,
         '& img': {
             width: '100%',
             borderRadius: 2,
@@ -79,10 +83,12 @@ const useStyles = createUseStyles({
         }
     },
     ProfileInfo__UserAbout: {
-        marginLeft: 15,
+
         backgroundColor: '#001c38',
-        padding: 17,
+        padding: 15,
         flexGrow: 1,
+        width: '100%',
+        boxSizing: 'border-box',
         borderRadius: 4,
     },
     ProfileInfo__UserName: {

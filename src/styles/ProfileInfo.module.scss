@@ -1,5 +1,7 @@
 
+
 .ProfileInfo__UserData {
+  display: flex;
   margin-bottom: 10px;
   font-size: 14px;
 }
@@ -7,4 +9,18 @@
 .UserData__item {
   color: #828282;
   margin-right: 5px;
+  min-width: 80px;
+  width: 25%;
+  flex-shrink: 0;
+  word-break: break-word;
+}
+
+.Contact {
+  padding: 3px 0;
+}
+
+.Contact__Link {
+  color: white;
+  padding-left:5px;
+  word-break: break-word;
 }

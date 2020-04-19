@@ -10,14 +10,12 @@ import UsersContainer from "./components/Users/UsersContainer";
 import {WithSuspense} from "./hoc/withSuspense";
 import Login from "./components/Login/Login";
 import {initializeApp} from "./Redux/reducers/app-reducer";
-//import {Layout} from 'antd';
 import useBreakpoint from "./custom_hook/useBreakpoint";
 import Algorithms from "./components/Education/Algorithms";
 import Header from "./components/Header/Header";
 import PreloaderApp from "./components/common/Preloader/PreloaderApp";
 import {useSelector, useDispatch} from "react-redux";
 import {createUseStyles, useTheme, ThemeProvider} from "react-jss";
-
 
 const News = React.lazy(() => import ("./components/News/News"));
 const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileContainer"));
@@ -26,13 +24,8 @@ const ProfileContainer = React.lazy(() => import ("./components/Profile/ProfileC
 const App = (props) => {
     const initialized = useSelector(state => state.app.initialized);
     const dispatch = useDispatch();
-    const screenWidth = useBreakpoint();
     const theme = useTheme();
-    const classes = useStyles({...props, screenWidth, theme});
-
-
-    //const {Sider} = Layout;
-
+    const classes = useStyles({theme});
 
     const catchAllErrors = (promiseRejectionEvent) => {
         console.log(promiseRejectionEvent)
@@ -54,7 +47,7 @@ const App = (props) => {
             <div className={classes.App__Container}>
                 <div className={classes.App__Content}>
 
-                    <NavBar screenWidth={screenWidth}/>
+                    <NavBar/>
 
                     <div className={classes.App__Router}>
                         <Switch>
@@ -71,7 +64,6 @@ const App = (props) => {
                         </Switch>
                     </div>
                 </div>
-
             </div>
         </div>
     );
@@ -96,19 +88,24 @@ const useStyles = createUseStyles({
         margin: '0 auto',
     },
     App__Router: {
-        marginLeft: props => props.screenWidth !== 'xs' ? '185px' : '85px',
+        marginLeft: ({theme}) => theme.screenWidth !== 'xs' ? '170px' : '70px',
         transition: '0.1s all'
     },
 });
 
 
 const AppContainer = () => {
+
+    //hook который срабатывает при определенном разрешении экрана
+    const screenWidth = useBreakpoint();
+
     const theme = {
         backGroundLight: 'grey',
         //backGroundDark: '#001529',
         backGroundDark: '#000c18',
         colorLight: 'black',
         colorDark: 'white',
+        screenWidth: screenWidth,
     }
     return (
         //HashRouter использую для того что бы все нормально работало в github
