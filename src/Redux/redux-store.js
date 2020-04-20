@@ -7,9 +7,11 @@ import usersReducer from "./reducers/users-reducer";
 import authReducer from "./reducers/auth-reducer";
 import thunkMiddleware from "redux-thunk";
 import appReducer from "./reducers/app-reducer";
+import taskManagerReducer from "./reducers/taskManager-reducer";
 
-let reducers = combineReducers({  //передаем этой функции наши редюсоры. импортим из библиотеки redux
-    profilePage: profileReducer,  //юда приходит state от редюсеров. и все это упаковывается в общий state
+let reducers = combineReducers({
+    profilePage: profileReducer,
+    taskManager: taskManagerReducer,
     dialogsPage: dialogsReducer,
     sideBar: sidebarReducer,
     usersPage: usersReducer,
@@ -22,7 +24,5 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)
 ));
 
-//thunkMiddleware- промежуточный уровень
-//автоматически createStore создает внутри себя state у которого есть 3 свойства(reducers)
 window.__store__ = store;
 export default store;

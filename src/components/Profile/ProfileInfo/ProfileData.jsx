@@ -18,8 +18,6 @@ const ProfileData = (props) => {
         }
     );
 
-    console.log(contactsItems)
-
     return (
         <div>
             {isOwner && <EditBtn setEditMode={setEditMode}> Редактировать </EditBtn>}

@@ -57,6 +57,19 @@ export const profileAPI = {
     }
 };
 
+export const TaskManagerAPI = {
+    getTaskList() {
+        return (
+            instance.get(`/todo-lists`)
+        )
+    },
+    addNewTaskList(title) {
+        return (
+            instance.post(`/todo-lists`, {title: title})
+        )
+    },
+};
+
 export const headerAPI = {
     getUserLogin() {
         return (

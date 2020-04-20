@@ -52,7 +52,6 @@ export const UpdateUserStatus = (status) => {
             }
         } catch (error) {
             console.error("something error");
-            debugger
         }
     }
 };

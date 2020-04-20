@@ -19,6 +19,10 @@ export const actions = {
     ADD_USER_STATUS: "social_network/profile/ADD_USER_STATUS",
     SAVE_PHOTO_SUCCESS: "social_network/profile/SAVE-PHOTO-SUCCESS",
 
+    //taskManager actions
+    SHOW_FOLDER_LIST: "social_network/taskManager/SHOW_FOLDER_LIST",
+
+
     //users actions
     SUBSCRIBE: "social_network/users/SUBSCRIBE",
     UNSUBSCRIBE: 'social_network/users/UNSUBSCRIBE',

@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/atoms/EditBtn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/taskManagerInitState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/taskManager-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/TaskManager/AddFolderForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/TaskManager/TaskManager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/reducers/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/reducers/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/atoms/LoadBtn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/LoadBtn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_hook/useBreakpoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom_hook/useBreakpoint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileInfo.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ProfileStatus.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ProfileStatus.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/validators.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +41,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/atoms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/TaskManager" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -58,19 +59,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\React-project\src\components\atoms" />
-      <recent name="C:\projects\React-project\src\components\Profile\ProfileInfo" />
-      <recent name="C:\projects\React-project\src\assets\images" />
-      <recent name="C:\projects\React-project\src\components\common\Preloader" />
-      <recent name="C:\projects\React-project\src\components\Header" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\React-project\src\custom_hook" />
       <recent name="C:\p\React-project\src\utils" />
       <recent name="C:\p\React-project\src\tests" />
       <recent name="C:\p\React-project\src\styles" />
       <recent name="C:\p\React-project\src\Redux\reducers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\React-project\src\components\Profile\TaskManager" />
+      <recent name="C:\projects\React-project\src\Redux\initialStates" />
+      <recent name="C:\projects\React-project\src\Redux\reducers" />
+      <recent name="C:\projects\React-project\src\components\atoms" />
+      <recent name="C:\projects\React-project\src\components\Profile\ProfileInfo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,6 +288,8 @@
       <workItem from="1587118672887" duration="1522000" />
       <workItem from="1587214138057" duration="36868000" />
       <workItem from="1587282004878" duration="15734000" />
+      <workItem from="1587352472306" duration="209000" />
+      <workItem from="1587353828568" duration="11552000" />
     </task>
     <servers />
   </component>

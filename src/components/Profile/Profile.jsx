@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import {createUseStyles} from "react-jss";
+import TaskManager from "./TaskManager/TaskManager";
 
 const Profile = (props) => {
     const classes = useStyles();
@@ -16,8 +17,9 @@ const Profile = (props) => {
                          isOwner={isOwner}
                          savePhoto={savePhoto}
                          updateProfile={updateProfile}/>
+            {isOwner &&<TaskManager/>}
+            {isOwner &&<MyPostsContainer/>}
 
-            <MyPostsContainer/>
         </div>
     )
 };
