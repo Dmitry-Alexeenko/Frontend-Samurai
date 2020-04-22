@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss'
 import Container from "../common/Conponents/Container";
-import {binary_search, copyObject, rec, sort} from "./algoritms";
+import {binary_search, copyObject, quickSort, rec, sort, sumNumbers} from "./algoritms";
 
 const useStyles = createUseStyles({
     title: {
@@ -45,8 +45,11 @@ const Algorithms = (props) => {
         }
     };
     //console.log(obj, "original")
-    console.log(copyObject(obj));
-    console.log(obj, "original");
+    //console.log(copyObject(obj));
+    //console.log(sumNumbers([2,4,6]), "sumNumbers");
+    //console.log(quickSort([2,1,3,5,4]), "quickSort");
+
+
     return (
         <Container>
 
@@ -180,6 +183,48 @@ const Algorithms = (props) => {
                 Действие 1 и 2 приостановлены, но не закончены пока не закончится действие 3. После действия 3 закончится
                 действие 2, а после и действое 1.
             </p>
+
+            <a> Быстрая сортировка</a>
+            <p>
+               Бвстрая сортировка работает быстрее сортировки выбором
+            </p>
+            <pre>
+                {`
+                const quickSort = (arr) => {
+                    if(arr.length < 2) {
+                        return arr
+                    } else {
+                        let operand = arr[0];
+                        let less = [];
+                        let more = [];
+                        for(let i = 1; i < arr.length; i++) {
+                            if(arr[i] < operand) {
+                                less.push(arr[i])
+                            } else {
+                                more.push(arr[i])
+                            }
+                        }
+                        return quickSort(less) + [operand] + quickSort(more)
+                }
+                quickSort([3,2,5,1,4])
+                `}
+            </pre>
+            <p>
+                Для быстрой сортировки требуется опорный элемент. В коде указанном выше опорным элементом является
+                переменная operand. Далее циклом проходим по все элементам в массиве. Те элементы, которые меньше operand
+                добавляем в массив less, а те которые больше в массив more. Далее выполняем рекурсию.
+                Если длина массива меньше 2, то возвращам массив.
+                Цель: рекурсией длину массива привести к значению 1 или 0. Далее весь стек рекурсий сложится.
+
+            </p>
+            <pre>
+               {`
+                3,2,5,1,4       //3 - опорный элемент
+                2,1     5,4     //2 и 5 опорные элементы
+                1       4
+                `}
+
+            </pre>
         </Container>
     )
 };

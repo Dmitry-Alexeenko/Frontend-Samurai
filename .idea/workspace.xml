@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Redux/initialStates/taskManagerInitState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/reducers/taskManager-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/TaskManager/AddFolderForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/TaskManager/TaskManager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/reducers/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/reducers/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/validators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/algoritms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +32,7 @@
   <component name="ProjectId" id="1UWKMtTBF4m9lL6ksx3GbB7mj2T" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/TaskManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -289,7 +280,10 @@
       <workItem from="1587214138057" duration="36868000" />
       <workItem from="1587282004878" duration="15734000" />
       <workItem from="1587352472306" duration="209000" />
-      <workItem from="1587353828568" duration="11552000" />
+      <workItem from="1587353828568" duration="11615000" />
+      <workItem from="1587384866792" duration="1811000" />
+      <workItem from="1587496519258" duration="1894000" />
+      <workItem from="1587528695266" duration="4962000" />
     </task>
     <servers />
   </component>

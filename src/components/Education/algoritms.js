@@ -66,6 +66,32 @@ export const copyObject = (object) => {
     return newObject
 }
 
+export const sumNumbers = (arr) => {
+    if(arr.length === 0) {
+        return 0
+    } else {
+        return arr[0] + sumNumbers(arr.slice(1))
+    }
+}
+
+export const quickSort = (arr) => {
+    if(arr.length < 2) {
+        return arr
+    } else {
+        let operand = arr[0];
+        let less = [];
+        let more = [];
+        for(let i = 1; i < arr.length; i++) {
+            if(arr[i] < operand) {
+                less.push(arr[i])
+            } else {
+                more.push(arr[i])
+            }
+        }
+        return quickSort(less) + [operand] + quickSort(more)
+    }
+}
+
 
 
 
