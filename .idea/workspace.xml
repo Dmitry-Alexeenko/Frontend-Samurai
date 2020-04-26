@@ -3,6 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a8c4a5-ac40-4865-aacb-ef128f217d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/appInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/appInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/authInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/authInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/dialogsInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/dialogsInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/profileInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/profileInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/sideBarInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/sideBarInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/taskManagerInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/taskManagerInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/initialStates/usersInitState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/initialStates/usersInitState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/reducers/app-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/reducers/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/reducers/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/reducers/auth-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/Algorithms.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Education/algoritms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Education/algoritms.js" afterDir="false" />
     </list>
@@ -48,6 +60,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\projects\React-project\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -283,7 +296,10 @@
       <workItem from="1587353828568" duration="11615000" />
       <workItem from="1587384866792" duration="1811000" />
       <workItem from="1587496519258" duration="1894000" />
-      <workItem from="1587528695266" duration="4962000" />
+      <workItem from="1587528695266" duration="5092000" />
+      <workItem from="1587702966564" duration="3666000" />
+      <workItem from="1587897599880" duration="4650000" />
+      <workItem from="1587915576754" duration="5000000" />
     </task>
     <servers />
   </component>

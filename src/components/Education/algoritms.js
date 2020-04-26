@@ -6,14 +6,14 @@ export const binary_search = (list, item) => {
         let middle = Math.ceil((low + high) / 2);
         let currentElement = list[middle];
 
-        if(currentElement === item) return middle; //достаем индекс элемента, которого ищем
-        if(currentElement > item){ //если текущий элемент больше искомого, меняем верхнюю планку
+        if (currentElement === item) return middle; //достаем индекс элемента, которого ищем
+        if (currentElement > item) { //если текущий элемент больше искомого, меняем верхнюю планку
             high = middle - 1
         } else { //если текущий элемент меньше искомого, меняем нижнюю планку
             low = middle + 1
         }
     }
-    return  NaN
+    return NaN
 };
 
 //------------sort------------//
@@ -21,7 +21,7 @@ const min = (list) => {
     let minNumber = list[0];
     let idMinNumber = 0;
     for (let i = 1; i < list.length; i++) {
-        if(list[i] < minNumber) {
+        if (list[i] < minNumber) {
             minNumber = list[i];
             idMinNumber = i;
         }
@@ -32,10 +32,10 @@ const min = (list) => {
 export const sort = (list) => {
     let oldList = [...list];
     let newList = [];
-    for(let i = 0; i < oldList.length; i) {
+    for (let i = 0; i < oldList.length; i) {
         let minNumber = min(oldList);
         newList.push(oldList[minNumber]);
-        oldList.splice(minNumber,1)
+        oldList.splice(minNumber, 1)
 
     }
     return newList
@@ -47,7 +47,7 @@ export const rec = (count) => {
 
     //console.log('count ' + count);
 
-    if(count === 0) {
+    if (count === 0) {
         return null
     } else {
         rec(count - 1)
@@ -56,10 +56,10 @@ export const rec = (count) => {
 
 export const copyObject = (object) => {
 
-    let newObject = {...object, copy:'copy'};
+    let newObject = {...object, copy: 'copy'};
 
     for (let key in newObject) {
-        if(typeof (newObject[key]) === "object") {
+        if (typeof (newObject[key]) === "object") {
             newObject[key] = {...copyObject(newObject[key])};
         }
     }
@@ -67,7 +67,7 @@ export const copyObject = (object) => {
 }
 
 export const sumNumbers = (arr) => {
-    if(arr.length === 0) {
+    if (arr.length === 0) {
         return 0
     } else {
         return arr[0] + sumNumbers(arr.slice(1))
@@ -75,14 +75,14 @@ export const sumNumbers = (arr) => {
 }
 
 export const quickSort = (arr) => {
-    if(arr.length < 2) {
+    if (arr.length < 2) {
         return arr
     } else {
         let operand = arr[0];
         let less = [];
         let more = [];
-        for(let i = 1; i < arr.length; i++) {
-            if(arr[i] < operand) {
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < operand) {
                 less.push(arr[i])
             } else {
                 more.push(arr[i])
@@ -91,6 +91,19 @@ export const quickSort = (arr) => {
         return quickSort(less) + [operand] + quickSort(more)
     }
 }
+
+export function persistence(num, count = 0) {
+    let numArr = num.toString();
+    if (numArr.length === 1) return count;
+    let result = 1;
+    for (let i = 0; i < numArr.length; i++) {
+        result *= numArr[i]
+    }
+    count += 1;
+    return persistence(result, count)
+}
+
+
 
 
 

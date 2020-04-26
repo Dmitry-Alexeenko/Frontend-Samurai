@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss'
 import Container from "../common/Conponents/Container";
-import {binary_search, copyObject, quickSort, rec, sort, sumNumbers} from "./algoritms";
+import {binary_search, copyObject, persistence, quickSort, rec, sort, sumNumbers} from "./algoritms";
 
 const useStyles = createUseStyles({
     title: {
@@ -48,7 +48,7 @@ const Algorithms = (props) => {
     //console.log(copyObject(obj));
     //console.log(sumNumbers([2,4,6]), "sumNumbers");
     //console.log(quickSort([2,1,3,5,4]), "quickSort");
-
+    //console.log(persistence(4))
 
     return (
         <Container>
